@@ -193,9 +193,12 @@ table.cmp td:nth-child(2) svg,table.cmp td:nth-child(3) svg{width:16px;height:16
 .pc svg{width:48px;height:48px;margin-bottom:18px}
 .pc h3{margin-bottom:8px}.pc p{font-size:15.5px;color:var(--ink-2)}
 @media (max-width:900px){.phero .w,.duo,.spec,.pc{grid-template-columns:1fr}.sub{display:none}}
-.pdfv iframe{width:100%;height:1100px;border:1px solid var(--rule);background:var(--surface);display:block}
-.pdfm{display:none}
-@media (max-width:900px){.pdfv iframe{display:none}.pdfm{display:block;border:1px solid var(--rule)}.pdfm img{width:100%}.pdfm span{display:flex;gap:8px;align-items:center;padding:12px 14px;font-weight:600;color:var(--red-2)}.pdfm svg{width:16px;height:16px}}
+.pdfv{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pdfv a{display:block;border:1px solid var(--rule);background:#fff;transition:border-color .15s}
+.pdfv a:hover{border-color:var(--red)}
+.pdfv img{width:100%;display:block}
+.pdfv span{display:block;padding:10px 12px;font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--rule-2)}
+@media (max-width:900px){.pdfv{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -1843,8 +1846,7 @@ table.cmp td:nth-child(2) svg,table.cmp td:nth-child(3) svg{width:16px;height:16
   <div class="shead"><div><div class="lbl">Teknik veri föyü</div><h2>Dört sayfada bütün teknik değerler.</h2></div>
     <div><p style="margin-bottom:22px">Modeller, portlar, boyutlar, ortam koşulları, Standart ve Pro lisans uyumu, belgeler ve sipariş kodları. İhale şartnamesine doğrudan aktarılabilir.</p>
     <a class="btn red" href="assets/belge/leopc-teknik-veri-foyu.pdf" download>Teknik veri föyünü indirin (PDF) <svg><use href="#ui-indir"/></svg></a></div></div>
-  <div class="pdfv"><iframe src="assets/belge/leopc-teknik-veri-foyu.pdf#view=FitH&toolbar=1" title="LeoPC Teknik Veri Föyü" loading="lazy"></iframe>
-    <a class="pdfm" href="assets/belge/leopc-teknik-veri-foyu.pdf" target="_blank" rel="noopener"><img src="assets/belge/tds-kapak.png" alt="LeoPC Teknik Veri Föyü, 1. sayfa"><span>Föyü açın <svg><use href="#ui-dis"/></svg></span></a></div>
+  <div class="pdfv"><a href="assets/belge/leopc-teknik-veri-foyu.pdf#page=1" target="_blank" rel="noopener"><img src="assets/belge/tds/sayfa-1.jpg" alt="LeoPC Teknik Veri Föyü, sayfa 1" loading="lazy"><span class="mono">Sayfa 1 / 4</span></a><a href="assets/belge/leopc-teknik-veri-foyu.pdf#page=2" target="_blank" rel="noopener"><img src="assets/belge/tds/sayfa-2.jpg" alt="LeoPC Teknik Veri Föyü, sayfa 2" loading="lazy"><span class="mono">Sayfa 2 / 4</span></a><a href="assets/belge/leopc-teknik-veri-foyu.pdf#page=3" target="_blank" rel="noopener"><img src="assets/belge/tds/sayfa-3.jpg" alt="LeoPC Teknik Veri Föyü, sayfa 3" loading="lazy"><span class="mono">Sayfa 3 / 4</span></a><a href="assets/belge/leopc-teknik-veri-foyu.pdf#page=4" target="_blank" rel="noopener"><img src="assets/belge/tds/sayfa-4.jpg" alt="LeoPC Teknik Veri Föyü, sayfa 4" loading="lazy"><span class="mono">Sayfa 4 / 4</span></a></div>
 </div></section>
 <section class="sec"><div class="w">
   <div class="shead"><div><div class="lbl">Karşılaştırma</div><h2>LeoPC ve klasik masaüstü bilgisayar.</h2></div><p>Fark donanımın gücünde değil, verinin ve yönetimin nerede durduğunda.</p></div>
