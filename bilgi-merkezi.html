@@ -1,0 +1,1760 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bilgi Merkezi · Tedarikçi değerlendirme — Letron</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+/* Letron v3 — görsel sistem: 00_calisma/gorsel-sistem.md */
+:root{
+  --paper:#FFFFFF; --ink:#111111; --ink-2:#474747; --ink-3:#8A8A8A; --rule:#D9D9D9; --rule-2:#E9E9E9;
+  --surface:#F4F4F4; --surface-2:#E6E6E6; --red:#D01A1A; --red-2:#A81414; --red-wash:#FBEAEA;
+  --ok:#1F7A3F; --warn:#A86200; --i2:#D01A1A;
+  --sans:'IBM Plex Sans',Arial,sans-serif; --mono:'IBM Plex Mono',Menlo,monospace;
+  --max:1312px; --g:40px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--sans);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+img,svg{display:block;max-width:100%}
+.w{max-width:var(--max);margin:0 auto;padding:0 var(--g)}
+.mono{font-family:var(--mono)}
+h1,h2,h3,h4{font-weight:600;letter-spacing:-.015em;line-height:1.08}
+h1{font-size:64px;letter-spacing:-.028em;line-height:1.02}
+h2{font-size:44px;letter-spacing:-.022em}
+h3{font-size:22px;line-height:1.25}
+p{max-width:64ch}
+.lead{font-size:21px;line-height:1.55;color:var(--ink-2)}
+:focus-visible{outline:2px solid var(--red-2);outline-offset:3px}
+svg.u{width:20px;height:20px;flex:none}
+svg.p{width:48px;height:48px;flex:none}
+svg.b{width:96px;height:96px;flex:none}
+
+.lbl{display:flex;align-items:center;gap:12px;font:600 13px var(--mono);color:var(--red);letter-spacing:.02em;margin-bottom:20px}
+.lbl::before{content:"";width:28px;height:2px;background:currentColor}
+.btn{display:inline-flex;align-items:center;gap:10px;font:600 15.5px var(--sans);padding:15px 22px;border:1.5px solid var(--ink);transition:background .15s,color .15s}
+.btn svg{width:18px;height:18px;transition:transform .15s}
+.btn:hover svg{transform:translateX(3px)}
+.btn.red{background:var(--red);border-color:var(--red);color:#fff}
+.btn.red:hover{background:var(--red-2);border-color:var(--red-2)}
+.btn.line:hover{background:var(--ink);color:#fff}
+.tl{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--red-2);border-bottom:1.5px solid currentColor;padding-bottom:2px}
+.tl svg{width:16px;height:16px}
+.tag{font:500 12px var(--mono);border:1px solid currentColor;padding:2px 8px;white-space:nowrap}
+.tag.red{color:var(--red-2)} .tag.road{color:var(--ink-3)}
+
+/* üst */
+.util{border-bottom:1px solid var(--rule-2);font-size:13.5px;color:var(--ink-2)}
+.util .w{display:flex;justify-content:space-between;height:40px;align-items:center}
+.util nav{display:flex;gap:26px}
+.util .k{font:500 12.5px var(--mono);color:var(--ink-3)}
+header.nav{border-bottom:1px solid var(--rule);position:sticky;top:0;background:rgba(255,255,255,.97);z-index:30}
+header.nav .w{display:flex;align-items:center;height:76px;gap:40px}
+header.nav .logo img{height:28px;width:auto}
+header.nav ul{list-style:none;display:flex;gap:30px;font-weight:500;font-size:15.5px;flex:1}
+header.nav li{display:flex;align-items:center;gap:6px;height:76px;position:relative}
+header.nav li.on{box-shadow:inset 0 -3px 0 var(--red)}
+header.nav .ara{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--rule)}
+
+/* bölüm */
+.sec{padding:112px 0}
+.sec.tone{background:var(--surface);border-top:1px solid var(--rule-2);border-bottom:1px solid var(--rule-2)}
+.shead{display:grid;grid-template-columns:6fr 6fr;gap:56px;margin-bottom:56px;align-items:end}
+.shead p{color:var(--ink-2);font-size:18.5px}
+.crumbs{font:500 13px var(--mono);color:var(--ink-3);padding:26px 0 0}
+
+/* şekil (çizim / infografik) */
+.fig{margin:0}
+.fig .art{background:#fff;border:1px solid var(--rule);padding:28px}
+.fig .art svg{width:100%;height:auto}
+.fig.bare .art{border:0;padding:0}
+.fig figcaption{display:flex;gap:14px;align-items:baseline;margin-top:14px;font-size:14.5px;color:var(--ink-2)}
+.fig figcaption b{font:600 12.5px var(--mono);color:var(--ink);white-space:nowrap}
+
+/* piktogram kartları */
+.feat{display:grid;grid-template-columns:repeat(4,1fr);border-top:1.5px solid var(--ink)}
+.feat article{padding:32px 28px 36px 0;border-right:1px solid var(--rule)}
+.feat article+article{padding-left:28px}
+.feat article:last-child{border-right:0}
+.feat svg.p{margin-bottom:22px}
+.feat h3{margin-bottom:10px}
+.feat p{font-size:15.5px;color:var(--ink-2)}
+.feat .tag{margin-left:8px;vertical-align:middle}
+
+/* KPI */
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.kpi>div{padding:32px 28px 30px 0;border-right:1px solid var(--rule);display:grid;grid-template-columns:auto 1fr;gap:0 18px;align-items:center}
+.kpi>div+div{padding-left:28px}.kpi>div:last-child{border-right:0}
+.kpi .v{font:600 60px/1 var(--sans);letter-spacing:-.035em}
+.kpi .v small{display:block;font:500 13px var(--mono);color:var(--ink-3);letter-spacing:0;margin-top:6px}
+.kpi p{grid-column:1/-1;font-size:15px;color:var(--ink-2);margin-top:16px;border-top:2px solid var(--red);padding-top:12px}
+
+/* sektör kartları */
+.sek{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1.5px solid var(--ink)}
+.sek a{padding:30px 26px 32px 0;border-bottom:1px solid var(--rule);display:block;transition:background .15s}
+.sek a:not(:nth-child(4n+1)){padding-left:26px;border-left:1px solid var(--rule)}
+.sek a:hover{background:var(--red-wash)}
+.sek svg{width:64px;height:64px;margin-bottom:20px}
+.sek b{display:block;font-weight:600;font-size:18px;margin-bottom:6px}
+.sek span{font-size:14.5px;color:var(--ink-2)}
+
+/* bant */
+.band{background:var(--red);color:#fff;--i2:#fff}
+.band h2{color:#fff}
+.band .lbl{color:#fff}
+.band .btn{background:#fff;color:var(--red-2);border-color:#fff}
+
+/* bilgi merkezi */
+.kbmap{display:grid;grid-template-columns:1fr 1fr;gap:4px 56px}
+.kbmap button{display:grid;grid-template-columns:36px 1fr 44px;gap:14px;align-items:center;text-align:left;padding:10px 0;border-bottom:1px solid var(--rule-2)}
+.kbmap button svg{width:32px;height:32px}
+.kbmap .nm{font-weight:500;font-size:15.5px}
+.kbmap .bar{height:3px;background:var(--rule-2);margin-top:6px;position:relative}
+.kbmap .bar i{position:absolute;left:0;top:0;height:3px;background:var(--ink)}
+.kbmap button:hover .bar i,.kbmap button.on .bar i{background:var(--red)}
+.kbmap .n{font:600 15px var(--mono);text-align:right}
+.kbmap button.on .nm{font-weight:700}
+.kbsplit{display:grid;grid-template-columns:4fr 8fr;gap:56px;margin-top:72px}
+.kbside{position:sticky;top:100px;align-self:start}
+.kbsearch{display:flex;align-items:center;gap:12px;border-bottom:2px solid var(--ink);padding:12px 0;margin-bottom:14px}
+.kbsearch input{border:0;outline:0;font:500 18px var(--sans);flex:1;background:none}
+.kbcount{font:500 13px var(--mono);color:var(--ink-3)}
+.kbarea{display:flex;gap:18px;align-items:center;margin:28px 0 8px}
+.kbarea svg{width:56px;height:56px}
+.kbarea h3{font-size:26px}
+.kblist{list-style:none;border-top:1.5px solid var(--ink)}
+.kblist li{display:grid;grid-template-columns:72px 1fr 150px;gap:18px;padding:18px 0;border-bottom:1px solid var(--rule-2);align-items:baseline}
+.kblist .id{font:600 13px var(--mono);color:var(--ink-3)}
+.kblist b{font-weight:600;font-size:17px;display:block;margin-bottom:4px}
+.kblist p{font-size:14.5px;color:var(--ink-2)}
+.kblist .rt{font:500 12.5px var(--mono);color:var(--ink-3);text-align:right;white-space:nowrap}
+.kblist li:hover b{color:var(--red-2)}
+.kblist mark{background:var(--red-wash);color:inherit}
+
+footer{background:var(--ink);color:#CFCFCF;font-size:14.5px;--i2:#fff}
+footer .w{padding-top:72px;padding-bottom:36px}
+footer .fg{display:grid;grid-template-columns:2fr repeat(5,1fr);gap:28px}
+footer h5{color:#fff;font:600 13px var(--mono);margin-bottom:14px}
+footer li{list-style:none;margin-bottom:9px}
+footer .lg{border-top:1px solid #2E2E2E;margin-top:56px;padding-top:22px;display:flex;justify-content:space-between;font:500 12.5px var(--mono);color:#9A9A9A}
+footer img{height:26px;width:auto;margin-bottom:18px}
+
+/* çift sürüm şekil */
+.v-mob{display:none}
+.burger{display:none}
+@media (max-width:900px){
+  .v-web{display:none}.v-mob{display:block}
+  .burger{display:grid;place-items:center;width:42px;height:42px;border:1px solid var(--rule)}
+  header.nav .ara{display:none}
+  :root{--g:20px} body{font-size:16px}
+  h1{font-size:40px} h2{font-size:30px} .sec{padding:72px 0}
+  .util,header.nav ul{display:none}
+  header.nav .w{justify-content:space-between;height:62px}
+  .shead,.kbsplit,.kbmap{grid-template-columns:1fr;gap:24px}
+  .feat,.sek{grid-template-columns:1fr 1fr}
+  .feat article,.sek a{padding:22px 14px 24px 0!important;border-left:0!important}
+  .feat article:nth-child(even),.sek a:nth-child(even){padding-left:14px!important;border-left:1px solid var(--rule)!important;border-right:0}
+  .kpi{grid-template-columns:1fr 1fr}
+  .kpi>div{padding:22px 14px!important}
+  .kbside{position:static}
+  .kblist li{grid-template-columns:56px 1fr}
+  .kblist .rt{display:none}
+  .fig .art{padding:12px;overflow-x:auto}
+  footer .fg{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<style>
+.kbhero{padding:72px 0 0}
+.kbhero .hg{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:end}
+.kbhero .stat{display:grid;grid-template-columns:repeat(3,1fr);border-top:1.5px solid var(--ink)}
+.kbhero .stat div{padding:18px 16px 0 0}
+.kbhero .stat b{display:block;font:600 44px/1 var(--sans);letter-spacing:-.03em}
+.kbhero .stat span{font:500 12.5px var(--mono);color:var(--ink-3)}
+.kbtabs{display:flex;gap:28px;border-bottom:1px solid var(--rule);margin-top:56px;font-weight:500;font-size:15px;color:var(--ink-2)}
+.kbtabs span{padding:14px 0}
+.kbtabs .on{color:var(--ink);font-weight:600;box-shadow:inset 0 -3px 0 var(--red)}
+.how4{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--rule);margin-top:28px}
+.how4 div{padding:16px 18px;border-right:1px solid var(--rule);font-size:14px;color:var(--ink-2)}
+.how4 div:last-child{border-right:0}
+.how4 b{display:block;font-weight:600;color:var(--ink);font-size:15px;margin:10px 0 2px}
+.how4 svg{width:32px;height:32px}
+@media (max-width:900px){.kbtabs{overflow-x:auto;white-space:nowrap;gap:20px}.kbhero .hg{grid-template-columns:1fr}.how4{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="display:none">
+<!-- Letron ikon sistemi · ui-* 20px/1.75 currentColor · i-* a-* 48px/2 · b-* 96px izometrik 30° · s-* 64px · d-* 16px. CSS değişkenleri: i1 mürekkep, i2 vurgu (#D01A1A), f0 kâğıt, f1/f2 düz ton; koyu zeminde i1 ve i2 beyaz, f0 #111, f1 #222, f2 #333. -->
+<symbol id="ui-ara" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.6 12.6L16.8 16.8"/></g></symbol>
+<symbol id="ui-menu" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 5.5h14M3 10h14M3 14.5h14"/></g></symbol>
+<symbol id="ui-kapat" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><path d="M4.5 4.5l11 11M15.5 4.5l-11 11"/></g></symbol>
+<symbol id="ui-ok-sag" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 10h13M11 5l5 5-5 5"/></g></symbol>
+<symbol id="ui-ok-asagi" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><path d="M4.5 7.5l5.5 5.5 5.5-5.5"/></g></symbol>
+<symbol id="ui-indir" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><path d="M10 3v10M5.5 8.5L10 13l4.5-4.5M3.5 17h13"/></g></symbol>
+<symbol id="ui-dis" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><path d="M8.5 4H4v12h12v-4.5M12 4h4v4M15.6 4.4L9 11"/></g></symbol>
+<symbol id="ui-dil" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><circle cx="10" cy="10" r="7"/><path d="M3 10h14M10 3c-3 2.5-3 11.5 0 14M10 3c3 2.5 3 11.5 0 14"/></g></symbol>
+<symbol id="ui-kullanici" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><circle cx="10" cy="6.5" r="3.25"/><path d="M3.5 17.5V16a4 4 0 0 1 4-4h5a4 4 0 0 1 4 4v1.5"/></g></symbol>
+<symbol id="ui-kilit" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><rect x="3.5" y="9" width="13" height="8.5"/><path d="M6.5 9V6.5a3.5 3.5 0 0 1 7 0V9M10 12.25v2"/></g></symbol>
+<symbol id="ui-onay" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><path d="M3.5 10.5l4.25 4.25L16.5 5.5"/></g></symbol>
+<symbol id="ui-carpi" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><circle cx="10" cy="10" r="7"/><path d="M7.25 7.25l5.5 5.5M12.75 7.25l-5.5 5.5"/></g></symbol>
+<symbol id="ui-bilgi" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><circle cx="10" cy="10" r="7"/><path d="M10 9v5.25"/><rect x="9.1" y="5.4" width="1.8" height="1.8" fill="currentColor" stroke="none"/></g></symbol>
+<symbol id="ui-uyari" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><path d="M10 2.75L18 17H2z"/><path d="M10 7.75v4.5"/><rect x="9.1" y="13.6" width="1.8" height="1.8" fill="currentColor" stroke="none"/></g></symbol>
+<symbol id="ui-filtre" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 4h14l-5.5 6.5V16L8.5 17.5v-7z"/></g></symbol>
+<symbol id="ui-sirala" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><path d="M6 3.5v13M3 13.5l3 3 3-3M14 16.5v-13M11 6.5l3-3 3 3"/></g></symbol>
+<symbol id="ui-oynat" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><path d="M6 3.5v13l10.5-6.5z"/></g></symbol>
+<symbol id="ui-duraklat" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><path d="M6.5 4v12M13.5 4v12"/></g></symbol>
+<symbol id="ui-yazdir" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><path d="M5.5 7V3h9v4M5.5 14h-3V7h15v7h-3"/><rect x="5.5" y="11" width="9" height="6"/></g></symbol>
+<symbol id="ui-paylas" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><circle cx="15" cy="4.5" r="2.25"/><circle cx="5" cy="10" r="2.25"/><circle cx="15" cy="15.5" r="2.25"/><path d="M7 8.9l6-3.3M7 11.1l6 3.3"/></g></symbol>
+<symbol id="ui-eposta" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><rect x="2.5" y="4.5" width="15" height="11"/><path d="M2.5 5l7.5 6 7.5-6"/></g></symbol>
+<symbol id="ui-telefon" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><path d="M4 3h3.5L9 7.25 7 8.75c1 2.25 2.5 3.75 4.25 4.25l1.5-2L17 12.5V16c0 .75-.5 1.25-1.25 1.25C8.5 17.25 2.75 11.5 2.75 4.25 2.75 3.5 3.25 3 4 3z"/></g></symbol>
+<symbol id="ui-konum" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><path d="M10 18s-5.75-5.5-5.75-10a5.75 5.75 0 0 1 11.5 0c0 4.5-5.75 10-5.75 10z"/><circle cx="10" cy="8" r="2"/></g></symbol>
+<symbol id="ui-takvim" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><rect x="3" y="4.5" width="14" height="12.5"/><path d="M3 8.5h14M7 2.5v4M13 2.5v4"/><rect x="6" y="11" width="2.5" height="2.5" fill="currentColor" stroke="none"/></g></symbol>
+<symbol id="ui-saat" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><circle cx="10" cy="10" r="7"/><path d="M10 5.75v4.5l3 2"/></g></symbol>
+<symbol id="ui-belge" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><path d="M4.5 2.5h7l4 4v11h-11z"/><path d="M11.5 2.5v4h4M7.5 10.5h5M7.5 13.5h5"/></g></symbol>
+<symbol id="ui-pdf" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><path d="M4.5 9V2.5h7l4 4V17.5h-11V16"/><path d="M11.5 2.5v4h4"/><rect x="1.5" y="9.25" width="12.5" height="6.5" fill="currentColor" stroke="none"/><path d="M3 14.5v-4h1.6a1 1 0 0 1 0 2H3M6.5 10.5v4h1a2 2 0 0 0 0-4zM11 14.5v-4h1.8M11 12.5h1.4" stroke="#fff" stroke-width="1" fill="none" stroke-linecap="butt"/></g></symbol>
+<symbol id="ui-geri" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><path d="M12.5 4.5L7 10l5.5 5.5"/></g></symbol>
+<symbol id="ui-ileri" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><path d="M7.5 4.5L13 10l-5.5 5.5"/></g></symbol>
+<symbol id="ui-arti" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><path d="M10 3.5v13M3.5 10h13"/></g></symbol>
+<symbol id="i-cihaz" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 15h30l5 6H4z" fill="#8A8A8A"/><rect x="4" y="21" width="40" height="11" fill="#474747"/><path d="M4 21h40"/><g fill="#111111" stroke="#D9D9D9" stroke-width="1"><rect x="8" y="25" width="4" height="3"/><rect x="14" y="25" width="4" height="3"/><rect x="20" y="25" width="3" height="3"/></g><circle cx="38" cy="26.5" r="2.5" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M9 32v3M39 32v3"/></g></symbol>
+<symbol id="i-isletim" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="5" y="8" width="38" height="32" fill="var(--f1,#F4F4F4)"/><rect x="5" y="8" width="38" height="7" fill="var(--f2,#E6E6E6)"/><rect x="9" y="10.5" width="2" height="2" fill="var(--i1,#111111)" stroke="none"/><rect x="13" y="10.5" width="2" height="2" fill="var(--i1,#111111)" stroke="none"/><path d="M11 22l6 5-6 5"/><rect x="20" y="30" width="12" height="3.5" fill="var(--i2,#D01A1A)" stroke="none"/></g></symbol>
+<symbol id="i-sunucu" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="8" y="5" width="32" height="11" fill="var(--f1,#F4F4F4)"/><rect x="8" y="16" width="32" height="11" fill="var(--f1,#F4F4F4)"/><rect x="8" y="27" width="32" height="11" fill="var(--f1,#F4F4F4)"/><circle cx="13" cy="10.5" r="1.6" fill="var(--i1,#111111)" stroke="none"/><circle cx="13" cy="32.5" r="1.6" fill="var(--i1,#111111)" stroke="none"/><rect x="11.5" y="19.5" width="17" height="4" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M24 10.5h11M24 32.5h11M34 21.5h1"/><path d="M12 38v4M36 38v4"/></g></symbol>
+<symbol id="i-raf" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="10" y="3" width="28" height="40" fill="var(--f2,#E6E6E6)"/><rect x="14" y="7" width="20" height="6" fill="var(--f0,#FFFFFF)"/><rect x="14" y="15" width="20" height="6" fill="var(--f0,#FFFFFF)"/><rect x="14" y="23" width="20" height="6" fill="var(--f0,#FFFFFF)"/><rect x="14" y="31" width="20" height="6" fill="var(--f0,#FFFFFF)"/><rect x="15.5" y="25" width="8" height="2" fill="var(--i2,#D01A1A)" stroke="none"/><rect x="29" y="9" width="2" height="2" fill="var(--i1,#111111)" stroke="none"/><rect x="29" y="17" width="2" height="2" fill="var(--i1,#111111)" stroke="none"/><rect x="29" y="33" width="2" height="2" fill="var(--i1,#111111)" stroke="none"/><path d="M13 43v2M35 43v2"/></g></symbol>
+<symbol id="i-vm" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="5" y="32" width="38" height="11" fill="var(--f2,#E6E6E6)"/><circle cx="10" cy="37.5" r="1.6" fill="var(--i1,#111111)" stroke="none"/><path d="M16 37.5h12"/><path d="M13 32v-5M35 32v-5" stroke-width="1.5" stroke-dasharray="3 2" fill="none"/><rect x="11" y="5" width="26" height="22" fill="var(--f1,#F4F4F4)"/><rect x="11" y="5" width="26" height="5" fill="var(--i2,#D01A1A)" stroke="none"/><rect x="16" y="14" width="7" height="8" fill="var(--f0,#FFFFFF)"/><rect x="25" y="14" width="7" height="8" fill="var(--f0,#FFFFFF)"/></g></symbol>
+<symbol id="i-oturum" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="5" y="6" width="38" height="26" fill="var(--f1,#F4F4F4)"/><path d="M24.0 32v5M17.0 37h14"/><path d="M5 27h38"/><rect x="8" y="28.5" width="3" height="2" fill="var(--i1,#111111)" stroke="none"/><circle cx="24" cy="13.5" r="3.5" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M17 25v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z" fill="var(--i2,#D01A1A)" stroke="none"/></g></symbol>
+<symbol id="i-yonetim" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="4" y="6" width="40" height="27" fill="var(--f1,#F4F4F4)"/><path d="M24.0 33v5M17.0 38h14"/><rect x="4" y="6" width="10" height="27" fill="var(--f2,#E6E6E6)"/><path d="M7 11h4M7 15h4M7 19h4"/><rect x="18" y="22" width="4" height="7" fill="var(--i1,#111111)" stroke="none"/><rect x="24" y="17" width="4" height="12" fill="var(--i1,#111111)" stroke="none"/><rect x="30" y="12" width="4" height="17" fill="var(--i2,#D01A1A)" stroke="none"/><rect x="36" y="20" width="4" height="9" fill="var(--i1,#111111)" stroke="none"/></g></symbol>
+<symbol id="i-sertifika" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M6 5h28l8 8v28H6z" fill="var(--f1,#F4F4F4)"/><path d="M34 5v8h8" fill="var(--f2,#E6E6E6)"/><path d="M11 14h16M11 19h20M11 24h12"/><path d="M28 35l-2.5 9 5-2.5 5 2.5-2.5-9z" fill="var(--i2,#D01A1A)" stroke="none"/><circle cx="33" cy="31" r="6.5" fill="var(--i2,#D01A1A)" stroke="none"/><path stroke="var(--f0,#FFFFFF)" stroke-width="1.75" d="M30.5 31l2 2 3.5-4"/></g></symbol>
+<symbol id="i-bilet" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M4 12h40v8a4 4 0 0 0 0 8v8H4v-8a4 4 0 0 0 0-8z" fill="var(--f1,#F4F4F4)"/><path d="M5 13h8v22H5z" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M16 12v24" stroke-width="1.5" stroke-dasharray="2.5 2.5" fill="none"/><path d="M21 19h16M21 24h11M21 29h14"/></g></symbol>
+<symbol id="i-gecit" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="6" y="8" width="8" height="32" fill="var(--f2,#E6E6E6)"/><rect x="34" y="8" width="8" height="32" fill="var(--f2,#E6E6E6)"/><path d="M2 40h44"/><rect x="9" y="12" width="2" height="4" fill="var(--i1,#111111)" stroke="none"/><rect x="37" y="12" width="2" height="4" fill="var(--i1,#111111)" stroke="none"/><path d="M14 21h13v-5.5l9 8.5-9 8.5V27H14z" fill="var(--i2,#D01A1A)" stroke="none"/></g></symbol>
+<symbol id="i-ag" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M24 17v7M9 32v-8h30v8M24 24v8"/><rect x="15" y="6" width="18" height="11" fill="var(--i2,#D01A1A)" stroke="none"/><rect x="3" y="32" width="12" height="9" fill="var(--f1,#F4F4F4)"/><rect x="18" y="32" width="12" height="9" fill="var(--f1,#F4F4F4)"/><rect x="33" y="32" width="12" height="9" fill="var(--f1,#F4F4F4)"/></g></symbol>
+<symbol id="i-kapaliag" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="3" y="10" width="22" height="28" fill="var(--f1,#F4F4F4)"/><rect x="3" y="10" width="22" height="6" fill="var(--f2,#E6E6E6)"/><rect x="8" y="21" width="5" height="5" fill="var(--f0,#FFFFFF)"/><rect x="15" y="21" width="5" height="5" fill="var(--f0,#FFFFFF)"/><rect x="8" y="29" width="12" height="4" fill="var(--f0,#FFFFFF)"/><path d="M25 24h3"/><path d="M29 14h3v20h-3z" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M34.5 14h0" fill="var(--i2,#D01A1A)" stroke="none"/><circle cx="40" cy="24" r="6.5" fill="var(--f0,#FFFFFF)"/><path d="M33.5 24h13M40 17.5c-2.8 2-2.8 11 0 13M40 17.5c2.8 2 2.8 11 0 13"/><path d="M32 24h1.5"/></g></symbol>
+<symbol id="i-internetyok" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><circle cx="24" cy="24" r="16" fill="var(--f1,#F4F4F4)"/><path d="M8 24h32M24 8c-7 5-7 27 0 32M24 8c7 5 7 27 0 32M11 16h26M11 32h26"/><path d="M9.5 11.5l2.5-2.5 27 27-2.5 2.5z" fill="var(--i2,#D01A1A)" stroke="none"/></g></symbol>
+<symbol id="i-usb" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="18" y="4" width="12" height="11" fill="var(--f2,#E6E6E6)"/><rect x="21" y="8" width="2" height="3" fill="var(--i1,#111111)" stroke="none"/><rect x="25" y="8" width="2" height="3" fill="var(--i1,#111111)" stroke="none"/><rect x="15" y="15" width="18" height="28" fill="var(--f1,#F4F4F4)" rx="2"/><path d="M24 38V22M24 22l-2.5 3h5zM24 34l-4.5-3.5v-3M24 31l4.5-2.5v-2" stroke="var(--i2,#D01A1A)" stroke-width="1.75" fill="none"/><path d="M22 24.5l2-3 2 3z" fill="var(--i2,#D01A1A)" stroke="none"/></g></symbol>
+<symbol id="i-usbkilit" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="4" y="17" width="16" height="14" fill="var(--f2,#E6E6E6)"/><rect x="7" y="21" width="10" height="3" fill="var(--f0,#FFFFFF)"/><path d="M20 24h5"/><path d="M30.025 22v-4.0249999999999995a4.0249999999999995 4.0249999999999995 0 0 1 8.049999999999999 0v4.0249999999999995"/><rect x="26" y="22" width="16.099999999999998" height="12.649999999999999" fill="var(--f1,#F4F4F4)"/><path d="M32.55 24.875h3v6.324999999999999h-3z" fill="var(--i2,#D01A1A)" stroke="none"/></g></symbol>
+<symbol id="i-yazici" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M13 16V5h22v11" fill="var(--f0,#FFFFFF)"/><rect x="4" y="16" width="40" height="16" fill="var(--f1,#F4F4F4)"/><circle cx="38" cy="21" r="1.6" fill="var(--i1,#111111)" stroke="none"/><rect x="12" y="26" width="24" height="17" fill="var(--f0,#FFFFFF)"/><rect x="16" y="31" width="16" height="3" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M16 38h11"/></g></symbol>
+<symbol id="i-tarayici" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M6 20l6-12h30l-6 12" fill="var(--f2,#E6E6E6)"/><rect x="4" y="20" width="40" height="16" fill="var(--f1,#F4F4F4)"/><path d="M4 26h40"/><rect x="4" y="29" width="40" height="2.5" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M9 36v3M39 36v3"/></g></symbol>
+<symbol id="i-kart" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="4" y="10" width="40" height="28" fill="var(--f1,#F4F4F4)" rx="3"/><path stroke-width="0" d="M4 17h40"/><rect x="9" y="17" width="12" height="10" fill="var(--i2,#D01A1A)" stroke="none" rx="1.5"/><path d="M9 22h12M15 17v4M15 23v4" stroke="var(--f0,#FFFFFF)" stroke-width="1.5"/><path d="M26 20h13M26 25h9M9 32h14"/></g></symbol>
+<symbol id="i-seriport" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 13h42l-5 20H8z" fill="var(--f2,#E6E6E6)"/><path d="M8.5 16.5h31l-3.5 13H12z" fill="var(--i2,#D01A1A)" stroke="none"/><circle cx="14" cy="21" r="1.3" fill="var(--f0,#FFFFFF)" stroke="none"/><circle cx="19" cy="21" r="1.3" fill="var(--f0,#FFFFFF)" stroke="none"/><circle cx="24" cy="21" r="1.3" fill="var(--f0,#FFFFFF)" stroke="none"/><circle cx="29" cy="21" r="1.3" fill="var(--f0,#FFFFFF)" stroke="none"/><circle cx="34" cy="21" r="1.3" fill="var(--f0,#FFFFFF)" stroke="none"/><circle cx="16.5" cy="26" r="1.3" fill="var(--f0,#FFFFFF)" stroke="none"/><circle cx="21.5" cy="26" r="1.3" fill="var(--f0,#FFFFFF)" stroke="none"/><circle cx="26.5" cy="26" r="1.3" fill="var(--f0,#FFFFFF)" stroke="none"/><circle cx="31.5" cy="26" r="1.3" fill="var(--f0,#FFFFFF)" stroke="none"/><path d="M16 33v5h16v-5M24 38v6"/></g></symbol>
+<symbol id="i-ses" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="13" y="4" width="12" height="22" fill="var(--f1,#F4F4F4)" rx="6"/><path d="M13 12h5M13 17h5M13 22h5"/><path d="M8 22a11 11 0 0 0 22 0M19 33v8M12 42h14"/><path d="M33 10c3 3 3 9 0 12M37 6c5 5 5 15 0 20" stroke="var(--i2,#D01A1A)" stroke-width="2.5" fill="none"/></g></symbol>
+<symbol id="i-dokunmatik" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="4" y="6" width="40" height="30" fill="var(--f1,#F4F4F4)"/><rect x="8" y="10" width="32" height="22" fill="var(--f0,#FFFFFF)"/><path d="M20 42h8M24 36v6"/><circle cx="28" cy="21" r="3" fill="var(--i2,#D01A1A)" stroke="none"/><circle cx="28" cy="21" r="7" stroke="var(--i2,#D01A1A)" stroke-width="2" fill="none"/><path d="M12 15h7M12 19h5"/></g></symbol>
+<symbol id="i-monitor" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="2" y="6" width="21" height="16" fill="var(--f1,#F4F4F4)"/><rect x="25" y="6" width="21" height="16" fill="var(--f1,#F4F4F4)"/><path d="M12.5 22v5M35.5 22v5M12.5 27v6h7M35.5 27v6h-7"/><rect x="18" y="31" width="12" height="6" fill="var(--i2,#D01A1A)" stroke="none" rx="1.5"/><path d="M8 42h32"/></g></symbol>
+<symbol id="i-kayit" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="7" y="4" width="34" height="40" fill="var(--f1,#F4F4F4)"/><rect x="7" y="4" width="34" height="7" fill="var(--f2,#E6E6E6)"/><rect x="11" y="6.5" width="2" height="2" fill="var(--i1,#111111)" stroke="none"/><path d="M12 17h4M20 17h16"/><path d="M12 23h4M20 23h16"/><path d="M12 35h4M20 35h16"/><path d=""/><rect x="10" y="26.5" width="28" height="5" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M12 17h4M20 17h16"/></g></symbol>
+<symbol id="i-destek" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="3" y="6" width="34" height="24" fill="var(--f1,#F4F4F4)"/><path d="M20.0 30v5M13.0 35h14"/><path d="M10 13l0 11 3-3 4 6 2.5-1.5-4-6h4.5z" fill="var(--f0,#FFFFFF)"/><circle cx="36" cy="30" r="9" fill="var(--f0,#FFFFFF)"/><circle cx="36" cy="30" r="7.5" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M32 30l3 3 5-6" stroke="var(--f0,#FFFFFF)" stroke-width="2.25" fill="none"/></g></symbol>
+<symbol id="i-dizin" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="18" y="4" width="12" height="9" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M24 13v6M10 19h28M10 19v6M38 19v6M24 19v6"/><rect x="4" y="25" width="12" height="8" fill="var(--f1,#F4F4F4)"/><rect x="18" y="25" width="12" height="8" fill="var(--f1,#F4F4F4)"/><rect x="32" y="25" width="12" height="8" fill="var(--f1,#F4F4F4)"/><path d="M10 33v4M10 37h-4v4M10 37h4v4M38 33v8"/><rect x="3" y="40" width="6" height="5" fill="var(--f2,#E6E6E6)"/><rect x="11" y="40" width="6" height="5" fill="var(--f2,#E6E6E6)"/><rect x="35" y="40" width="6" height="5" fill="var(--f2,#E6E6E6)"/></g></symbol>
+<symbol id="i-guncelle" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="17" y="17" width="14" height="14" fill="var(--f1,#F4F4F4)"/><path d="M17 22h14M24 17v5"/><path d="M8.96 18.53A16 16 0 0 1 39.04 18.53"/><path d="M41.43 25.11L35.00 17.37L41.38 15.04z" fill="var(--i1,#111111)" stroke="none"/><path d="M39.04 29.47A16 16 0 0 1 8.96 29.47" stroke="var(--i2,#D01A1A)" stroke-width="3" fill="none"/><path d="M6.57 22.89L13.00 30.63L6.62 32.96z" fill="var(--i2,#D01A1A)" stroke="none"/></g></symbol>
+<symbol id="i-imzali" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M5 14l19-8 19 8-19 8z" fill="var(--f0,#FFFFFF)"/><path d="M5 14v20l19 9V22z" fill="var(--f1,#F4F4F4)"/><path d="M43 14v20l-19 9V22z" fill="var(--f2,#E6E6E6)"/><path d="M14.5 10l19 8v7"/><circle cx="33" cy="33" r="7" fill="var(--f0,#FFFFFF)"/><circle cx="33" cy="33" r="5.5" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M30 33l2.2 2.2L36 31" stroke="var(--f0,#FFFFFF)" stroke-width="2" fill="none"/></g></symbol>
+<symbol id="i-geri-al" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="4" y="26" width="10" height="10" fill="var(--f2,#E6E6E6)"/><rect x="19" y="26" width="10" height="10" fill="var(--f2,#E6E6E6)"/><rect x="34" y="26" width="10" height="10" fill="var(--f1,#F4F4F4)"/><path d="M14 31h5M29 31h5"/><path d="M39 22V16H13" stroke="var(--i2,#D01A1A)" stroke-width="3" fill="none"/><path d="M8 16l7-5.5v11z" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M9 42h30"/></g></symbol>
+<symbol id="i-yedek" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M5 14v24a9 4 0 0 0 18 0v-24" fill="var(--f1,#F4F4F4)"/><ellipse cx="14" cy="14" rx="9" ry="4" fill="var(--f0,#FFFFFF)"/><path d="M5 22a9 4 0 0 0 18 0M5 30a9 4 0 0 0 18 0"/><path d="M25 14v24a9 4 0 0 0 18 0v-24" fill="var(--f2,#E6E6E6)"/><ellipse cx="34" cy="14" rx="9" ry="4" fill="var(--f0,#FFFFFF)"/><path d="M25 22a9 4 0 0 0 18 0M25 30a9 4 0 0 0 18 0"/><path d="M19 5h7V1.5l6.5 5-6.5 5V8h-7z" fill="var(--i2,#D01A1A)" stroke="none"/></g></symbol>
+<symbol id="i-kurtarma" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 28v12a15 5 0 0 0 30 0v-12" fill="var(--f1,#F4F4F4)"/><ellipse cx="24" cy="28" rx="15" ry="5" fill="var(--f0,#FFFFFF)"/><path d="M9 34a15 5 0 0 0 30 0"/><path d="M24 4l9 9h-5.5v9h-7v-9H15z" fill="var(--i2,#D01A1A)" stroke="none"/></g></symbol>
+<symbol id="i-izleme" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="4" y="6" width="40" height="27" fill="var(--f1,#F4F4F4)"/><path d="M24.0 33v5M17.0 38h14"/><path d="M8 21h8l3-7 5 13 4-9 2 3h10" stroke="var(--i2,#D01A1A)" stroke-width="2.75" fill="none"/></g></symbol>
+<symbol id="i-olay" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M24 4L45 41H3z" fill="var(--f1,#F4F4F4)"/><path d="M22 16h4l-.8 13h-2.4z" fill="var(--i2,#D01A1A)" stroke="none"/><rect x="22" y="32" width="4" height="4" fill="var(--i2,#D01A1A)" stroke="none"/></g></symbol>
+<symbol id="i-grup" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><circle cx="12" cy="11.4" r="3.4" fill="var(--f2,#E6E6E6)"/><path d="M6.05 24.15v-2.975a3.4 3.4 0 0 1 3.4-3.4h5.1a3.4 3.4 0 0 1 3.4 3.4v2.975z" fill="var(--f2,#E6E6E6)"/><circle cx="36" cy="11.4" r="3.4" fill="var(--f2,#E6E6E6)"/><path d="M30.05 24.15v-2.975a3.4 3.4 0 0 1 3.4-3.4h5.1a3.4 3.4 0 0 1 3.4 3.4v2.975z" fill="var(--f2,#E6E6E6)"/><circle cx="24" cy="16.0" r="4.0" fill="var(--f1,#F4F4F4)"/><path d="M17.0 31.0v-3.5a4.0 4.0 0 0 1 4.0-4.0h6.0a4.0 4.0 0 0 1 4.0 4.0v3.5z" fill="var(--f1,#F4F4F4)"/><rect x="8" y="40" width="32" height="3.5" fill="var(--i2,#D01A1A)" stroke="none"/></g></symbol>
+<symbol id="i-lokasyon" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="4" y="26" width="12" height="16" fill="var(--f1,#F4F4F4)"/><rect x="18" y="20" width="12" height="22" fill="var(--f2,#E6E6E6)"/><rect x="32" y="26" width="12" height="16" fill="var(--f1,#F4F4F4)"/><rect x="8" y="30" width="4" height="3" fill="var(--i1,#111111)" stroke="none"/><rect x="36" y="30" width="4" height="3" fill="var(--i1,#111111)" stroke="none"/><rect x="22" y="25" width="4" height="3" fill="var(--i1,#111111)" stroke="none"/><rect x="22" y="32" width="4" height="3" fill="var(--i1,#111111)" stroke="none"/><path d="M2 42h44"/><path d="M24 18s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z" fill="var(--i2,#D01A1A)" stroke="none"/><circle cx="24" cy="7" r="2.5" fill="var(--f0,#FFFFFF)" stroke="none"/></g></symbol>
+<symbol id="i-kural" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="5" y="5" width="38" height="38" fill="var(--f1,#F4F4F4)"/><path d="M5 17.7h38M5 30.3h38"/><rect x="28" y="8" width="11" height="6.5" fill="var(--f0,#FFFFFF)" rx="3.25"/><circle cx="31.5" cy="11.25" r="2" fill="var(--i1,#111111)" stroke="none"/><rect x="28" y="20.75" width="11" height="6.5" fill="var(--i2,#D01A1A)" stroke="none" rx="3.25"/><circle cx="35.5" cy="24" r="2" fill="var(--f0,#FFFFFF)" stroke="none"/><rect x="28" y="33.5" width="11" height="6.5" fill="var(--f0,#FFFFFF)" rx="3.25"/><circle cx="31.5" cy="36.75" r="2" fill="var(--i1,#111111)" stroke="none"/><path d="M10 11h13M10 24h13M10 37h9"/></g></symbol>
+<symbol id="i-cihaz-onay" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M7 17h26l5 5H2z" fill="var(--f0,#FFFFFF)"/><rect x="2" y="22" width="36" height="10" fill="var(--f2,#E6E6E6)"/><path d="M2 22h36"/><rect x="6" y="26" width="4" height="2.5" fill="var(--i1,#111111)" stroke="none"/><rect x="12" y="26" width="4" height="2.5" fill="var(--i1,#111111)" stroke="none"/><circle cx="36" cy="32" r="9.5" fill="var(--f0,#FFFFFF)"/><circle cx="36" cy="32" r="8" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M32 32l3 3 5-6" stroke="var(--f0,#FFFFFF)" stroke-width="2.25" fill="none"/></g></symbol>
+<symbol id="i-cihaz-engel" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M7 17h26l5 5H2z" fill="var(--f0,#FFFFFF)"/><rect x="2" y="22" width="36" height="10" fill="var(--f2,#E6E6E6)"/><path d="M2 22h36"/><rect x="6" y="26" width="4" height="2.5" fill="var(--i1,#111111)" stroke="none"/><rect x="12" y="26" width="4" height="2.5" fill="var(--i1,#111111)" stroke="none"/><circle cx="36" cy="32" r="9.5" fill="var(--f0,#FFFFFF)"/><circle cx="36" cy="32" r="7" stroke="var(--i2,#D01A1A)" stroke-width="3" fill="none"/><path d="M30.5 27.6l1.4-1.4 9.9 9.9-1.4 1.4z" fill="var(--i2,#D01A1A)" stroke="none"/></g></symbol>
+<symbol id="i-veri-merkez" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M4 18L24 6l20 12v25H4z" fill="var(--f1,#F4F4F4)"/><rect x="10" y="22" width="8" height="21" fill="var(--f0,#FFFFFF)"/><rect x="20" y="22" width="8" height="21" fill="var(--f0,#FFFFFF)"/><rect x="30" y="22" width="8" height="21" fill="var(--f2,#E6E6E6)"/><path d="M12 27h4M12 31h4M22 27h4M22 31h4M22 35h4M12 35h4"/><path d="M30 27h8v12a4 1.5 0 0 1-8 0z" fill="var(--i2,#D01A1A)" stroke="none"/><ellipse cx="34" cy="27" rx="4" ry="1.5" fill="var(--i2,#D01A1A)" stroke="var(--f0,#FFFFFF)" stroke-width="1"/></g></symbol>
+<symbol id="i-kayip" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 17h30l5 5H4zM4 22h40v10H4z" stroke-width="2" stroke-dasharray="4 3" fill="none"/><path d="M18 9.5a6 6 0 1 1 8.5 5.5c-1.5.8-2.5 1.8-2.5 3.5v1.5h-4V18c0-3 1.7-4.6 3.8-5.7a2 2 0 1 0-2.8-2.8z" fill="var(--i2,#D01A1A)" stroke="none"/><rect x="20" y="22.5" width="4" height="4" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M8 38h32"/></g></symbol>
+<symbol id="i-enerji" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="12" y="18" width="24" height="18" fill="var(--f1,#F4F4F4)" rx="2"/><path d="M18 18V8M30 18V8M24 36v8"/><path d="M26 20l-8 10h6l-2 8 8-10h-6z" fill="var(--i2,#D01A1A)" stroke="none"/></g></symbol>
+<symbol id="i-omur" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M32.50 9.28A17 17 0 1 1 9.28 15.50"/><path d="M12.78 9.44L10.98 19.34L5.10 15.94z" fill="var(--i1,#111111)" stroke="none"/><path d="M15 33C15 21 23 14 34 14c0 11-7 19-19 19z" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M16 32l11-10" stroke="var(--f0,#FFFFFF)" stroke-width="1.75"/></g></symbol>
+<symbol id="i-ikinci-hayat" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="3" y="6" width="16" height="36" fill="var(--f2,#E6E6E6)"/><path d="M7 11h8M7 15h8"/><circle cx="11" cy="34" r="2" fill="var(--i1,#111111)" stroke="none"/><path d="M21 21h8v-4l7 7-7 7v-4h-8z" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M39 22h6"/><rect x="36" y="20" width="10" height="16" fill="var(--f1,#F4F4F4)" rx="2"/><circle cx="41" cy="32" r="1.4" fill="var(--i1,#111111)" stroke="none"/><path d="M36 25h10"/></g></symbol>
+<symbol id="i-maliyet" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><ellipse cx="16" cy="36" rx="11" ry="4" fill="var(--f2,#E6E6E6)"/><path d="M5 36v-6"/><path d="M27 36v-6"/><ellipse cx="16" cy="30" rx="11" ry="4" fill="var(--f1,#F4F4F4)"/><path d="M5 30v-6M27 30v-6"/><ellipse cx="16" cy="24" rx="11" ry="4" fill="var(--f1,#F4F4F4)"/><path d="M5 24v-6M27 24v-6"/><ellipse cx="16" cy="18" rx="11" ry="4" fill="var(--f0,#FFFFFF)"/><path d="M5 36a11 4 0 0 0 22 0"/><path d="M33 6h7v24h5l-8.5 12L28 30h5z" fill="var(--i2,#D01A1A)" stroke="none"/></g></symbol>
+<symbol id="i-pilot" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 44V4"/><path d="M13 6h26l-6 8 6 8H13z" fill="var(--i2,#D01A1A)" stroke="none"/><rect x="5" y="40" width="14" height="4" fill="var(--f2,#E6E6E6)"/><path d="M24 32h18M24 36h13"/></g></symbol>
+<symbol id="i-rozet" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M15 28l-6 16 7-3 4 6 4-12zM33 28l6 16-7-3-4 6-4-12z" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M24 3l4.5 3.5 5.5-.5 1.5 5.5 5 2.5-1.5 5.5 2.5 5-4 4-.5 5.5-5.5 1-3.5 4.5-4.5-3-4.5 3-3.5-4.5-5.5-1-.5-5.5-4-4 2.5-5-1.5-5.5 5-2.5 1.5-5.5 5.5.5z" fill="var(--f1,#F4F4F4)"/><circle cx="24" cy="20" r="9" fill="var(--f0,#FFFFFF)"/><path d="M19.5 20l3 3 6-6.5"/></g></symbol>
+<symbol id="i-yerli" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="4" y="6" width="40" height="32" fill="var(--f1,#F4F4F4)"/><rect x="4" y="6" width="40" height="6" fill="var(--f2,#E6E6E6)"/><path d="M17 18l-6 6 6 6M31 18l6 6-6 6M26 17l-4 14"/><path d="M36 32l8 6v6H28V38z" fill="var(--i2,#D01A1A)" stroke="none"/></g></symbol>
+<symbol id="i-sla" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 26v-4a15 15 0 0 1 30 0v4"/><rect x="5" y="25" width="8" height="12" fill="var(--f2,#E6E6E6)"/><rect x="35" y="25" width="8" height="12" fill="var(--f2,#E6E6E6)"/><path d="M39 37v2a5 5 0 0 1-5 5h-5"/><rect x="22" y="41" width="8" height="5" fill="var(--i2,#D01A1A)" stroke="none" rx="1"/></g></symbol>
+<symbol id="i-egitim" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M24 8L45 17 24 26 3 17z" fill="var(--f1,#F4F4F4)"/><path d="M11 21v10c0 3 6 6 13 6s13-3 13-6V21" fill="var(--f2,#E6E6E6)"/><path d="M24 26l-13-5.5"/><path d="M42 18.5v12"/><path d="M40 30h4v9h-4z" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M24 17h.1"/></g></symbol>
+<symbol id="i-ihale" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M6 4h28l8 8v32H6z" fill="var(--f1,#F4F4F4)"/><path d="M34 4v8h8" fill="var(--f2,#E6E6E6)"/><rect x="11" y="17" width="3" height="3" fill="var(--i1,#111111)" stroke="none"/><path d="M18 18.5h17"/><rect x="11" y="24" width="3" height="3" fill="var(--i1,#111111)" stroke="none"/><path d="M18 25.5h17"/><rect x="11" y="31" width="3" height="3" fill="var(--i1,#111111)" stroke="none"/><path d="M18 32.5h11"/><path d="M30 36h8v10l-4-3-4 3z" fill="var(--i2,#D01A1A)" stroke="none"/></g></symbol>
+<symbol id="i-sbom" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="4" y="4" width="40" height="40" fill="var(--f1,#F4F4F4)"/><rect x="9" y="9" width="13" height="9" fill="var(--f0,#FFFFFF)"/><rect x="26" y="9" width="13" height="9" fill="var(--f0,#FFFFFF)"/><rect x="9" y="22" width="13" height="9" fill="var(--f0,#FFFFFF)"/><rect x="26" y="22" width="13" height="9" fill="var(--i2,#D01A1A)" stroke="none"/><rect x="9" y="35" width="30" height="5" fill="var(--f2,#E6E6E6)"/><path d="M22 13.5h4M15.5 18v4M32.5 18v4M22 26.5h4" stroke-width="1.25" fill="none"/></g></symbol>
+<symbol id="i-test" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M18 4h12M20 4v14L8 40a3 3 0 0 0 2.6 4.4h26.8A3 3 0 0 0 40 40L28 18V4" fill="var(--f0,#FFFFFF)"/><path d="M13.5 30h21l4.5 10.2a2 2 0 0 1-1.8 2.8H10.8A2 2 0 0 1 9 40.2z" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M20 10h4M20 14h3"/></g></symbol>
+<symbol id="i-yol" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M4 34h27" stroke-width="3" fill="none"/><path d="M31 34h8" stroke-width="3" stroke-dasharray="3 2.5" fill="none"/><circle cx="7" cy="34" r="4" fill="var(--i1,#111111)" stroke="none"/><circle cx="19" cy="34" r="4" fill="var(--f1,#F4F4F4)"/><circle cx="31" cy="34" r="4" fill="var(--f1,#F4F4F4)"/><path d="M41 38V6"/><path d="M42 6h6l-3 5 3 5h-6z" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M4 43h37" stroke-width="1.25" fill="none"/></g></symbol>
+<symbol id="i-kilit" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M15 22v-7a9 9 0 0 1 18 0v7"/><rect x="9" y="22" width="30" height="22" fill="var(--f1,#F4F4F4)"/><path stroke-width="0" d="M9 28h30"/><path d="M21 29a3 3 0 1 1 6 0c0 1.2-.7 2.2-1.5 2.7V38h-3v-6.3c-.8-.5-1.5-1.5-1.5-2.7z" fill="var(--i2,#D01A1A)" stroke="none"/></g></symbol>
+<symbol id="b-sunucu" viewBox="0 0 96 96"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><g transform="translate(0.00 33.00)"><polygon points="48.00,-24.00 72.25,-10.00 48.00,4.00 23.75,-10.00" fill="var(--f0,#FFFFFF)"/><polygon points="23.75,40.00 48.00,54.00 48.00,4.00 23.75,-10.00" fill="var(--f1,#F4F4F4)"/><polygon points="72.25,40.00 48.00,54.00 48.00,4.00 72.25,-10.00" fill="var(--f2,#E6E6E6)"/><polyline points="23.75,2.50 48.00,16.50 72.25,2.50" fill="none" stroke-width="1.25"/><polyline points="23.75,15.00 48.00,29.00 72.25,15.00" fill="none" stroke-width="1.25"/><polyline points="23.75,27.50 48.00,41.50 72.25,27.50" fill="none" stroke-width="1.25"/><polygon points="27.22,-0.50 29.81,1.00 29.81,-2.00 27.22,-3.50" fill="var(--i1,#111111)" stroke="none"/><polyline points="33.28,1.50 43.67,7.50" fill="none" stroke-width="1.25"/><polygon points="68.78,1.00 66.62,2.25 66.62,-3.75 68.78,-5.00" fill="var(--i1,#111111)" stroke="none"/><polygon points="64.45,3.50 62.29,4.75 62.29,-1.25 64.45,-2.50" fill="var(--i1,#111111)" stroke="none"/><polygon points="60.12,6.00 57.96,7.25 57.96,1.25 60.12,0.00" fill="var(--i1,#111111)" stroke="none"/><polygon points="55.79,8.50 53.63,9.75 53.63,3.75 55.79,2.50" fill="var(--i1,#111111)" stroke="none"/><polygon points="27.22,12.00 29.81,13.50 29.81,10.50 27.22,9.00" fill="var(--i1,#111111)" stroke="none"/><polyline points="33.28,14.00 43.67,20.00" fill="none" stroke-width="1.25"/><polygon points="68.78,13.50 66.62,14.75 66.62,8.75 68.78,7.50" fill="var(--i1,#111111)" stroke="none"/><polygon points="64.45,16.00 62.29,17.25 62.29,11.25 64.45,10.00" fill="var(--i1,#111111)" stroke="none"/><polygon points="60.12,18.50 57.96,19.75 57.96,13.75 60.12,12.50" fill="var(--i1,#111111)" stroke="none"/><polygon points="55.79,21.00 53.63,22.25 53.63,16.25 55.79,15.00" fill="var(--i1,#111111)" stroke="none"/><polygon points="27.22,24.50 29.81,26.00 29.81,23.00 27.22,21.50" fill="var(--i1,#111111)" stroke="none"/><polyline points="33.28,26.50 43.67,32.50" fill="none" stroke-width="1.25"/><polygon points="68.78,26.00 66.62,27.25 66.62,21.25 68.78,20.00" fill="var(--i1,#111111)" stroke="none"/><polygon points="64.45,28.50 62.29,29.75 62.29,23.75 64.45,22.50" fill="var(--i1,#111111)" stroke="none"/><polygon points="60.12,31.00 57.96,32.25 57.96,26.25 60.12,25.00" fill="var(--i1,#111111)" stroke="none"/><polygon points="55.79,33.50 53.63,34.75 53.63,28.75 55.79,27.50" fill="var(--i1,#111111)" stroke="none"/><polygon points="27.22,37.00 29.81,38.50 29.81,35.50 27.22,34.00" fill="var(--i1,#111111)" stroke="none"/><polyline points="33.28,39.00 43.67,45.00" fill="none" stroke-width="1.25"/><polygon points="68.78,38.50 66.62,39.75 66.62,33.75 68.78,32.50" fill="var(--i1,#111111)" stroke="none"/><polygon points="64.45,41.00 62.29,42.25 62.29,36.25 64.45,35.00" fill="var(--i1,#111111)" stroke="none"/><polygon points="60.12,43.50 57.96,44.75 57.96,38.75 60.12,37.50" fill="var(--i1,#111111)" stroke="none"/><polygon points="55.79,46.00 53.63,47.25 53.63,41.25 55.79,40.00" fill="var(--i1,#111111)" stroke="none"/><polygon points="32.41,27.50 44.54,34.50 44.54,31.50 32.41,24.50" fill="var(--i2,#D01A1A)" stroke="none"/></g></g></symbol>
+<symbol id="b-leopc" viewBox="0 0 96 96"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><g transform="translate(0.00 13.50)"><polygon points="48.00,7.00 86.11,29.00 48.00,51.00 9.89,29.00" fill="#8A8A8A"/><polygon points="9.89,40.00 48.00,62.00 48.00,51.00 9.89,29.00" fill="#474747"/><polygon points="86.11,40.00 48.00,62.00 48.00,51.00 86.11,29.00" fill="#2E2E2E"/><polygon points="48.00,15.00 72.25,29.00 48.00,43.00 23.75,29.00" fill="none" stroke="#D9D9D9" stroke-width="1.25"/><polygon points="41.07,41.00 48.87,45.50 46.70,46.75 38.91,42.25" fill="#D9D9D9" stroke="none"/><polygon points="14.23,38.50 16.82,40.00 16.82,37.00 14.23,35.50" fill="var(--i1,#111111)" stroke="#D9D9D9" stroke-width="1"/><polygon points="20.29,42.00 25.48,45.00 25.48,42.00 20.29,39.00" fill="var(--i1,#111111)" stroke="#D9D9D9" stroke-width="1"/><polygon points="28.95,46.50 32.41,48.50 32.41,46.50 28.95,44.50" fill="var(--i1,#111111)" stroke="#D9D9D9" stroke-width="1"/><polygon points="44.71,54.60 44.67,54.15 44.56,53.67 44.39,53.19 44.15,52.72 43.86,52.28 43.53,51.89 43.18,51.56 42.80,51.30 42.43,51.13 42.07,51.05 41.75,51.06 41.46,51.17 41.22,51.36 41.04,51.64 40.94,51.99 40.90,52.40 40.94,52.85 41.04,53.33 41.22,53.81 41.46,54.28 41.75,54.72 42.07,55.11 42.43,55.44 42.80,55.70 43.18,55.87 43.53,55.95 43.86,55.94 44.15,55.83 44.39,55.64 44.56,55.36 44.67,55.01" fill="var(--i2,#D01A1A)" stroke="none"/><polygon points="37.61,51.00 39.34,52.00 39.34,51.00 37.61,50.00" fill="var(--i1,#111111)" stroke="#D9D9D9" stroke-width="1"/><polygon points="79.96,40.05 79.99,39.75 80.08,39.43 80.24,39.11 80.43,38.82 80.66,38.58 80.91,38.40 81.16,38.30 81.39,38.27 81.58,38.33 81.73,38.47 81.83,38.68 81.86,38.95 81.83,39.25 81.73,39.57 81.58,39.89 81.39,40.18 81.16,40.42 80.91,40.60 80.66,40.70 80.43,40.73 80.24,40.67 80.08,40.53 79.99,40.32" fill="var(--i1,#111111)" stroke="#D9D9D9" stroke-width="1"/><polygon points="79.96,36.05 79.99,35.75 80.08,35.43 80.24,35.11 80.43,34.82 80.66,34.58 80.91,34.40 81.16,34.30 81.39,34.27 81.58,34.33 81.73,34.47 81.83,34.68 81.86,34.95 81.83,35.25 81.73,35.57 81.58,35.89 81.39,36.18 81.16,36.42 80.91,36.60 80.66,36.70 80.43,36.73 80.24,36.67 80.08,36.53 79.99,36.32" fill="var(--i1,#111111)" stroke="#D9D9D9" stroke-width="1"/><polygon points="75.63,42.55 75.66,42.25 75.75,41.93 75.91,41.61 76.10,41.32 76.33,41.08 76.58,40.90 76.83,40.80 77.06,40.77 77.25,40.83 77.40,40.97 77.50,41.18 77.53,41.45 77.50,41.75 77.40,42.07 77.25,42.39 77.06,42.68 76.83,42.92 76.58,43.10 76.33,43.20 76.10,43.23 75.91,43.17 75.75,43.03 75.66,42.82" fill="var(--i1,#111111)" stroke="#D9D9D9" stroke-width="1"/><polygon points="75.63,38.55 75.66,38.25 75.75,37.93 75.91,37.61 76.10,37.32 76.33,37.08 76.58,36.90 76.83,36.80 77.06,36.77 77.25,36.83 77.40,36.97 77.50,37.18 77.53,37.45 77.50,37.75 77.40,38.07 77.25,38.39 77.06,38.68 76.83,38.92 76.58,39.10 76.33,39.20 76.10,39.23 75.91,39.17 75.75,39.03 75.66,38.82" fill="var(--i1,#111111)" stroke="#D9D9D9" stroke-width="1"/><polygon points="71.30,45.05 71.33,44.75 71.42,44.43 71.58,44.11 71.77,43.82 72.00,43.58 72.25,43.40 72.50,43.30 72.73,43.27 72.92,43.33 73.07,43.47 73.17,43.68 73.20,43.95 73.17,44.25 73.07,44.57 72.92,44.89 72.73,45.18 72.50,45.42 72.25,45.60 72.00,45.70 71.77,45.73 71.58,45.67 71.42,45.53 71.33,45.32" fill="var(--i1,#111111)" stroke="#D9D9D9" stroke-width="1"/><polygon points="71.30,41.05 71.33,40.75 71.42,40.43 71.58,40.11 71.77,39.82 72.00,39.58 72.25,39.40 72.50,39.30 72.73,39.27 72.92,39.33 73.07,39.47 73.17,39.68 73.20,39.95 73.17,40.25 73.07,40.57 72.92,40.89 72.73,41.18 72.50,41.42 72.25,41.60 72.00,41.70 71.77,41.73 71.58,41.67 71.42,41.53 71.33,41.32" fill="var(--i1,#111111)" stroke="#D9D9D9" stroke-width="1"/><polygon points="66.97,47.55 67.00,47.25 67.09,46.93 67.24,46.61 67.44,46.32 67.67,46.08 67.92,45.90 68.17,45.80 68.39,45.77 68.59,45.83 68.74,45.97 68.84,46.18 68.87,46.45 68.84,46.75 68.74,47.07 68.59,47.39 68.39,47.68 68.17,47.92 67.92,48.10 67.67,48.20 67.44,48.23 67.24,48.17 67.09,48.03 67.00,47.82" fill="var(--i1,#111111)" stroke="#D9D9D9" stroke-width="1"/><polygon points="66.97,43.55 67.00,43.25 67.09,42.93 67.24,42.61 67.44,42.32 67.67,42.08 67.92,41.90 68.17,41.80 68.39,41.77 68.59,41.83 68.74,41.97 68.84,42.18 68.87,42.45 68.84,42.75 68.74,43.07 68.59,43.39 68.39,43.68 68.17,43.92 67.92,44.10 67.67,44.20 67.44,44.23 67.24,44.17 67.09,44.03 67.00,43.82" fill="var(--i1,#111111)" stroke="#D9D9D9" stroke-width="1"/><polygon points="62.64,50.05 62.67,49.75 62.76,49.43 62.91,49.11 63.11,48.82 63.34,48.58 63.59,48.40 63.84,48.30 64.06,48.27 64.26,48.33 64.41,48.47 64.51,48.68 64.54,48.95 64.51,49.25 64.41,49.57 64.26,49.89 64.06,50.18 63.84,50.42 63.59,50.60 63.34,50.70 63.11,50.73 62.91,50.67 62.76,50.53 62.67,50.32" fill="var(--i1,#111111)" stroke="#D9D9D9" stroke-width="1"/><polygon points="62.64,46.05 62.67,45.75 62.76,45.43 62.91,45.11 63.11,44.82 63.34,44.58 63.59,44.40 63.84,44.30 64.06,44.27 64.26,44.33 64.41,44.47 64.51,44.68 64.54,44.95 64.51,45.25 64.41,45.57 64.26,45.89 64.06,46.18 63.84,46.42 63.59,46.60 63.34,46.70 63.11,46.73 62.91,46.67 62.76,46.53 62.67,46.32" fill="var(--i1,#111111)" stroke="#D9D9D9" stroke-width="1"/><polygon points="58.31,52.55 58.34,52.25 58.43,51.93 58.58,51.61 58.78,51.32 59.01,51.08 59.26,50.90 59.50,50.80 59.73,50.77 59.93,50.83 60.08,50.97 60.18,51.18 60.21,51.45 60.18,51.75 60.08,52.07 59.93,52.39 59.73,52.68 59.50,52.92 59.26,53.10 59.01,53.20 58.78,53.23 58.58,53.17 58.43,53.03 58.34,52.82" fill="var(--i1,#111111)" stroke="#D9D9D9" stroke-width="1"/><polygon points="58.31,48.55 58.34,48.25 58.43,47.93 58.58,47.61 58.78,47.32 59.01,47.08 59.26,46.90 59.50,46.80 59.73,46.77 59.93,46.83 60.08,46.97 60.18,47.18 60.21,47.45 60.18,47.75 60.08,48.07 59.93,48.39 59.73,48.68 59.50,48.92 59.26,49.10 59.01,49.20 58.78,49.23 58.58,49.17 58.43,49.03 58.34,48.82" fill="var(--i1,#111111)" stroke="#D9D9D9" stroke-width="1"/><polygon points="53.98,55.05 54.01,54.75 54.10,54.43 54.25,54.11 54.45,53.82 54.68,53.58 54.93,53.40 55.17,53.30 55.40,53.27 55.60,53.33 55.75,53.47 55.85,53.68 55.88,53.95 55.85,54.25 55.75,54.57 55.60,54.89 55.40,55.18 55.17,55.42 54.93,55.60 54.68,55.70 54.45,55.73 54.25,55.67 54.10,55.53 54.01,55.32" fill="var(--i1,#111111)" stroke="#D9D9D9" stroke-width="1"/><polygon points="53.98,51.05 54.01,50.75 54.10,50.43 54.25,50.11 54.45,49.82 54.68,49.58 54.93,49.40 55.17,49.30 55.40,49.27 55.60,49.33 55.75,49.47 55.85,49.68 55.88,49.95 55.85,50.25 55.75,50.57 55.60,50.89 55.40,51.18 55.17,51.42 54.93,51.60 54.68,51.70 54.45,51.73 54.25,51.67 54.10,51.53 54.01,51.32" fill="var(--i1,#111111)" stroke="#D9D9D9" stroke-width="1"/></g></g></symbol>
+<symbol id="b-gecit" viewBox="0 0 96 96"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><g transform="translate(0.00 22.50)"><polygon points="48.00,13.00 89.57,37.00 48.00,61.00 6.43,37.00" fill="var(--f1,#F4F4F4)"/><polygon points="6.43,40.00 48.00,64.00 48.00,61.00 6.43,37.00" fill="var(--f2,#E6E6E6)"/><polygon points="89.57,40.00 48.00,64.00 48.00,61.00 89.57,37.00" fill="var(--f2,#E6E6E6)"/><polygon points="60.12,-8.00 70.52,-2.00 62.72,2.50 52.33,-3.50" fill="var(--f0,#FFFFFF)"/><polygon points="52.33,26.50 62.72,32.50 62.72,2.50 52.33,-3.50" fill="var(--f1,#F4F4F4)"/><polygon points="70.52,28.00 62.72,32.50 62.72,2.50 70.52,-2.00" fill="var(--f2,#E6E6E6)"/><polygon points="32.41,24.00 53.20,36.00 59.26,32.50 63.59,46.00 40.21,43.50 46.27,40.00 25.48,28.00" fill="var(--i2,#D01A1A)" stroke="none"/><polygon points="29.81,9.50 40.21,15.50 32.41,20.00 22.02,14.00" fill="var(--f0,#FFFFFF)"/><polygon points="22.02,44.00 32.41,50.00 32.41,20.00 22.02,14.00" fill="var(--f1,#F4F4F4)"/><polygon points="40.21,45.50 32.41,50.00 32.41,20.00 40.21,15.50" fill="var(--f2,#E6E6E6)"/><polygon points="25.48,27.00 28.95,29.00 28.95,23.00 25.48,21.00" fill="var(--i1,#111111)" stroke="none"/><polygon points="38.47,27.50 35.01,29.50 35.01,25.50 38.47,23.50" fill="var(--i1,#111111)" stroke="none"/><polygon points="60.12,-13.00 70.52,-7.00 32.41,15.00 22.02,9.00" fill="var(--f0,#FFFFFF)"/><polygon points="22.02,14.00 32.41,20.00 32.41,15.00 22.02,9.00" fill="var(--f1,#F4F4F4)"/><polygon points="70.52,-2.00 32.41,20.00 32.41,15.00 70.52,-7.00" fill="var(--f2,#E6E6E6)"/></g></g></symbol>
+<symbol id="b-bilet" viewBox="0 0 96 96"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><g transform="translate(0.00 10.50)"><polygon points="39.34,14.00 84.37,40.00 56.66,56.00 11.63,30.00" fill="var(--f0,#FFFFFF)"/><polygon points="11.63,35.00 56.66,61.00 56.66,56.00 11.63,30.00" fill="var(--f1,#F4F4F4)"/><polygon points="84.37,45.00 56.66,61.00 56.66,56.00 84.37,40.00" fill="var(--f2,#E6E6E6)"/><polygon points="39.34,14.00 49.73,20.00 22.02,36.00 11.63,30.00" fill="var(--i2,#D01A1A)" stroke="none"/><polyline points="51.46,23.00 49.30,24.25" fill="none" stroke-width="1.75"/><polyline points="47.13,25.50 44.97,26.75" fill="none" stroke-width="1.75"/><polyline points="42.80,28.00 40.64,29.25" fill="none" stroke-width="1.75"/><polyline points="38.47,30.50 36.31,31.75" fill="none" stroke-width="1.75"/><polyline points="34.14,33.00 31.98,34.25" fill="none" stroke-width="1.75"/><polyline points="29.81,35.50 27.65,36.75" fill="none" stroke-width="1.75"/><polyline points="51.46,28.00 73.98,41.00" fill="none"/><polyline points="46.27,31.00 68.78,44.00" fill="none"/><polyline points="41.07,34.00 54.93,42.00" fill="none"/><polygon points="51.46,45.00 58.39,49.00 54.06,51.50 47.13,47.50" fill="var(--i1,#111111)" stroke="none"/></g></g></symbol>
+<symbol id="b-sertifika" viewBox="0 0 96 96"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><g transform="translate(0.00 9.50)"><polygon points="42.80,16.00 84.37,40.00 53.20,58.00 11.63,34.00" fill="var(--f0,#FFFFFF)"/><polygon points="11.63,37.00 53.20,61.00 53.20,58.00 11.63,34.00" fill="var(--f1,#F4F4F4)"/><polygon points="84.37,43.00 53.20,61.00 53.20,58.00 84.37,40.00" fill="var(--f2,#E6E6E6)"/><polygon points="84.37,40.00 75.71,45.00 75.71,35.00" fill="var(--f2,#E6E6E6)"/><polyline points="42.80,22.00 65.32,35.00" fill="none"/><polyline points="37.61,25.00 54.93,35.00" fill="none"/><polyline points="32.41,28.00 44.54,35.00" fill="none"/><polygon points="39.34,46.00 27.22,49.00 33.71,50.75 33.28,54.50 42.80,50.00" fill="var(--i2,#D01A1A)" stroke="none"/><polygon points="54.93,50.00 53.96,50.49 52.90,50.90 51.75,51.23 50.54,51.46 49.28,51.61 48.00,51.66 46.72,51.61 45.46,51.46 44.25,51.23 43.10,50.90 42.04,50.49 41.07,50.00 40.23,49.44 39.51,48.83 38.95,48.16 38.54,47.46 38.29,46.74 38.20,46.00 38.29,45.26 38.54,44.54 38.95,43.84 39.51,43.17 40.23,42.56 41.07,42.00 42.04,41.51 43.10,41.10 44.25,40.77 45.46,40.54 46.72,40.39 48.00,40.34 49.28,40.39 50.54,40.54 51.75,40.77 52.90,41.10 53.96,41.51 54.93,42.00 55.77,42.56 56.49,43.17 57.05,43.84 57.46,44.54 57.71,45.26 57.80,46.00 57.71,46.74 57.46,47.46 57.05,48.16 56.49,48.83 55.77,49.44" fill="var(--i2,#D01A1A)" stroke="none"/><polygon points="51.12,47.80 50.68,48.02 50.20,48.20 49.69,48.35 49.14,48.46 48.58,48.52 48.00,48.55 47.42,48.52 46.86,48.46 46.31,48.35 45.80,48.20 45.32,48.02 44.88,47.80 44.50,47.55 44.18,47.27 43.93,46.97 43.74,46.66 43.63,46.33 43.59,46.00 43.63,45.67 43.74,45.34 43.93,45.03 44.18,44.73 44.50,44.45 44.88,44.20 45.32,43.98 45.80,43.80 46.31,43.65 46.86,43.54 47.42,43.48 48.00,43.45 48.58,43.48 49.14,43.54 49.69,43.65 50.20,43.80 50.68,43.98 51.12,44.20 51.50,44.45 51.82,44.73 52.07,45.03 52.26,45.34 52.37,45.67 52.41,46.00 52.37,46.33 52.26,46.66 52.07,46.97 51.82,47.27 51.50,47.55" fill="var(--f0,#FFFFFF)" stroke="none"/></g></g></symbol>
+<symbol id="b-bina" viewBox="0 0 96 96"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><g transform="translate(0.00 32.42)"><polygon points="48.00,-20.56 78.45,-2.98 48.00,14.60 17.55,-2.98" fill="var(--f0,#FFFFFF)"/><polygon points="17.55,40.00 48.00,57.58 48.00,14.60 17.55,-2.98" fill="var(--f1,#F4F4F4)"/><polygon points="78.45,40.00 48.00,57.58 48.00,14.60 78.45,-2.98" fill="var(--f2,#E6E6E6)"/><polygon points="48.00,-26.42 83.53,-5.91 48.00,14.60 12.47,-5.91" fill="var(--f0,#FFFFFF)"/><polygon points="12.47,-2.98 48.00,17.53 48.00,14.60 12.47,-5.91" fill="var(--f1,#F4F4F4)"/><polygon points="83.53,-2.98 48.00,17.53 48.00,14.60 83.53,-5.91" fill="var(--f2,#E6E6E6)"/><polygon points="20.93,9.72 24.32,11.67 24.32,5.81 20.93,3.86" fill="var(--f2,#E6E6E6)" stroke-width="1.25"/><polygon points="28.54,14.12 31.93,16.07 31.93,10.21 28.54,8.26" fill="var(--f2,#E6E6E6)" stroke-width="1.25"/><polygon points="36.16,18.51 39.54,20.47 39.54,14.60 36.16,12.65" fill="var(--f2,#E6E6E6)" stroke-width="1.25"/><polygon points="75.07,9.72 71.68,11.67 71.68,5.81 75.07,3.86" fill="var(--f1,#F4F4F4)" stroke-width="1.25"/><polygon points="68.30,13.63 64.92,15.58 64.92,9.72 68.30,7.77" fill="var(--f1,#F4F4F4)" stroke-width="1.25"/><polygon points="61.53,17.53 58.15,19.49 58.15,13.63 61.53,11.67" fill="var(--f1,#F4F4F4)" stroke-width="1.25"/><polygon points="54.77,21.44 51.38,23.40 51.38,17.53 54.77,15.58" fill="var(--f1,#F4F4F4)" stroke-width="1.25"/><polygon points="20.93,19.49 24.32,21.44 24.32,15.58 20.93,13.63" fill="var(--f2,#E6E6E6)" stroke-width="1.25"/><polygon points="28.54,23.88 31.93,25.84 31.93,19.98 28.54,18.02" fill="var(--f2,#E6E6E6)" stroke-width="1.25"/><polygon points="36.16,28.28 39.54,30.23 39.54,24.37 36.16,22.42" fill="var(--f2,#E6E6E6)" stroke-width="1.25"/><polygon points="75.07,19.49 71.68,21.44 71.68,15.58 75.07,13.63" fill="var(--f1,#F4F4F4)" stroke-width="1.25"/><polygon points="68.30,23.40 64.92,25.35 64.92,19.49 68.30,17.53" fill="var(--f1,#F4F4F4)" stroke-width="1.25"/><polygon points="61.53,27.30 58.15,29.26 58.15,23.40 61.53,21.44" fill="var(--f1,#F4F4F4)" stroke-width="1.25"/><polygon points="54.77,31.21 51.38,33.16 51.38,27.30 54.77,25.35" fill="var(--f1,#F4F4F4)" stroke-width="1.25"/><polygon points="20.93,29.26 24.32,31.21 24.32,25.35 20.93,23.40" fill="var(--f2,#E6E6E6)" stroke-width="1.25"/><polygon points="28.54,33.65 31.93,35.60 31.93,29.74 28.54,27.79" fill="var(--f2,#E6E6E6)" stroke-width="1.25"/><polygon points="36.16,38.05 39.54,40.00 39.54,34.14 36.16,32.19" fill="var(--f2,#E6E6E6)" stroke-width="1.25"/><polygon points="75.07,29.26 71.68,31.21 71.68,25.35 75.07,23.40" fill="var(--f1,#F4F4F4)" stroke-width="1.25"/><polygon points="68.30,33.16 64.92,35.12 64.92,29.26 68.30,27.30" fill="var(--f1,#F4F4F4)" stroke-width="1.25"/><polygon points="61.53,37.07 58.15,39.02 58.15,33.16 61.53,31.21" fill="var(--f1,#F4F4F4)" stroke-width="1.25"/><polygon points="54.77,40.98 51.38,42.93 51.38,37.07 54.77,35.12" fill="var(--f1,#F4F4F4)" stroke-width="1.25"/><polygon points="33.62,49.28 43.77,55.14 43.77,44.40 33.62,38.53" fill="var(--i2,#D01A1A)" stroke="none"/><polygon points="33.62,38.53 43.77,44.40 43.77,44.39 33.62,38.53" fill="var(--i1,#111111)"/><polygon points="38.02,47.42 39.37,48.20 39.37,45.76 38.02,44.98" fill="var(--f0,#FFFFFF)" stroke="none"/></g></g></symbol>
+<symbol id="b-monitor" viewBox="0 0 96 96"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><g transform="translate(-4.69 21.10)"><polygon points="52.69,31.87 62.08,37.29 55.82,40.90 46.44,35.48" fill="var(--f0,#FFFFFF)"/><polygon points="46.44,37.29 55.82,42.71 55.82,40.90 46.44,35.48" fill="var(--f1,#F4F4F4)"/><polygon points="62.08,39.10 55.82,42.71 55.82,40.90 62.08,37.29" fill="var(--f2,#E6E6E6)"/><polygon points="54.26,23.74 57.39,25.55 55.04,26.90 51.91,25.10" fill="var(--f0,#FFFFFF)"/><polygon points="51.91,35.94 55.04,37.74 55.04,26.90 51.91,25.10" fill="var(--f1,#F4F4F4)"/><polygon points="57.39,36.39 55.04,37.74 55.04,26.90 57.39,25.55" fill="var(--f2,#E6E6E6)"/><polygon points="37.05,-15.10 74.60,6.58 71.47,8.39 33.92,-13.29" fill="var(--f0,#FFFFFF)"/><polygon points="33.92,13.81 71.47,35.48 71.47,8.39 33.92,-13.29" fill="var(--f1,#F4F4F4)"/><polygon points="74.60,33.68 71.47,35.48 71.47,8.39 74.60,6.58" fill="var(--f2,#E6E6E6)"/><polygon points="37.05,12.00 68.34,30.06 68.34,10.19 37.05,-7.87" fill="var(--f0,#FFFFFF)" stroke-width="1.25"/><polygon points="40.18,-0.65 55.82,8.39 55.82,5.68 40.18,-3.35" fill="var(--f2,#E6E6E6)" stroke="none"/><polygon points="40.18,4.77 62.08,17.42 62.08,15.61 40.18,2.97" fill="var(--i1,#111111)" stroke="none"/><polygon points="40.18,9.29 54.26,17.42 54.26,15.61 40.18,7.48" fill="var(--i1,#111111)" stroke="none"/><polyline points="55.82,53.55 68.34,46.32 58.95,40.90" fill="none" stroke="var(--i2,#D01A1A)" stroke-width="3"/><polygon points="48.00,43.61 65.21,53.55 48.00,63.48 30.79,53.55" fill="var(--f1,#F4F4F4)"/><polygon points="30.79,58.97 48.00,68.90 48.00,63.48 30.79,53.55" fill="var(--f2,#E6E6E6)"/><polygon points="65.21,58.97 48.00,68.90 48.00,63.48 65.21,53.55" fill="var(--f2,#E6E6E6)"/><polygon points="41.74,63.03 44.87,64.84 44.87,63.03 41.74,61.23" fill="var(--i1,#111111)" stroke="none"/></g></g></symbol>
+<symbol id="b-bulutyok" viewBox="0 0 96 96"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><g transform="translate(0.00 27.50)"><polygon points="48.00,6.00 79.18,24.00 48.00,42.00 16.82,24.00" fill="var(--f0,#FFFFFF)"/><polygon points="16.82,40.00 48.00,58.00 48.00,42.00 16.82,24.00" fill="var(--f1,#F4F4F4)"/><polygon points="79.18,40.00 48.00,58.00 48.00,42.00 79.18,24.00" fill="var(--f2,#E6E6E6)"/><polygon points="22.02,37.00 27.22,40.00 27.22,36.00 22.02,33.00" fill="var(--i1,#111111)" stroke="none"/><polygon points="30.68,41.00 41.07,47.00 41.07,45.00 30.68,39.00" fill="var(--f2,#E6E6E6)" stroke-width="1.25"/><polygon points="48.00,14.00 65.32,24.00 48.00,34.00 30.68,24.00" fill="var(--f1,#F4F4F4)" stroke-width="1.25"/><g transform="translate(48.00 -4.00) scale(1.000)"><path d="M-14 10a7 7 0 0 1 1-13.5 10 10 0 0 1 19-3 8 8 0 0 1 11 8.5A6.5 6.5 0 0 1 16 10z" fill="var(--f0,#FFFFFF)" stroke-width="2.000"/><path d="M-15 -8l2.6-2.6 34 34-2.6 2.6z" fill="var(--i2,#D01A1A)" stroke="none"/></g></g></g></symbol>
+<symbol id="b-disk" viewBox="0 0 96 96"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><g transform="translate(0.00 26.00)"><polygon points="48.00,56.97 46.08,56.93 44.16,56.83 42.27,56.64 40.39,56.39 38.55,56.07 36.75,55.68 35.00,55.22 33.30,54.70 31.67,54.11 30.11,53.46 28.62,52.76 27.22,52.00 25.90,51.19 24.68,50.33 23.56,49.43 22.54,48.49 21.64,47.51 20.84,46.49 20.17,45.46 19.61,44.39 19.17,43.31 18.86,42.22 18.67,41.11 18.61,40.00 18.61,30.00 18.67,31.11 18.86,32.22 19.17,33.31 19.61,34.39 20.17,35.46 20.84,36.49 21.64,37.51 22.54,38.49 23.56,39.43 24.68,40.33 25.90,41.19 27.22,42.00 28.62,42.76 30.11,43.46 31.67,44.11 33.30,44.70 35.00,45.22 36.75,45.68 38.55,46.07 40.39,46.39 42.27,46.64 44.16,46.83 46.08,46.93 48.00,46.97" fill="var(--f1,#F4F4F4)" stroke="none"/><polygon points="77.39,40.00 77.33,41.11 77.14,42.22 76.83,43.31 76.39,44.39 75.83,45.46 75.16,46.49 74.36,47.51 73.46,48.49 72.44,49.43 71.32,50.33 70.10,51.19 68.78,52.00 67.38,52.76 65.89,53.46 64.33,54.11 62.70,54.70 61.00,55.22 59.25,55.68 57.45,56.07 55.61,56.39 53.73,56.64 51.84,56.83 49.92,56.93 48.00,56.97 48.00,46.97 49.92,46.93 51.84,46.83 53.73,46.64 55.61,46.39 57.45,46.07 59.25,45.68 61.00,45.22 62.70,44.70 64.33,44.11 65.89,43.46 67.38,42.76 68.78,42.00 70.10,41.19 71.32,40.33 72.44,39.43 73.46,38.49 74.36,37.51 75.16,36.49 75.83,35.46 76.39,34.39 76.83,33.31 77.14,32.22 77.33,31.11 77.39,30.00" fill="var(--f2,#E6E6E6)" stroke="none"/><polygon points="77.39,40.00 77.14,42.22 76.39,44.39 75.16,46.49 73.46,48.49 71.32,50.33 68.78,52.00 65.89,53.46 62.70,54.70 59.25,55.68 55.61,56.39 51.84,56.83 48.00,56.97 44.16,56.83 40.39,56.39 36.75,55.68 33.30,54.70 30.11,53.46 27.22,52.00 24.68,50.33 22.54,48.49 20.84,46.49 19.61,44.39 18.86,42.22 18.61,40.00 18.61,30.00 18.86,32.22 19.61,34.39 20.84,36.49 22.54,38.49 24.68,40.33 27.22,42.00 30.11,43.46 33.30,44.70 36.75,45.68 40.39,46.39 44.16,46.83 48.00,46.97 51.84,46.83 55.61,46.39 59.25,45.68 62.70,44.70 65.89,43.46 68.78,42.00 71.32,40.33 73.46,38.49 75.16,36.49 76.39,34.39 77.14,32.22 77.39,30.00" fill="none"/><polygon points="68.78,42.00 65.89,43.46 62.70,44.70 59.25,45.68 55.61,46.39 51.84,46.83 48.00,46.97 44.16,46.83 40.39,46.39 36.75,45.68 33.30,44.70 30.11,43.46 27.22,42.00 24.68,40.33 22.54,38.49 20.84,36.49 19.61,34.39 18.86,32.22 18.61,30.00 18.86,27.78 19.61,25.61 20.84,23.51 22.54,21.51 24.68,19.67 27.22,18.00 30.11,16.54 33.30,15.30 36.75,14.32 40.39,13.61 44.16,13.17 48.00,13.03 51.84,13.17 55.61,13.61 59.25,14.32 62.70,15.30 65.89,16.54 68.78,18.00 71.32,19.67 73.46,21.51 75.16,23.51 76.39,25.61 77.14,27.78 77.39,30.00 77.14,32.22 76.39,34.39 75.16,36.49 73.46,38.49 71.32,40.33" fill="var(--f1,#F4F4F4)"/><polygon points="48.00,43.97 46.08,43.93 44.16,43.83 42.27,43.64 40.39,43.39 38.55,43.07 36.75,42.68 35.00,42.22 33.30,41.70 31.67,41.11 30.11,40.46 28.62,39.76 27.22,39.00 25.90,38.19 24.68,37.33 23.56,36.43 22.54,35.49 21.64,34.51 20.84,33.49 20.17,32.46 19.61,31.39 19.17,30.31 18.86,29.22 18.67,28.11 18.61,27.00 18.61,17.00 18.67,18.11 18.86,19.22 19.17,20.31 19.61,21.39 20.17,22.46 20.84,23.49 21.64,24.51 22.54,25.49 23.56,26.43 24.68,27.33 25.90,28.19 27.22,29.00 28.62,29.76 30.11,30.46 31.67,31.11 33.30,31.70 35.00,32.22 36.75,32.68 38.55,33.07 40.39,33.39 42.27,33.64 44.16,33.83 46.08,33.93 48.00,33.97" fill="var(--f1,#F4F4F4)" stroke="none"/><polygon points="77.39,27.00 77.33,28.11 77.14,29.22 76.83,30.31 76.39,31.39 75.83,32.46 75.16,33.49 74.36,34.51 73.46,35.49 72.44,36.43 71.32,37.33 70.10,38.19 68.78,39.00 67.38,39.76 65.89,40.46 64.33,41.11 62.70,41.70 61.00,42.22 59.25,42.68 57.45,43.07 55.61,43.39 53.73,43.64 51.84,43.83 49.92,43.93 48.00,43.97 48.00,33.97 49.92,33.93 51.84,33.83 53.73,33.64 55.61,33.39 57.45,33.07 59.25,32.68 61.00,32.22 62.70,31.70 64.33,31.11 65.89,30.46 67.38,29.76 68.78,29.00 70.10,28.19 71.32,27.33 72.44,26.43 73.46,25.49 74.36,24.51 75.16,23.49 75.83,22.46 76.39,21.39 76.83,20.31 77.14,19.22 77.33,18.11 77.39,17.00" fill="var(--f2,#E6E6E6)" stroke="none"/><polygon points="77.39,27.00 77.14,29.22 76.39,31.39 75.16,33.49 73.46,35.49 71.32,37.33 68.78,39.00 65.89,40.46 62.70,41.70 59.25,42.68 55.61,43.39 51.84,43.83 48.00,43.97 44.16,43.83 40.39,43.39 36.75,42.68 33.30,41.70 30.11,40.46 27.22,39.00 24.68,37.33 22.54,35.49 20.84,33.49 19.61,31.39 18.86,29.22 18.61,27.00 18.61,17.00 18.86,19.22 19.61,21.39 20.84,23.49 22.54,25.49 24.68,27.33 27.22,29.00 30.11,30.46 33.30,31.70 36.75,32.68 40.39,33.39 44.16,33.83 48.00,33.97 51.84,33.83 55.61,33.39 59.25,32.68 62.70,31.70 65.89,30.46 68.78,29.00 71.32,27.33 73.46,25.49 75.16,23.49 76.39,21.39 77.14,19.22 77.39,17.00" fill="none"/><polygon points="68.78,29.00 65.89,30.46 62.70,31.70 59.25,32.68 55.61,33.39 51.84,33.83 48.00,33.97 44.16,33.83 40.39,33.39 36.75,32.68 33.30,31.70 30.11,30.46 27.22,29.00 24.68,27.33 22.54,25.49 20.84,23.49 19.61,21.39 18.86,19.22 18.61,17.00 18.86,14.78 19.61,12.61 20.84,10.51 22.54,8.51 24.68,6.67 27.22,5.00 30.11,3.54 33.30,2.30 36.75,1.32 40.39,0.61 44.16,0.17 48.00,0.03 51.84,0.17 55.61,0.61 59.25,1.32 62.70,2.30 65.89,3.54 68.78,5.00 71.32,6.67 73.46,8.51 75.16,10.51 76.39,12.61 77.14,14.78 77.39,17.00 77.14,19.22 76.39,21.39 75.16,23.49 73.46,25.49 71.32,27.33" fill="var(--f1,#F4F4F4)"/><polygon points="48.00,30.97 46.08,30.93 44.16,30.83 42.27,30.64 40.39,30.39 38.55,30.07 36.75,29.68 35.00,29.22 33.30,28.70 31.67,28.11 30.11,27.46 28.62,26.76 27.22,26.00 25.90,25.19 24.68,24.33 23.56,23.43 22.54,22.49 21.64,21.51 20.84,20.49 20.17,19.46 19.61,18.39 19.17,17.31 18.86,16.22 18.67,15.11 18.61,14.00 18.61,4.00 18.67,5.11 18.86,6.22 19.17,7.31 19.61,8.39 20.17,9.46 20.84,10.49 21.64,11.51 22.54,12.49 23.56,13.43 24.68,14.33 25.90,15.19 27.22,16.00 28.62,16.76 30.11,17.46 31.67,18.11 33.30,18.70 35.00,19.22 36.75,19.68 38.55,20.07 40.39,20.39 42.27,20.64 44.16,20.83 46.08,20.93 48.00,20.97" fill="var(--f1,#F4F4F4)" stroke="none"/><polygon points="77.39,14.00 77.33,15.11 77.14,16.22 76.83,17.31 76.39,18.39 75.83,19.46 75.16,20.49 74.36,21.51 73.46,22.49 72.44,23.43 71.32,24.33 70.10,25.19 68.78,26.00 67.38,26.76 65.89,27.46 64.33,28.11 62.70,28.70 61.00,29.22 59.25,29.68 57.45,30.07 55.61,30.39 53.73,30.64 51.84,30.83 49.92,30.93 48.00,30.97 48.00,20.97 49.92,20.93 51.84,20.83 53.73,20.64 55.61,20.39 57.45,20.07 59.25,19.68 61.00,19.22 62.70,18.70 64.33,18.11 65.89,17.46 67.38,16.76 68.78,16.00 70.10,15.19 71.32,14.33 72.44,13.43 73.46,12.49 74.36,11.51 75.16,10.49 75.83,9.46 76.39,8.39 76.83,7.31 77.14,6.22 77.33,5.11 77.39,4.00" fill="var(--f2,#E6E6E6)" stroke="none"/><polygon points="77.39,14.00 77.14,16.22 76.39,18.39 75.16,20.49 73.46,22.49 71.32,24.33 68.78,26.00 65.89,27.46 62.70,28.70 59.25,29.68 55.61,30.39 51.84,30.83 48.00,30.97 44.16,30.83 40.39,30.39 36.75,29.68 33.30,28.70 30.11,27.46 27.22,26.00 24.68,24.33 22.54,22.49 20.84,20.49 19.61,18.39 18.86,16.22 18.61,14.00 18.61,4.00 18.86,6.22 19.61,8.39 20.84,10.49 22.54,12.49 24.68,14.33 27.22,16.00 30.11,17.46 33.30,18.70 36.75,19.68 40.39,20.39 44.16,20.83 48.00,20.97 51.84,20.83 55.61,20.39 59.25,19.68 62.70,18.70 65.89,17.46 68.78,16.00 71.32,14.33 73.46,12.49 75.16,10.49 76.39,8.39 77.14,6.22 77.39,4.00" fill="none"/><polygon points="68.78,16.00 65.89,17.46 62.70,18.70 59.25,19.68 55.61,20.39 51.84,20.83 48.00,20.97 44.16,20.83 40.39,20.39 36.75,19.68 33.30,18.70 30.11,17.46 27.22,16.00 24.68,14.33 22.54,12.49 20.84,10.49 19.61,8.39 18.86,6.22 18.61,4.00 18.86,1.78 19.61,-0.39 20.84,-2.49 22.54,-4.49 24.68,-6.33 27.22,-8.00 30.11,-9.46 33.30,-10.70 36.75,-11.68 40.39,-12.39 44.16,-12.83 48.00,-12.97 51.84,-12.83 55.61,-12.39 59.25,-11.68 62.70,-10.70 65.89,-9.46 68.78,-8.00 71.32,-6.33 73.46,-4.49 75.16,-2.49 76.39,-0.39 77.14,1.78 77.39,4.00 77.14,6.22 76.39,8.39 75.16,10.49 73.46,12.49 71.32,14.33" fill="var(--f0,#FFFFFF)"/><polygon points="48.00,4.00 68.07,12.11 66.76,13.09 65.32,14.00 63.75,14.83 62.05,15.58 60.25,16.25 58.35,16.82 56.38,17.29 54.34,17.66 52.25,17.93 50.13,18.09 48.00,18.14 45.87,18.09 43.75,17.93 41.66,17.66 39.62,17.29 37.65,16.82 35.75,16.25 33.95,15.58" fill="var(--i2,#D01A1A)" stroke="none"/><polygon points="51.46,6.00 50.98,6.24 50.45,6.45 49.87,6.61 49.27,6.73 48.64,6.80 48.00,6.83 47.36,6.80 46.73,6.73 46.13,6.61 45.55,6.45 45.02,6.24 44.54,6.00 44.11,5.72 43.76,5.41 43.47,5.08 43.27,4.73 43.14,4.37 43.10,4.00 43.14,3.63 43.27,3.27 43.47,2.92 43.76,2.59 44.11,2.28 44.54,2.00 45.02,1.76 45.55,1.55 46.13,1.39 46.73,1.27 47.36,1.20 48.00,1.17 48.64,1.20 49.27,1.27 49.87,1.39 50.45,1.55 50.98,1.76 51.46,2.00 51.89,2.28 52.24,2.59 52.53,2.92 52.73,3.27 52.86,3.63 52.90,4.00 52.86,4.37 52.73,4.73 52.53,5.08 52.24,5.41 51.89,5.72" fill="var(--f0,#FFFFFF)" stroke-width="1.5"/></g></g></symbol>
+<symbol id="b-burc" viewBox="0 0 96 96"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><g transform="translate(4.33 25.00)"><polygon points="18.56,1.00 44.54,16.00 37.61,20.00 11.63,5.00" fill="var(--f0,#FFFFFF)"/><polygon points="11.63,27.00 37.61,42.00 37.61,20.00 11.63,5.00" fill="var(--f1,#F4F4F4)"/><polygon points="44.54,38.00 37.61,42.00 37.61,20.00 44.54,16.00" fill="var(--f2,#E6E6E6)"/><polygon points="18.56,-4.00 22.89,-1.50 15.96,2.50 11.63,0.00" fill="var(--f0,#FFFFFF)"/><polygon points="11.63,5.00 15.96,7.50 15.96,2.50 11.63,0.00" fill="var(--f1,#F4F4F4)"/><polygon points="22.89,3.50 15.96,7.50 15.96,2.50 22.89,-1.50" fill="var(--f2,#E6E6E6)"/><polygon points="25.48,0.00 29.81,2.50 22.89,6.50 18.56,4.00" fill="var(--f0,#FFFFFF)"/><polygon points="18.56,9.00 22.89,11.50 22.89,6.50 18.56,4.00" fill="var(--f1,#F4F4F4)"/><polygon points="29.81,7.50 22.89,11.50 22.89,6.50 29.81,2.50" fill="var(--f2,#E6E6E6)"/><polygon points="32.41,4.00 36.74,6.50 29.81,10.50 25.48,8.00" fill="var(--f0,#FFFFFF)"/><polygon points="25.48,13.00 29.81,15.50 29.81,10.50 25.48,8.00" fill="var(--f1,#F4F4F4)"/><polygon points="36.74,11.50 29.81,15.50 29.81,10.50 36.74,6.50" fill="var(--f2,#E6E6E6)"/><polygon points="53.20,-7.00 75.71,6.00 53.20,19.00 30.68,6.00" fill="var(--f0,#FFFFFF)"/><polygon points="30.68,46.00 53.20,59.00 53.20,19.00 30.68,6.00" fill="var(--f1,#F4F4F4)"/><polygon points="75.71,46.00 53.20,59.00 53.20,19.00 75.71,6.00" fill="var(--f2,#E6E6E6)"/><polygon points="53.20,-13.00 57.53,-10.50 53.20,-8.00 48.87,-10.50" fill="var(--f0,#FFFFFF)"/><polygon points="48.87,-4.50 53.20,-2.00 53.20,-8.00 48.87,-10.50" fill="var(--f1,#F4F4F4)"/><polygon points="57.53,-4.50 53.20,-2.00 53.20,-8.00 57.53,-10.50" fill="var(--f2,#E6E6E6)"/><polygon points="44.10,-7.75 48.43,-5.25 44.10,-2.75 39.77,-5.25" fill="var(--f0,#FFFFFF)"/><polygon points="39.77,0.75 44.10,3.25 44.10,-2.75 39.77,-5.25" fill="var(--f1,#F4F4F4)"/><polygon points="48.43,0.75 44.10,3.25 44.10,-2.75 48.43,-5.25" fill="var(--f2,#E6E6E6)"/><polygon points="62.29,-7.75 66.62,-5.25 62.29,-2.75 57.96,-5.25" fill="var(--f0,#FFFFFF)"/><polygon points="57.96,0.75 62.29,3.25 62.29,-2.75 57.96,-5.25" fill="var(--f1,#F4F4F4)"/><polygon points="66.62,0.75 62.29,3.25 62.29,-2.75 66.62,-5.25" fill="var(--f2,#E6E6E6)"/><polygon points="35.01,-2.50 39.34,0.00 35.01,2.50 30.68,0.00" fill="var(--f0,#FFFFFF)"/><polygon points="30.68,6.00 35.01,8.50 35.01,2.50 30.68,0.00" fill="var(--f1,#F4F4F4)"/><polygon points="39.34,6.00 35.01,8.50 35.01,2.50 39.34,0.00" fill="var(--f2,#E6E6E6)"/><polygon points="71.38,-2.50 75.71,0.00 71.38,2.50 67.05,0.00" fill="var(--f0,#FFFFFF)"/><polygon points="67.05,6.00 71.38,8.50 71.38,2.50 67.05,0.00" fill="var(--f1,#F4F4F4)"/><polygon points="75.71,6.00 71.38,8.50 71.38,2.50 75.71,0.00" fill="var(--f2,#E6E6E6)"/><polygon points="44.10,2.75 48.43,5.25 44.10,7.75 39.77,5.25" fill="var(--f0,#FFFFFF)"/><polygon points="39.77,11.25 44.10,13.75 44.10,7.75 39.77,5.25" fill="var(--f1,#F4F4F4)"/><polygon points="48.43,11.25 44.10,13.75 44.10,7.75 48.43,5.25" fill="var(--f2,#E6E6E6)"/><polygon points="62.29,2.75 66.62,5.25 62.29,7.75 57.96,5.25" fill="var(--f0,#FFFFFF)"/><polygon points="57.96,11.25 62.29,13.75 62.29,7.75 57.96,5.25" fill="var(--f1,#F4F4F4)"/><polygon points="66.62,11.25 62.29,13.75 62.29,7.75 66.62,5.25" fill="var(--f2,#E6E6E6)"/><polygon points="53.20,8.00 57.53,10.50 53.20,13.00 48.87,10.50" fill="var(--f0,#FFFFFF)"/><polygon points="48.87,16.50 53.20,19.00 53.20,13.00 48.87,10.50" fill="var(--f1,#F4F4F4)"/><polygon points="57.53,16.50 53.20,19.00 53.20,13.00 57.53,10.50" fill="var(--f2,#E6E6E6)"/><polygon points="37.61,50.00 46.27,55.00 46.27,43.00 37.61,38.00" fill="var(--i2,#D01A1A)" stroke="none"/><polygon points="37.61,38.00 46.27,43.00 41.94,36.50" fill="var(--i2,#D01A1A)" stroke="none"/><polygon points="66.19,25.50 62.72,27.50 62.72,19.50 66.19,17.50" fill="var(--i1,#111111)" stroke="none"/><polygon points="40.21,25.50 43.67,27.50 43.67,19.50 40.21,17.50" fill="var(--i1,#111111)" stroke="none"/></g></g></symbol>
+<symbol id="b-konsol" viewBox="0 0 96 96"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><g transform="translate(2.60 26.50)"><polygon points="30.68,6.00 79.18,34.00 60.12,45.00 11.63,17.00" fill="var(--f0,#FFFFFF)"/><polygon points="11.63,33.00 60.12,61.00 60.12,45.00 11.63,17.00" fill="var(--f1,#F4F4F4)"/><polygon points="79.18,50.00 60.12,61.00 60.12,45.00 79.18,34.00" fill="var(--f2,#E6E6E6)"/><polygon points="15.09,31.00 56.66,55.00 56.66,47.00 15.09,23.00" fill="var(--f2,#E6E6E6)" stroke-width="1.25"/><polygon points="34.14,-18.00 72.25,4.00 69.65,5.50 31.55,-16.50" fill="var(--f0,#FFFFFF)"/><polygon points="31.55,11.50 69.65,33.50 69.65,5.50 31.55,-16.50" fill="var(--f1,#F4F4F4)"/><polygon points="72.25,32.00 69.65,33.50 69.65,5.50 72.25,4.00" fill="var(--f2,#E6E6E6)"/><polygon points="35.01,10.50 66.19,28.50 66.19,6.50 35.01,-11.50" fill="var(--f0,#FFFFFF)" stroke-width="1.25"/><polygon points="37.61,9.00 41.07,11.00 41.07,3.00 37.61,1.00" fill="var(--i1,#111111)" stroke="none"/><polygon points="42.80,12.00 46.27,14.00 46.27,1.00 42.80,-1.00" fill="var(--i1,#111111)" stroke="none"/><polygon points="48.00,15.00 51.46,17.00 51.46,-1.00 48.00,-3.00" fill="var(--i2,#D01A1A)" stroke="none"/><polygon points="53.20,18.00 56.66,20.00 56.66,10.00 53.20,8.00" fill="var(--i1,#111111)" stroke="none"/><polygon points="58.39,21.00 61.86,23.00 61.86,8.00 58.39,6.00" fill="var(--i1,#111111)" stroke="none"/><polygon points="33.28,20.50 54.06,32.50 48.87,35.50 28.08,23.50" fill="var(--f1,#F4F4F4)" stroke-width="1.25"/></g></g></symbol>
+<symbol id="b-laptop" viewBox="0 0 96 96"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><g transform="translate(2.17 23.25)"><polygon points="41.94,-11.50 80.04,10.50 77.44,12.00 39.34,-10.00" fill="var(--f0,#FFFFFF)"/><polygon points="39.34,20.00 77.44,42.00 77.44,12.00 39.34,-10.00" fill="var(--f1,#F4F4F4)"/><polygon points="80.04,40.50 77.44,42.00 77.44,12.00 80.04,10.50" fill="var(--f2,#E6E6E6)"/><polygon points="42.80,18.00 73.98,36.00 73.98,14.00 42.80,-4.00" fill="var(--f0,#FFFFFF)" stroke-width="1.25"/><polygon points="46.27,12.00 68.78,25.00 68.78,21.00 46.27,8.00" fill="var(--f2,#E6E6E6)" stroke="none"/><polygon points="46.27,12.00 60.99,20.50 60.99,16.50 46.27,8.00" fill="var(--i2,#D01A1A)" stroke="none"/><polygon points="46.27,4.00 53.20,8.00 53.20,5.00 46.27,1.00" fill="var(--i1,#111111)" stroke="none"/><polygon points="39.34,20.00 77.44,42.00 49.73,58.00 11.63,36.00" fill="var(--f0,#FFFFFF)"/><polygon points="11.63,39.00 49.73,61.00 49.73,58.00 11.63,36.00" fill="var(--f1,#F4F4F4)"/><polygon points="77.44,45.00 49.73,61.00 49.73,58.00 77.44,42.00" fill="var(--f2,#E6E6E6)"/><polygon points="32.41,30.00 58.39,45.00 48.00,51.00 22.02,36.00" fill="var(--f1,#F4F4F4)" stroke-width="1.25"/><polygon points="30.68,43.00 37.61,47.00 35.01,48.50 28.08,44.50" fill="var(--f2,#E6E6E6)" stroke-width="1.25"/></g></g></symbol>
+<symbol id="a-01" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 20h26l5 5H4z" fill="var(--f0,#FFFFFF)"/><rect x="4" y="25" width="36" height="10" fill="var(--f2,#E6E6E6)"/><path d="M4 25h36"/><rect x="8" y="29" width="4" height="2.5" fill="var(--i1,#111111)" stroke="none"/><rect x="14" y="29" width="4" height="2.5" fill="var(--i1,#111111)" stroke="none"/><path d="M30 18L40 8h5v5L35 23"/><path d="M29 17l11-11h6v6L35 23z" fill="var(--i2,#D01A1A)" stroke="none"/><circle cx="42" cy="10" r="1.6" fill="var(--f0,#FFFFFF)" stroke="none"/></g></symbol>
+<symbol id="a-02" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="16" y="5" width="28" height="24" fill="var(--f1,#F4F4F4)"/><rect x="16" y="5" width="28" height="5" fill="var(--f2,#E6E6E6)"/><path d="M25 15l-4 4 4 4M35 15l4 4-4 4"/><path d="M17 36h26M37 36v6M31 36v4"/><circle cx="11" cy="36" r="8" fill="var(--i2,#D01A1A)" stroke="none"/><circle cx="11" cy="36" r="3" fill="var(--f0,#FFFFFF)" stroke="none"/></g></symbol>
+<symbol id="a-03" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="3" y="17" width="10" height="14" fill="var(--f1,#F4F4F4)"/><rect x="19" y="14" width="10" height="20" fill="var(--f2,#E6E6E6)"/><rect x="35" y="10" width="10" height="28" fill="var(--f1,#F4F4F4)"/><path d="M38 16h4M38 22h4M38 28h4M22 19h4"/><rect x="6" y="26" width="4" height="2" fill="var(--i1,#111111)" stroke="none"/><path d="M8 31v8h32v-1" stroke="var(--i2,#D01A1A)" stroke-width="3" fill="none"/><path d="M8 17V9h19" stroke="var(--i2,#D01A1A)" stroke-width="3" fill="none"/><path d="M40.00 9.00L30.53 12.40L30.53 5.60z" fill="var(--i2,#D01A1A)" stroke="none"/></g></symbol>
+<symbol id="a-04" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 22h26l5 5H4z" fill="var(--f0,#FFFFFF)"/><rect x="4" y="27" width="36" height="10" fill="var(--f2,#E6E6E6)"/><path d="M4 27h36"/><rect x="8" y="31" width="4" height="2.5" fill="var(--i1,#111111)" stroke="none"/><rect x="14" y="31" width="4" height="2.5" fill="var(--i1,#111111)" stroke="none"/><path d="M29 14v-4a5 5 0 0 1 10 0v4"/><rect x="26" y="14" width="16" height="12" fill="var(--i2,#D01A1A)" stroke="none"/><rect x="33" y="17" width="2" height="6" fill="var(--f0,#FFFFFF)" stroke="none"/></g></symbol>
+<symbol id="a-05" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M24 24L8 8M24 24L40 8M24 24L8 40M24 24L40 40M24 24H4M24 24h20"/><rect x="4" y="4" width="8" height="8" fill="var(--f1,#F4F4F4)"/><rect x="36" y="4" width="8" height="8" fill="var(--f1,#F4F4F4)"/><rect x="4" y="36" width="8" height="8" fill="var(--f1,#F4F4F4)"/><rect x="36" y="36" width="8" height="8" fill="var(--f1,#F4F4F4)"/><rect x="2" y="20" width="6" height="8" fill="var(--f2,#E6E6E6)"/><rect x="40" y="20" width="6" height="8" fill="var(--f2,#E6E6E6)"/><circle cx="24" cy="24" r="9" fill="var(--f0,#FFFFFF)"/><circle cx="24" cy="24" r="7" fill="var(--i2,#D01A1A)" stroke="none"/></g></symbol>
+<symbol id="a-06" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="4" y="6" width="14" height="30" fill="var(--f2,#E6E6E6)"/><path d="M8 12h6M8 17h6M8 22h6"/><circle cx="11" cy="30" r="1.5" fill="var(--i1,#111111)" stroke="none"/><rect x="24" y="10" width="20" height="15" fill="var(--f1,#F4F4F4)"/><path d="M34.0 25v5M27.0 30h14"/><rect x="28" y="13" width="12" height="3" fill="var(--f2,#E6E6E6)"/><path d="M18 21h6" stroke="var(--i2,#D01A1A)" stroke-width="3" fill="none"/><path d="M4 42h40"/></g></symbol>
+<symbol id="a-07" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="4" y="10" width="30" height="22" fill="var(--f1,#F4F4F4)" rx="2"/><rect x="8" y="14" width="9" height="11" fill="var(--f2,#E6E6E6)"/><path d="M21 16h9M21 21h7M8 28h14"/><circle cx="33" cy="34" r="6.5" fill="var(--i2,#D01A1A)" stroke="none"/><circle cx="33" cy="34" r="2.2" fill="var(--f0,#FFFFFF)" stroke="none"/><path d="M38 32h8v4h-2v3h-3v-3h-3z" fill="var(--i2,#D01A1A)" stroke="none"/></g></symbol>
+<symbol id="a-08" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M26.60 9.23A15 15 0 1 1 9.23 26.60"/><path d="M8.01 19.71L13.00 28.45L6.31 29.63z" fill="var(--i1,#111111)" stroke="none"/><path d="M9.23 21.40A15 15 0 0 1 18.87 9.90"/><circle cx="39" cy="24" r="4.5" fill="var(--f1,#F4F4F4)"/><circle cx="24" cy="39" r="4.5" fill="var(--f1,#F4F4F4)"/><circle cx="9" cy="24" r="4.5" fill="var(--f1,#F4F4F4)"/><circle cx="24" cy="9" r="5.5" fill="var(--f0,#FFFFFF)"/><circle cx="24" cy="9" r="5.5" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M21.5 9l2 2 3-3.5" stroke="var(--f0,#FFFFFF)" stroke-width="1.75" fill="none"/></g></symbol>
+<symbol id="a-09" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="3" y="17" width="12" height="14" fill="var(--f1,#F4F4F4)"/><rect x="33" y="17" width="12" height="14" fill="var(--f1,#F4F4F4)"/><path d="M3 22h12M33 22h12"/><path d="M15 24h5M28 24h5"/><rect x="18" y="19" width="12" height="10" rx="5" stroke="var(--i2,#D01A1A)" stroke-width="3" fill="none"/><path d="M9 31v8M39 31v8M9 39h30"/><rect x="20" y="35" width="8" height="8" fill="var(--f2,#E6E6E6)"/></g></symbol>
+<symbol id="a-10" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="4" y="26" width="26" height="16" fill="var(--f2,#E6E6E6)"/><rect x="11" y="18" width="26" height="16" fill="var(--f1,#F4F4F4)"/><rect x="18" y="8" width="26" height="16" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M23 16h10M23 12.5h6" stroke="var(--f0,#FFFFFF)" stroke-width="2" fill="none"/><path d="M8 36h6M15 28h9"/></g></symbol>
+<symbol id="a-11" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="4" y="8" width="30" height="34" fill="var(--f1,#F4F4F4)"/><rect x="10" y="14" width="18" height="22" fill="var(--f0,#FFFFFF)"/><path d="M10 20h18M10 26h18M10 32h18"/><circle cx="14" cy="17" r="1.2" fill="var(--i1,#111111)" stroke="none"/><path d="M34 24h4"/><path d="M38 16h3v16h-3z" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M41 24h5" stroke-width="2" stroke-dasharray="2 2" fill="none"/></g></symbol>
+<symbol id="a-12" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M6 34a18 18 0 0 1 36 0z" fill="var(--f1,#F4F4F4)"/><path d="M6 34h36"/><path d="M10 26l3 1.5M16 19l2 2.5M24 16v3M32 19l-2 2.5M38 26l-3 1.5" stroke-width="1.75" fill="none"/><path d="M22.5 35.5l12-15 2 1.5-11.5 15.5z" fill="var(--i2,#D01A1A)" stroke="none"/><circle cx="24" cy="34" r="3.5" fill="var(--i1,#111111)"/><path d="M6 40h36"/></g></symbol>
+<symbol id="a-13" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="4" y="12" width="14" height="26" fill="var(--f1,#F4F4F4)"/><rect x="30" y="12" width="14" height="26" fill="var(--f2,#E6E6E6)"/><path d="M4 20h14M4 28h14M30 20h14M30 28h14"/><circle cx="8" cy="16" r="1.3" fill="var(--i1,#111111)" stroke="none"/><circle cx="34" cy="16" r="1.3" fill="var(--i1,#111111)" stroke="none"/><path d="M19 19h6v-3l5 5-5 5v-3h-6z" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M29 33h-6v3l-5-5 5-5v3h6z" fill="var(--f0,#FFFFFF)"/></g></symbol>
+<symbol id="a-14" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="4" y="6" width="32" height="24" fill="var(--f1,#F4F4F4)"/><path d="M8 22l6-6 5 4 6-8 7 5" stroke="var(--i2,#D01A1A)" stroke-width="2.5" fill="none"/><circle cx="32" cy="32" r="8" fill="var(--f0,#FFFFFF)"/><path d="M38 38l7 7"/></g></symbol>
+<symbol id="a-15" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M8 4h24l8 8v32H8z" fill="var(--f1,#F4F4F4)"/><path d="M32 4v8h8" fill="var(--f2,#E6E6E6)"/><path d="M13 15h12M13 34h20M13 40h14"/><rect x="13" y="21" width="22" height="7" fill="var(--i2,#D01A1A)" stroke="none"/></g></symbol>
+<symbol id="a-16" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="10" y="10" width="28" height="28" fill="var(--f1,#F4F4F4)"/><rect x="17" y="17" width="14" height="14" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M16 10V4M24 10V4M32 10V4M16 38v6M24 38v6M32 38v6M10 16H4M10 24H4M10 32H4M38 16h6M38 24h6M38 32h6"/></g></symbol>
+<symbol id="a-17" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="8" y="6" width="32" height="38" fill="var(--f1,#F4F4F4)"/><rect x="17" y="3" width="14" height="6" fill="var(--f2,#E6E6E6)"/><rect x="13" y="15" width="5" height="5" fill="var(--f0,#FFFFFF)"/><path d="M22 17.5h13"/><rect x="13" y="25" width="5" height="5" fill="var(--f0,#FFFFFF)"/><path d="M22 27.5h13"/><rect x="13" y="35" width="5" height="5" fill="var(--f0,#FFFFFF)"/><path d="M22 37.5h9"/><path d="M12 16l3 3 6-7" stroke="var(--i2,#D01A1A)" stroke-width="3" fill="none"/></g></symbol>
+<symbol id="a-18" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M10 44V6"/><path d="M11 7h22l-5 7 5 7H11z" fill="var(--i2,#D01A1A)" stroke="none"/><rect x="24" y="34" width="5" height="10" fill="var(--i1,#111111)" stroke="none"/><rect x="31" y="28" width="5" height="16" fill="var(--i1,#111111)" stroke="none"/><rect x="38" y="22" width="5" height="22" fill="var(--f2,#E6E6E6)"/><path d="M4 44h42"/></g></symbol>
+<symbol id="a-19" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><circle cx="13" cy="23.6" r="3.6" fill="var(--f1,#F4F4F4)"/><path d="M6.7 37.1v-3.15a3.6 3.6 0 0 1 3.6-3.6h5.4a3.6 3.6 0 0 1 3.6 3.6v3.15z" fill="var(--f1,#F4F4F4)"/><circle cx="35" cy="23.6" r="3.6" fill="var(--f2,#E6E6E6)"/><path d="M28.7 37.1v-3.15a3.6 3.6 0 0 1 3.6-3.6h5.4a3.6 3.6 0 0 1 3.6 3.6v3.15z" fill="var(--f2,#E6E6E6)"/><path d="M24.00 3.50 L25.66 1.66 L27.25 2.15 L27.61 4.60 L28.60 5.40 L31.07 5.28 L31.85 6.75 L30.38 8.73 L30.50 10.00 L32.34 11.66 L31.85 13.25 L29.40 13.61 L28.60 14.60 L28.72 17.07 L27.25 17.85 L25.27 16.38 L24.00 16.50 L22.34 18.34 L20.75 17.85 L20.39 15.40 L19.40 14.60 L16.93 14.72 L16.15 13.25 L17.62 11.27 L17.50 10.00 L15.66 8.34 L16.15 6.75 L18.60 6.39 L19.40 5.40 L19.28 2.93 L20.75 2.15 L22.73 3.62z" fill="var(--i2,#D01A1A)" stroke="none"/><circle cx="24" cy="10" r="2.6" fill="var(--f0,#FFFFFF)" stroke="none"/></g></symbol>
+<symbol id="a-20" viewBox="0 0 48 48"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M22 8v36M14 44h18"/><path d="M8 10h26l5 5-5 5H8z" fill="var(--f1,#F4F4F4)"/><path d="M40 22H14l-5 5 5 5h26z" fill="var(--i2,#D01A1A)" stroke="none"/></g></symbol>
+<symbol id="s-savunma" viewBox="0 0 64 64"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="30" y="16" width="30" height="38" fill="var(--f1,#F4F4F4)"/><path d="M28 16h34"/><rect x="35" y="22" width="4" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="35" y="32" width="4" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="43" y="22" width="4" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="43" y="32" width="4" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="51" y="22" width="4" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="51" y="32" width="4" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="40" y="42" width="10" height="12" fill="var(--f2,#E6E6E6)"/><rect x="7" y="24" width="10" height="30" fill="var(--f2,#E6E6E6)"/><rect x="3" y="14" width="18" height="10" fill="var(--f1,#F4F4F4)"/><rect x="7" y="17" width="10" height="4" fill="var(--f0,#FFFFFF)"/><path d="M2 14l10-6 10 6"/><rect x="19" y="42" width="4" height="12" fill="var(--f1,#F4F4F4)"/><rect x="23" y="43" width="18" height="3" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M2 54h60"/><path d="M2 58h60" stroke-width="1.25" fill="none"/></g></symbol>
+<symbol id="s-kamu" viewBox="0 0 64 64"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M6 26L32 12l26 14z" fill="var(--f1,#F4F4F4)"/><rect x="8" y="26" width="48" height="4" fill="var(--f2,#E6E6E6)"/><path d="M12 30v20M20 30v20M44 30v20M52 30v20"/><rect x="26" y="36" width="12" height="14" fill="var(--f2,#E6E6E6)"/><path d="M4 54h56M6 50h52"/><circle cx="32" cy="21.5" r="4.5" fill="var(--f0,#FFFFFF)"/><circle cx="32" cy="21.5" r="3.2" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M32 19.5v2h1.5" stroke="var(--f0,#FFFFFF)" stroke-width="1.25" fill="none"/><path d="M32 12V5h7v4h-7"/></g></symbol>
+<symbol id="s-saglik" viewBox="0 0 64 64"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="8" y="20" width="48" height="34" fill="var(--f1,#F4F4F4)"/><rect x="22" y="10" width="20" height="10" fill="var(--f2,#E6E6E6)"/><rect x="12" y="25" width="5" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="12" y="35" width="5" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="20" y="25" width="5" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="20" y="35" width="5" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="41" y="25" width="5" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="41" y="35" width="5" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="49" y="25" width="5" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="49" y="35" width="5" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><path d="M20 42h24l3 4H17z" fill="var(--f2,#E6E6E6)"/><rect x="26" y="46" width="12" height="8" fill="var(--f0,#FFFFFF)"/><rect x="27" y="11.5" width="10" height="7" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M32 12.5v5M29.5 15h5" stroke="var(--f0,#FFFFFF)" stroke-width="2" fill="none"/><path d="M2 54h60"/></g></symbol>
+<symbol id="s-banka" viewBox="0 0 64 64"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M6 20h52v6H6z" fill="var(--f2,#E6E6E6)"/><rect x="8" y="26" width="48" height="28" fill="var(--f1,#F4F4F4)"/><rect x="12" y="30" width="18" height="14" fill="var(--f0,#FFFFFF)"/><path d="M21 30v14" stroke-width="1.25" fill="none"/><rect x="36" y="30" width="14" height="24" fill="var(--f2,#E6E6E6)"/><rect x="39" y="33" width="8" height="6" fill="var(--i2,#D01A1A)" stroke="none"/><rect x="40" y="42" width="6" height="1.5" fill="var(--i1,#111111)" stroke="none"/><path d="M38 48h10"/><path d="M2 54h60"/><path d="M10 16h44"/></g></symbol>
+<symbol id="s-universite" viewBox="0 0 64 64"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="4" y="30" width="56" height="24" fill="var(--f1,#F4F4F4)"/><path d="M2 30h60"/><rect x="22" y="22" width="20" height="32" fill="var(--f2,#E6E6E6)"/><path d="M22 22a10 10 0 0 1 20 0z" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M22 22a10 10 0 0 1 20 0"/><path d="M32 12V8"/><rect x="7" y="36" width="4" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="7" y="45" width="4" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="14" y="36" width="4" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="14" y="45" width="4" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="46" y="36" width="4" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="46" y="45" width="4" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="53" y="36" width="4" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="53" y="45" width="4" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="28" y="42" width="8" height="12" fill="var(--f0,#FFFFFF)"/><path d="M26 28h12"/><path d="M2 58h60M4 54v4M60 54v4"/></g></symbol>
+<symbol id="s-okul" viewBox="0 0 64 64"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M8 30L32 16l24 14" fill="var(--f1,#F4F4F4)"/><rect x="10" y="30" width="44" height="24" fill="var(--f1,#F4F4F4)"/><rect x="26" y="8" width="12" height="12" fill="var(--f2,#E6E6E6)"/><path d="M24 8h16l-8-6z" fill="var(--f1,#F4F4F4)"/><circle cx="32" cy="14.5" r="3" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M32 11.5v0"/><rect x="14" y="36" width="7" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="14" y="45" width="7" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="43" y="36" width="7" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="43" y="45" width="7" height="5" fill="var(--f2,#E6E6E6)" stroke-width="1.5"/><rect x="27" y="40" width="10" height="14" fill="var(--f2,#E6E6E6)"/><path d="M2 54h60"/></g></symbol>
+<symbol id="s-cagri" viewBox="0 0 64 64"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="12" y="6" width="40" height="8" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M20 14v4M44 14v4"/><path d="M16 10h14M34 10h6" stroke="var(--f0,#FFFFFF)" stroke-width="1.75"/><rect x="4" y="24" width="16" height="11" fill="var(--f1,#F4F4F4)"/><rect x="24" y="24" width="16" height="11" fill="var(--f1,#F4F4F4)"/><rect x="44" y="24" width="16" height="11" fill="var(--f1,#F4F4F4)"/><path d="M12 35v4M32 35v4M52 35v4"/><rect x="2" y="39" width="60" height="5" fill="var(--f2,#E6E6E6)"/><path d="M6 44v12M58 44v12"/><path d="M9 31a3 3 0 0 1 6 0M29 31a3 3 0 0 1 6 0M49 31a3 3 0 0 1 6 0"/></g></symbol>
+<symbol id="s-perakende" viewBox="0 0 64 64"><g fill="none" stroke="var(--i1,#111111)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="6" y="24" width="52" height="30" fill="var(--f1,#F4F4F4)"/><path d="M4 12h56"/><path d="M6 12v12M58 12v12"/><path d="M4 14h56v8a4 4 0 0 1-8 0 4 4 0 0 1-8 0 4 4 0 0 1-8 0 4 4 0 0 1-8 0 4 4 0 0 1-8 0 4 4 0 0 1-8 0 4 4 0 0 1-8 0z" fill="var(--i2,#D01A1A)" stroke="none"/><rect x="11" y="32" width="22" height="14" fill="var(--f0,#FFFFFF)"/><rect x="38" y="32" width="14" height="22" fill="var(--f2,#E6E6E6)"/><rect x="48" y="42" width="2" height="3" fill="var(--i1,#111111)" stroke="none"/><path d="M2 54h60"/><path d="M11 40h22"/></g></symbol>
+<symbol id="d-online" viewBox="0 0 16 16"><g fill="none" stroke="var(--i1,#111111)" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><circle cx="8" cy="8" r="5" fill="var(--i1,#111111)"/></g></symbol>
+<symbol id="d-degraded" viewBox="0 0 16 16"><g fill="none" stroke="var(--i1,#111111)" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><circle cx="8" cy="8" r="5" fill="var(--f0,#FFFFFF)"/><path d="M8 3a5 5 0 0 1 0 10z" fill="var(--i1,#111111)"/></g></symbol>
+<symbol id="d-bakim" viewBox="0 0 16 16"><g fill="none" stroke="var(--i1,#111111)" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><rect x="3" y="3" width="10" height="10" fill="var(--f0,#FFFFFF)"/><path stroke-width="1.5" d="M3 13L13 3M3 8l5-5M8 13l5-5"/></g></symbol>
+<symbol id="d-offline" viewBox="0 0 16 16"><g fill="none" stroke="var(--i1,#111111)" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><circle cx="8" cy="8" r="6" fill="var(--i2,#D01A1A)" stroke="none"/><path d="M5.5 5.5l5 5M10.5 5.5l-5 5" stroke="var(--f0,#FFFFFF)" stroke-width="1.75"/></g></symbol>
+<symbol id="d-var" viewBox="0 0 16 16"><g fill="none" stroke="var(--i1,#111111)" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><rect x="2" y="2" width="12" height="12" fill="var(--i1,#111111)" stroke="none"/><path d="M4.75 8.25l2.25 2.25 4.25-4.75" stroke="var(--f0,#FFFFFF)" stroke-width="1.75" fill="none"/></g></symbol>
+<symbol id="d-yol" viewBox="0 0 16 16"><g fill="none" stroke="var(--i1,#111111)" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><rect x="3" y="3" width="10" height="10" fill="var(--f0,#FFFFFF)" stroke-dasharray="2.5 2" stroke-width="1.5"/><path stroke-width="1.5" d="M6 8h4M8.5 6l2 2-2 2"/></g></symbol>
+<symbol id="d-kismi" viewBox="0 0 16 16"><g fill="none" stroke="var(--i1,#111111)" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><rect x="3" y="3" width="10" height="10" fill="var(--f0,#FFFFFF)"/><path d="M3 13L13 3v10z" fill="var(--i1,#111111)"/></g></symbol>
+<symbol id="d-pro" viewBox="0 0 30 14"><g fill="none" stroke="var(--i1,#111111)" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"><rect x="0" y="0" width="30" height="14" fill="var(--i2,#D01A1A)" stroke="none" rx="1"/><path d="M5 11V3.25h3.5a2 2 0 0 1 0 4H5M12 11V3.25h3.5a2 2 0 0 1 0 4H12M15 7.25L17.25 11" stroke="var(--f0,#FFFFFF)" stroke-width="1.6" fill="none"/><rect x="20.5" y="3.25" width="5" height="7.75" rx="2.5" stroke="var(--f0,#FFFFFF)" stroke-width="1.6" fill="none"/></g></symbol>
+</svg>
+
+<div class="util"><div class="w"><span class="k">Bir GETEK Elektronik kuruluşu · Ankara</span>
+<nav><a href="#">Güven Merkezi</a><a href="#"><b>Bilgi Merkezi</b></a><a href="#">Destek</a><a href="#">İş ortakları</a><a href="#">Kariyer</a><a href="#"><b>TR</b> / EN</a></nav></div></div>
+<header class="nav"><div class="w">
+  <a class="logo" href="index.html"><img src="assets/logo/letron-logo-beyaz-zemin-icin.png" alt="Letron"></a>
+  <ul><li>Ürünler</li><li>Teknoloji</li><li>Çözümler</li><li>Sektörler</li><li>Dijital Devlet</li><li>Blog</li><li class="on">Bilgi Merkezi</li></ul>
+  <button class="ara" aria-label="Arama"><svg class="u"><use href="#ui-ara"/></svg></button>
+  <button class="burger" aria-label="Menü"><svg class="u"><use href="#ui-menu"/></svg></button>
+  <a class="btn red" href="#">Pilot başlatın</a>
+</div></header>
+
+<section class="kbhero"><div class="w hg">
+  <div>
+    <p class="crumbs" style="padding:0 0 22px">Bilgi Merkezi / Tedarikçi değerlendirme</p>
+    <div class="lbl">Tedarikçi değerlendirme rehberi</div>
+    <h1>Bir masaüstü platformu tedarikçisine sorulacak 226 soru.</h1>
+    <p class="lead" style="margin-top:22px">Hangi ürünü seçerseniz seçin işinize yarar. Her soru için neden önemli olduğu, iyi bir cevabın neye benzediği, kırmızı bayraklar, kontrol listesi ve ihale şartnamesine nasıl yazılacağı.</p>
+  </div>
+  <div>
+    <div class="stat"><div><b>226</b><span>soru</span></div><div><b>20</b><span>teknik alan</span></div><div><b>5</b><span>bölüm her soruda</span></div></div>
+    <a class="btn red" href="#" style="margin-top:28px">Kontrol listesini indirin <svg><use href="#ui-indir"/></svg></a>
+  </div>
+</div>
+<div class="w">
+  <div class="how4">
+    <div><svg><use href="#i-sertifika"/></svg><b>Soru</b>Tedarikçiye aynen sorulacak cümle</div>
+    <div><svg><use href="#i-olay"/></svg><b>Neden önemli</b>Kurum açısından riski</div>
+    <div><svg><use href="#i-cihaz-onay"/></svg><b>İyi cevap</b>Aranacak özellikler</div>
+    <div><svg><use href="#i-test"/></svg><b>Kontrol listesi</b>Toplantıda işaretlenecekler</div>
+    <div><svg><use href="#i-ihale"/></svg><b>Şartname metni</b>İhaleye aktarılacak cümle</div>
+  </div>
+  <div class="kbtabs"><span>Rehberler</span><span class="on">Tedarikçi değerlendirme</span><span>Standartlar</span><span>Kamu alımı</span><span>Karşılaştırmalar</span><span>Sözlük</span></div>
+</div></section>
+
+<section class="sec" style="padding-top:64px"><div class="w">
+  <div class="lbl">20 alan</div>
+  <div class="kbmap" id="harita"></div>
+
+  <div class="kbsplit">
+    <aside class="kbside">
+      <label class="kbsearch"><svg class="u"><use href="#ui-ara"/></svg><input id="ara" placeholder="Soru, konu ya da numara arayın" autocomplete="off"></label>
+      <div class="kbcount" id="say"></div>
+      <div class="kbarea" id="alanbas"></div>
+      <p id="alanacik" style="color:var(--ink-2);font-size:15.5px"></p>
+    </aside>
+    <ol class="kblist" id="liste"></ol>
+  </div>
+</div></section>
+
+<footer><div class="w"><div class="lg" style="margin-top:0;border-top:0;padding-top:0"><span>© Letron · Ankara · Bir GETEK Elektronik kuruluşu</span><span>KVKK · Gizlilik · Çerezler</span></div></div></footer>
+
+<script>
+const DD = {"alanlar": ["Ürün Tanımı ve Teknik Sınırlar", "Teknoloji Sahipliği ve Bileşen Kökeni", "Uçtan Uca Sistem Mimarisi", "Endpoint OS ve Cihaz Güvenliği", "Merkezi Yönetim Platformu", "VDI, RDS ve DaaS Uyumluluğu", "Güvenlik Mimarisi, Kimlik ve Kriptografi", "Güvenli SDLC ve Kod Kalitesi", "SBOM, Açık Kaynak ve Yazılım Tedarik Zinciri", "Güncelleme, Sürüm ve Provisioning", "Altyapı, Kurulum ve Kapalı Ağ", "Performans, Ölçek ve Kapasite", "Süreklilik, Yedekleme ve Felaket Kurtarma", "Gözlemlenebilirlik, Olay Müdahalesi ve Destek", "Veri, Mahremiyet ve Müşteri Ayrıştırması", "Donanım, Firmware ve Üretim", "Test Stratejisi ve Bağımsız Doğrulama", "Pilot Kanıtı ve Production Readiness", "Teknik Ekip ve Uygulama Kapasitesi", "Roadmap, Teknik Borç ve Uygulama Planı"], "sorular": [{"id": "A-001", "a": 0, "konu": "Ürün mimarisi katmanları ve sorumluluk sınırları", "yayin": "AÇIK"}, {"id": "A-002", "a": 0, "konu": "LETRON'a özgü teknik çekirdek vs 3. taraf", "yayin": "AÇIK"}, {"id": "A-003", "a": 0, "konu": "Deployment modeli sorumluluk paylaşımı", "yayin": "AÇIK"}, {"id": "A-004", "a": 0, "konu": "Ürün taksonomisi: LeoPC modelleri, LeoSoft", "yayin": "AÇIK"}, {"id": "A-005", "a": 0, "konu": "Fonksiyon statüsü (mevcut/pilot/roadmap) ve ticari durum", "yayin": "KAPILI"}, {"id": "A-006", "a": 0, "konu": "Desteklenen kullanım senaryosu ve kısıtlar", "yayin": "AÇIK"}, {"id": "A-007", "a": 0, "konu": "Lisanslama modeli: Standart/Pro, feature gate", "yayin": "AÇIK"}, {"id": "A-008", "a": 0, "konu": "Lisans/servis kesintisinde davranış", "yayin": "AÇIK"}, {"id": "A-009", "a": 0, "konu": "Sürüm uyumluluğu ve EOL politikası", "yayin": "AÇIK"}, {"id": "A-010", "a": 0, "konu": "Standart konfig vs müşteriye özel geliştirme", "yayin": "AÇIK"}, {"id": "A-011", "a": 0, "konu": "Ürün garantisi vs altyapıya bağlı performans", "yayin": "AÇIK"}, {"id": "A-012", "a": 1, "konu": "LeoSoft Client modülleri ve işlevleri", "yayin": "AÇIK"}, {"id": "A-013", "a": 1, "konu": "Management modülleri ve hazır bileşenler", "yayin": "AÇIK"}, {"id": "A-014", "a": 1, "konu": "LeoSoft Agent görev ve durum modeli", "yayin": "AÇIK"}, {"id": "A-015", "a": 1, "konu": "Hypervisor/broker/protokol köken matrisi", "yayin": "AÇIK"}, {"id": "A-016", "a": 1, "konu": "Endpoint OS (Letros) köken ve dağıtım", "yayin": "AÇIK"}, {"id": "A-017", "a": 1, "konu": "3. taraf servis kesintisinde degrade davranışı", "yayin": "KAPILI"}, {"id": "A-018", "a": 1, "konu": "Eski çalışan/dış katkılı kod izlenebilirliği", "yayin": "İÇ"}, {"id": "A-019", "a": 1, "konu": "Kaynak kodun kurum dışı ortamda tutulmaması", "yayin": "İÇ"}, {"id": "A-020", "a": 1, "konu": "Domain/registry/app store/code-signing sahipliği", "yayin": "İÇ"}, {"id": "A-021", "a": 1, "konu": "Binary provenance / SLSA / signed commit", "yayin": "KAPILI"}, {"id": "A-022", "a": 2, "konu": "Güncel C4 Context diyagramı ve doğrulama tarihi", "yayin": "KAPILI"}, {"id": "A-023", "a": 2, "konu": "Bileşen/port/protokol envanteri", "yayin": "KAPILI"}, {"id": "A-024", "a": 2, "konu": "İnternet/LAN/yönetim/DMZ güven sınırları", "yayin": "AÇIK"}, {"id": "A-025", "a": 2, "konu": "Control plane / veri trafiği ayrımı", "yayin": "AÇIK"}, {"id": "A-026", "a": 2, "konu": "Enrollment/login/update/device-lost sequence diyagramları", "yayin": "KAPILI"}, {"id": "A-027", "a": 2, "konu": "Tek/çok lokasyon referans mimari ve sunucu boyutlandırma", "yayin": "AÇIK"}, {"id": "A-028", "a": 2, "konu": "Kritik bileşenlerde SPOF listesi", "yayin": "KAPILI"}, {"id": "A-029", "a": 2, "konu": "Sunucu compute/memory/storage/network sorumluluğu", "yayin": "AÇIK"}, {"id": "A-030", "a": 2, "konu": "Ağ bölünmesinde davranış", "yayin": "KAPILI"}, {"id": "A-031", "a": 2, "konu": "Saat kayması/certificate/CA testleri", "yayin": "AÇIK"}, {"id": "A-032", "a": 2, "konu": "Endpoint önyükleyememe kurtarma yolu", "yayin": "AÇIK"}, {"id": "A-033", "a": 2, "konu": "Management kaybında aktif oturumların durumu", "yayin": "AÇIK"}, {"id": "A-034", "a": 2, "konu": "Veritabanı kesintisinde lisans/politika/oturum davranışı", "yayin": "AÇIK"}, {"id": "A-035", "a": 2, "konu": "Pilot ile production mimari farkı", "yayin": "İÇ"}, {"id": "A-036", "a": 3, "konu": "Desteklenen CPU mimarileri (x86-64/ARM)", "yayin": "AÇIK"}, {"id": "A-037", "a": 3, "konu": "Bootloader/kernel/rootfs imza zinciri", "yayin": "KAPILI"}, {"id": "A-038", "a": 3, "konu": "Live USB/BIOS parolası merkezi yönetim", "yayin": "KAPILI"}, {"id": "A-039", "a": 3, "konu": "Root filesystem read-only/immutable mi", "yayin": "KAPILI"}, {"id": "A-040", "a": 3, "konu": "Yazılabilir partition ve veri türleri", "yayin": "AÇIK"}, {"id": "A-041", "a": 3, "konu": "Swap/şifreleme/veri kalıntısı kontrolleri", "yayin": "AÇIK"}, {"id": "A-042", "a": 3, "konu": "Browser cache/clipboard/print spool işleyişi", "yayin": "AÇIK"}, {"id": "A-043", "a": 3, "konu": "RDP/VDI istemcisi kimlik bilgisi saklama", "yayin": "BEKLET"}, {"id": "A-044", "a": 3, "konu": "TLS private key konumu/koruması", "yayin": "BEKLET"}, {"id": "A-045", "a": 3, "konu": "Golden image üretim/imzalama/onay akışı", "yayin": "AÇIK"}, {"id": "A-046", "a": 3, "konu": "Gereksiz daemon/port/shell kaldırma", "yayin": "AÇIK"}, {"id": "A-047", "a": 3, "konu": "Yerel root/admin hesap yönetimi", "yayin": "AÇIK"}, {"id": "A-048", "a": 3, "konu": "Local privilege escalation / kiosk escape testleri", "yayin": "BEKLET"}, {"id": "A-049", "a": 3, "konu": "Proxy/PAC/captive portal/CA dağıtımı", "yayin": "AÇIK"}, {"id": "A-050", "a": 3, "konu": "Ekran kilidi/idle timeout/reconnect politikası", "yayin": "AÇIK"}, {"id": "A-051", "a": 3, "konu": "Clipboard/drive mapping/dosya transferi merkezi kapatma", "yayin": "AÇIK"}, {"id": "A-052", "a": 3, "konu": "Factory reset / secure wipe prosedürü", "yayin": "BEKLET"}, {"id": "A-053", "a": 3, "konu": "Kayıp/çalıntı cihazda erişim iptali yayılım süresi", "yayin": "AÇIK"}, {"id": "A-054", "a": 3, "konu": "Kernel/paket güvenlik yaması SLA'ları", "yayin": "AÇIK"}, {"id": "A-055", "a": 3, "konu": "Endpoint OS/kernel LTS ve EOL takvimi", "yayin": "AÇIK"}, {"id": "A-056", "a": 3, "konu": "Desteklenmeyen donanım algılama davranışı", "yayin": "BEKLET"}, {"id": "A-057", "a": 3, "konu": "Remote diagnostic bundle / crash dump içeriği", "yayin": "BEKLET"}, {"id": "A-058", "a": 4, "konu": "API envanteri / OpenAPI kontratı", "yayin": "KAPILI"}, {"id": "A-059", "a": 4, "konu": "RBAC least-privilege / custom scope", "yayin": "AÇIK"}, {"id": "A-060", "a": 4, "konu": "Privileged action MFA / step-up", "yayin": "İÇ"}, {"id": "A-061", "a": 4, "konu": "Admin session timeout / concurrent session", "yayin": "AÇIK"}, {"id": "A-062", "a": 4, "konu": "AD/LDAP senkronizasyonu", "yayin": "AÇIK"}, {"id": "A-063", "a": 4, "konu": "Policy precedence / inheritance / rollback", "yayin": "AÇIK"}, {"id": "A-064", "a": 4, "konu": "Device enrollment token / clone koruması", "yayin": "AÇIK"}, {"id": "A-065", "a": 4, "konu": "Envanter–fiziksel sayım mutabakatı", "yayin": "AÇIK"}, {"id": "A-066", "a": 4, "konu": "Remote command imza / replay koruması", "yayin": "AÇIK"}, {"id": "A-067", "a": 4, "konu": "DB migration versiyonlama / geri alma", "yayin": "AÇIK"}, {"id": "A-068", "a": 4, "konu": "Lisans / clock rollback / clone direnci", "yayin": "AÇIK"}, {"id": "A-069", "a": 4, "konu": "Toplu komut blast radius / staged rollout", "yayin": "AÇIK"}, {"id": "A-070", "a": 4, "konu": "Audit log kapsamı / bütünlük", "yayin": "AÇIK"}, {"id": "A-071", "a": 4, "konu": "API rate-limit / pagination / bulk sınırları", "yayin": "BEKLET"}, {"id": "A-072", "a": 4, "konu": "Uninstall/migration veri-config export", "yayin": "AÇIK"}, {"id": "A-073", "a": 5, "konu": "Resmî desteklenen platform listesi (AVD/Citrix vb.)", "yayin": "AÇIK"}, {"id": "A-074", "a": 5, "konu": "Connection broker discovery / workspace feed", "yayin": "AÇIK"}, {"id": "A-075", "a": 5, "konu": "Gateway/MFA/CA/SSO test matrisi", "yayin": "BEKLET"}, {"id": "A-076", "a": 5, "konu": "Çoklu monitör (sayı/çözünürlük/Hz)", "yayin": "BEKLET"}, {"id": "A-077", "a": 5, "konu": "Ağ toleransı (gecikme/paket kaybı/BW)", "yayin": "BEKLET"}, {"id": "A-078", "a": 5, "konu": "Session roaming / reconnect / branch kopması", "yayin": "AÇIK"}, {"id": "A-079", "a": 5, "konu": "Oturum başlatma p50/p95/p99", "yayin": "BEKLET"}, {"id": "A-080", "a": 5, "konu": "Persona benchmark (Office/ERP/çağrı merkezi)", "yayin": "BEKLET"}, {"id": "A-081", "a": 5, "konu": "Protokol CVE izleme / vendor uyum", "yayin": "AÇIK"}, {"id": "A-082", "a": 6, "konu": "Veri akışına bağlı threat model", "yayin": "BEKLET"}, {"id": "A-083", "a": 6, "konu": "Ürün güvenliği sahipliği / eskalasyon", "yayin": "İÇ"}, {"id": "A-084", "a": 6, "konu": "Secure-by-design / secure-by-default", "yayin": "AÇIK"}, {"id": "A-085", "a": 6, "konu": "TLS politikası / sertifika doğrulama", "yayin": "AÇIK"}, {"id": "A-086", "a": 6, "konu": "mTLS zorunlu olan/olmayan akışlar", "yayin": "AÇIK"}, {"id": "A-087", "a": 6, "konu": "Root/intermediate/device/server CA hiyerarşisi", "yayin": "BEKLET"}, {"id": "A-088", "a": 6, "konu": "Private key üretimi / export edilemezlik", "yayin": "BEKLET"}, {"id": "A-089", "a": 6, "konu": "Sertifika rotasyonu otomasyonu", "yayin": "BEKLET"}, {"id": "A-090", "a": 6, "konu": "Sertifika/erişim iptali, air-gapped davranış", "yayin": "AÇIK"}, {"id": "A-091", "a": 6, "konu": "Production signing görev ayrımı", "yayin": "BEKLET"}, {"id": "A-092", "a": 6, "konu": "Encryption-at-rest kapsamı", "yayin": "BEKLET"}, {"id": "A-093", "a": 6, "konu": "Secrets tarama (repo/imaj/CI/support bundle)", "yayin": "BEKLET"}, {"id": "A-094", "a": 6, "konu": "Parola hash algoritması / rehash", "yayin": "BEKLET"}, {"id": "A-095", "a": 6, "konu": "Brute force / credential stuffing testleri", "yayin": "BEKLET"}, {"id": "A-096", "a": 6, "konu": "Parola sıfırlama / hesap kurtarma", "yayin": "AÇIK"}, {"id": "A-097", "a": 6, "konu": "RBAC server-side enforcement / IDOR-BOLA", "yayin": "AÇIK"}, {"id": "A-098", "a": 6, "konu": "XSS/CSRF/SSRF/injection testleri", "yayin": "BEKLET"}, {"id": "A-099", "a": 6, "konu": "API/bilet scope-TTL-rotasyon-iptal", "yayin": "AÇIK"}, {"id": "A-100", "a": 6, "konu": "Cookie flags / CSP / CORS başlıkları", "yayin": "BEKLET"}, {"id": "A-101", "a": 6, "konu": "Endpoint compromise → lateral movement", "yayin": "AÇIK"}, {"id": "A-102", "a": 6, "konu": "Management plane compromise blast radius", "yayin": "AÇIK"}, {"id": "A-103", "a": 6, "konu": "Update server compromise tabletop/pentest", "yayin": "BEKLET"}, {"id": "A-104", "a": 6, "konu": "Vulnerability disclosure policy / SLA", "yayin": "BEKLET"}, {"id": "A-105", "a": 6, "konu": "Bağımsız pentest kapsamı/kapanış", "yayin": "BEKLET"}, {"id": "A-106", "a": 6, "konu": "Açık risk kabulü / yeniden değerlendirme", "yayin": "BEKLET"}, {"id": "A-107", "a": 7, "konu": "Repo envanteri (aktif/arka plan/legacy)", "yayin": "KAPILI"}, {"id": "A-108", "a": 7, "konu": "Branch protection / PR review zorunluluğu", "yayin": "BEKLET"}, {"id": "A-109", "a": 7, "konu": "Repo/CI erişim güncelliği, offboarding", "yayin": "KAPILI"}, {"id": "A-110", "a": 7, "konu": "Issue tracker ↔ commit/PR/release izlenebilirliği", "yayin": "BEKLET"}, {"id": "A-111", "a": 7, "konu": "Test katmanları (unit/integration/e2e) dağılımı", "yayin": "BEKLET"}, {"id": "A-112", "a": 7, "konu": "Test coverage (repo/modül, kritik akış)", "yayin": "KAPILI"}, {"id": "A-113", "a": 7, "konu": "Flaky test / release waiver süreci", "yayin": "KAPILI"}, {"id": "A-114", "a": 7, "konu": "SAST/SCA/secrets/IaC/container tarama kapısı", "yayin": "BEKLET"}, {"id": "A-115", "a": 7, "konu": "DAST/API güvenlik testi ortamı", "yayin": "KAPILI"}, {"id": "A-116", "a": 7, "konu": "Bağımlılık güncelleme botu", "yayin": "BEKLET"}, {"id": "A-117", "a": 7, "konu": "CI runner izolasyonu, build secret ayrımı", "yayin": "BEKLET"}, {"id": "A-118", "a": 7, "konu": "Dev/test/prod ortam ayrımı", "yayin": "KAPILI"}, {"id": "A-119", "a": 7, "konu": "Feature flag / kill switch politikası", "yayin": "BEKLET"}, {"id": "A-120", "a": 7, "konu": "Release note / rollback talimatı", "yayin": "BEKLET"}, {"id": "A-121", "a": 7, "konu": "Kod kalitesi/duplication/dead-code trendi", "yayin": "İÇ"}, {"id": "A-122", "a": 7, "konu": "24 ay commit/contributor/defect metrikleri", "yayin": "İÇ"}, {"id": "A-123", "a": 7, "konu": "Tek kişiye bağımlı modül / yedek", "yayin": "İÇ"}, {"id": "A-124", "a": 7, "konu": "Sıfırdan, dokümantasyonla build", "yayin": "KAPILI"}, {"id": "A-125", "a": 7, "konu": "Yüksek riskli modüllerde kod incelemesi", "yayin": "İÇ"}, {"id": "A-126", "a": 8, "konu": "SBOM üretim yöntemi ve kapsamı", "yayin": "BEKLET"}, {"id": "A-127", "a": 8, "konu": "SBOM üretim kaynağı, artefakta bağlanma", "yayin": "BEKLET"}, {"id": "A-128", "a": 8, "konu": "SBOM tabanlı zafiyet taraması sıklığı", "yayin": "BEKLET"}, {"id": "A-129", "a": 8, "konu": "Base OS zafiyet backlog / EOL bağımlılık", "yayin": "İÇ"}, {"id": "A-130", "a": 8, "konu": "3. taraf bileşen ve lisans envanteri", "yayin": "KAPILI"}, {"id": "A-131", "a": 8, "konu": "Paket kaynağı bütünlüğü, hash pinleme", "yayin": "BEKLET"}, {"id": "A-132", "a": 8, "konu": "Dependency confusion / typosquatting", "yayin": "BEKLET"}, {"id": "A-133", "a": 8, "konu": "3. taraf ikili güncelleme SLA'sı", "yayin": "BEKLET"}, {"id": "A-134", "a": 9, "konu": "Fabrika provisioning zinciri", "yayin": "BEKLET"}, {"id": "A-135", "a": 9, "konu": "Fabrika test hesabı temizliği", "yayin": "BEKLET"}, {"id": "A-136", "a": 9, "konu": "Update manifest imzalama, replay testi", "yayin": "BEKLET"}, {"id": "A-137", "a": 9, "konu": "Kesintili güncelleme, veri kaybı olmadan recovery", "yayin": "AÇIK"}, {"id": "A-138", "a": 9, "konu": "Canary/ring rollout, otomatik durdurma", "yayin": "KAPILI"}, {"id": "A-139", "a": 9, "konu": "Acil güvenlik güncellemesi SLA'sı", "yayin": "BEKLET"}, {"id": "A-140", "a": 9, "konu": "İmzalama anahtarı ele geçirme kurtarma", "yayin": "BEKLET"}, {"id": "A-141", "a": 9, "konu": "Release artifact/SBOM/imza tek kayıt", "yayin": "KAPILI"}, {"id": "A-142", "a": 10, "konu": "Sunucu boyutlandırma tablosu", "yayin": "AÇIK"}, {"id": "A-143", "a": 10, "konu": "Desteklenen OS/DB/sanallaştırma matrisi", "yayin": "AÇIK"}, {"id": "A-144", "a": 10, "konu": "Kurulum adımları (9/7/6/8 madde)", "yayin": "AÇIK"}, {"id": "A-145", "a": 10, "konu": "Kuruma özel ayar = merkezi config, kod yok", "yayin": "AÇIK"}, {"id": "A-146", "a": 10, "konu": "Token/bilet hash saklama, destek gizliliği", "yayin": "AÇIK"}, {"id": "A-147", "a": 10, "konu": "Kapalı ağ, minimum firewall kuralı", "yayin": "AÇIK"}, {"id": "A-148", "a": 10, "konu": "Varsayılan erişim yok, onaylı destek", "yayin": "AÇIK"}, {"id": "A-149", "a": 10, "konu": "Kurulum/güncelleme sonrası kontrol listeleri", "yayin": "KAPILI"}, {"id": "A-150", "a": 10, "konu": "Sürüm geçişi öncesi zorunlu kontroller", "yayin": "KAPILI"}, {"id": "A-151", "a": 10, "konu": "Müşteri çıkışı, erişim kaldırma", "yayin": "AÇIK"}, {"id": "A-152", "a": 11, "konu": "Doğrulanmış en yüksek endpoint sayısı", "yayin": "BEKLET"}, {"id": "A-153", "a": 11, "konu": "Yük test ortamının temsil gücü", "yayin": "BEKLET"}, {"id": "A-154", "a": 11, "konu": "Cihaz check-in / mesaj oranları", "yayin": "BEKLET"}, {"id": "A-155", "a": 11, "konu": "Policy propagation p50/p95/p99", "yayin": "BEKLET"}, {"id": "A-156", "a": 11, "konu": "10.000 cihaz güncelleme yük profili", "yayin": "BEKLET"}, {"id": "A-157", "a": 11, "konu": "Büyük filoda panel sorgu zaman aşımı", "yayin": "BEKLET"}, {"id": "A-158", "a": 11, "konu": "Veritabanı büyüme modeli", "yayin": "BEKLET"}, {"id": "A-159", "a": 11, "konu": "Kuyruk/önbellek/backpressure tasarımı", "yayin": "BEKLET"}, {"id": "A-160", "a": 11, "konu": "En önemli 3 performans darboğazı", "yayin": "İÇ"}, {"id": "A-161", "a": 12, "konu": "SLO/SLA hedefleri (uptime, destek)", "yayin": "BEKLET"}, {"id": "A-162", "a": 12, "konu": "Son 12/24 ay gerçek uptime verisi", "yayin": "BEKLET"}, {"id": "A-163", "a": 12, "konu": "Bileşen bazında FMEA / tekil hata noktası", "yayin": "KAPILI"}, {"id": "A-164", "a": 12, "konu": "HA: otomatik mi, manuel mi, RTO kanıtı", "yayin": "KAPILI"}, {"id": "A-165", "a": 12, "konu": "RPO veri türüne göre (uçta veri kaybı yok)", "yayin": "AÇIK"}, {"id": "A-166", "a": 12, "konu": "Yedek kapsamı, şifreleme, kimlik ayrımı", "yayin": "KAPILI"}, {"id": "A-167", "a": 12, "konu": "Son restore testi, sertifika/cihaz güveni tutarlılığı", "yayin": "BEKLET"}, {"id": "A-168", "a": 12, "konu": "PKI / imzalama altyapısı kaybı kurtarma", "yayin": "BEKLET"}, {"id": "A-169", "a": 12, "konu": "Runbook'un yazar dışı kişice uygulanması", "yayin": "BEKLET"}, {"id": "A-170", "a": 12, "konu": "DR ortamı üretimle eşleniklik, tatbikat bulgusu", "yayin": "BEKLET"}, {"id": "A-171", "a": 12, "konu": "Dar dış bağımlılık, üretici bulut kesintisi etkisiz", "yayin": "AÇIK"}, {"id": "A-172", "a": 12, "konu": "Kilit kişi bağımlılığı, DR tatbikatı", "yayin": "İÇ"}, {"id": "A-173", "a": 13, "konu": "İzleme paneli (cihaz/kullanıcı/VM/proxy)", "yayin": "AÇIK"}, {"id": "A-174", "a": 13, "konu": "Alert severity, on-call, eskalasyon matrisi", "yayin": "BEKLET"}, {"id": "A-175", "a": 13, "konu": "Son olaylar, kök neden, postmortem", "yayin": "İÇ"}, {"id": "A-176", "a": 13, "konu": "MTTD/MTTA/MTTR/reopen oranı", "yayin": "BEKLET"}, {"id": "A-177", "a": 13, "konu": "Log hatları ve zorunlu alanlar", "yayin": "KAPILI"}, {"id": "A-178", "a": 13, "konu": "Loglarda secret/token yok, hash saklama", "yayin": "AÇIK"}, {"id": "A-179", "a": 13, "konu": "SIEM export, kapalı ağ raporlama", "yayin": "AÇIK"}, {"id": "A-180", "a": 13, "konu": "Destek talebi ↔ ürün geliştirme bağlantısı", "yayin": "İÇ"}, {"id": "A-181", "a": 13, "konu": "Uzaktan destek onay/süre/hedef gizleme", "yayin": "AÇIK"}, {"id": "A-182", "a": 13, "konu": "Olay bildirimi/regülatör runbook", "yayin": "BEKLET"}, {"id": "A-183", "a": 13, "konu": "Yıllık tabletop/teknik tatbikat", "yayin": "BEKLET"}, {"id": "A-184", "a": 14, "konu": "Veri envanteri (bileşen bazında)", "yayin": "KAPILI"}, {"id": "A-185", "a": 14, "konu": "LETRON'a telemetri yok, kapalı ağ", "yayin": "AÇIK"}, {"id": "A-186", "a": 14, "konu": "Data flow diagram, sınır ötesi aktarım yok", "yayin": "AÇIK"}, {"id": "A-187", "a": 14, "konu": "Silme işlemleri, rol bazlı yetki", "yayin": "KAPILI"}, {"id": "A-188", "a": 14, "konu": "Destek personeli erişim sınırı, rol modeli", "yayin": "AÇIK"}, {"id": "A-189", "a": 14, "konu": "\"Uçta veri yok\" forensic doğrulaması", "yayin": "BEKLET"}, {"id": "A-190", "a": 15, "konu": "HBOM/EBOM/MBOM revizyon kontrolü", "yayin": "İÇ"}, {"id": "A-191", "a": 15, "konu": "AVL/counterfeit önleme", "yayin": "İÇ"}, {"id": "A-192", "a": 15, "konu": "Tek kaynaklı bileşen/stok/ikame", "yayin": "İÇ"}, {"id": "A-193", "a": 15, "konu": "PCN/EOL değişiklik kontrolü", "yayin": "İÇ"}, {"id": "A-194", "a": 15, "konu": "ODM/OEM üretici, lokasyon", "yayin": "İÇ"}, {"id": "A-195", "a": 15, "konu": "İkinci üreticiye transfer hazırlığı", "yayin": "İÇ"}, {"id": "A-196", "a": 15, "konu": "Golden sample/QC planı", "yayin": "İÇ"}, {"id": "A-197", "a": 15, "konu": "Serial/MAC/sertifika tekillik kontrolü", "yayin": "AÇIK"}, {"id": "A-198", "a": 15, "konu": "SSD sanitize/secure erase", "yayin": "BEKLET"}, {"id": "A-199", "a": 15, "konu": "Çevresel/mekanik dayanım testleri", "yayin": "BEKLET"}, {"id": "A-200", "a": 15, "konu": "EMC/LVD/RoHS/CE/RED sertifikasyonu", "yayin": "BEKLET"}, {"id": "A-201", "a": 15, "konu": "MTBF/AFR/DOA/RMA verileri", "yayin": "BEKLET"}, {"id": "A-202", "a": 15, "konu": "Saha değişimi/yedek parça/EOL desteği", "yayin": "BEKLET"}, {"id": "A-203", "a": 15, "konu": "Üreticinin tasarım/firmware/anahtar erişimi", "yayin": "İÇ"}, {"id": "A-204", "a": 16, "konu": "Requirement-to-test traceability matrix", "yayin": "İÇ"}, {"id": "A-205", "a": 16, "konu": "Desteklenen donanım/VDI/peripheral matrisi", "yayin": "AÇIK"}, {"id": "A-206", "a": 16, "konu": "Test katmanı sahiplerinin ayrımı", "yayin": "İÇ"}, {"id": "A-207", "a": 16, "konu": "Test data/account yönetimi", "yayin": "KAPILI"}, {"id": "A-208", "a": 16, "konu": "Release candidate exact binary testi", "yayin": "İÇ"}, {"id": "A-209", "a": 16, "konu": "Açık P0/P1/P2 defect listesi", "yayin": "KAPILI"}, {"id": "A-210", "a": 16, "konu": "Reopen/regression defect trendleri", "yayin": "KAPILI"}, {"id": "A-211", "a": 16, "konu": "Endpoint image hardening benchmark", "yayin": "BEKLET"}, {"id": "A-212", "a": 16, "konu": "Update/signing/provisioning adversarial test", "yayin": "KAPILI"}, {"id": "A-213", "a": 16, "konu": "Benchmark/dataset yeniden üretilebilirliği", "yayin": "İÇ"}, {"id": "A-214", "a": 17, "konu": "Pilot künyesi, LOI, üretim evresi", "yayin": "AÇIK"}, {"id": "A-215", "a": 17, "konu": "İmzalı kabul kriterleri (8 maddelik liste)", "yayin": "AÇIK"}, {"id": "A-216", "a": 17, "konu": "Uptime/login time/memnuniyet ham verisi", "yayin": "BEKLET"}, {"id": "A-217", "a": 18, "konu": "Mühendislik org şeması, GETEK geçmişi", "yayin": "İÇ"}, {"id": "A-218", "a": 18, "konu": "Kritik bileşen birincil/ikincil sahiplik", "yayin": "İÇ"}, {"id": "A-219", "a": 18, "konu": "Yetkinlik matrisi (OS/backend/QA/vb.)", "yayin": "İÇ"}, {"id": "A-220", "a": 18, "konu": "Ekip kapasitesi vs. satış hedefi (30k/150k cihaz)", "yayin": "İÇ"}, {"id": "A-221", "a": 18, "konu": "On-call yükünün geliştirme kapasitesine etkisi", "yayin": "İÇ"}, {"id": "A-222", "a": 18, "konu": "QA bağımsız release veto yetkisi", "yayin": "İÇ"}, {"id": "A-223", "a": 19, "konu": "24 aylık roadmap iş kolları", "yayin": "İÇ"}, {"id": "A-224", "a": 19, "konu": "Teknik borç kaydı (bilet taşıma, proxy-VM, oturum modeli)", "yayin": "İÇ"}, {"id": "A-225", "a": 19, "konu": "Ölçek öncesi zorunlu refactor, sunucu boyutlandırma açığı", "yayin": "İÇ"}, {"id": "A-226", "a": 19, "konu": "Standart bileşenlerle ikame edilebilirlik", "yayin": "AÇIK"}]};
+const TR = [
+ {
+  "id": "A-001",
+  "alan": "Ürün Tanımı ve Teknik Sınırlar",
+  "baslik": "Ürünün resmi teknik tanımı ve bileşen katmanları arasındaki sorumluluk sınırları nedir?",
+  "ozet": "Katman sınırları belirsizse kurulum sonrası sorumluluk ve destek anlaşmazlıkları çıkar."
+ },
+ {
+  "id": "A-002",
+  "alan": "Ürün Tanımı ve Teknik Sınırlar",
+  "baslik": "Ürünün özgün geliştirilen çekirdeği ile üçüncü taraf bileşenleri nasıl ayrışıyor?",
+  "ozet": "Hangi kısmın tedarikçiye özgü, hangi kısmın hazır bileşen olduğu bilinmezse bağımlılık riski gizli kalır."
+ },
+ {
+  "id": "A-003",
+  "alan": "Ürün Tanımı ve Teknik Sınırlar",
+  "baslik": "Kurulum modeline göre tedarikçi, müşteri ve üçüncü taraf arasındaki sorumluluk paylaşımı nedir?",
+  "ozet": "Maliyet ve sorumluluk paylaşımı net değilse teklif sonrası saklı maliyetler ortaya çıkabilir."
+ },
+ {
+  "id": "A-004",
+  "alan": "Ürün Tanımı ve Teknik Sınırlar",
+  "baslik": "Ürün ailesindeki farklı model ve hizmet paketlerinin güncel adlandırma ve kapsamı nedir?",
+  "ozet": "Ürün/hizmet adları netleşmezse teklif kıyaslaması ve sözleşme kapsamı karışır."
+ },
+ {
+  "id": "A-005",
+  "alan": "Ürün Tanımı ve Teknik Sınırlar",
+  "baslik": "Sunumlardaki her teknik özellik mevcut, pilot veya yol haritası olarak nasıl sınıflandırılıyor?",
+  "ozet": "Pazarlamada öne çıkan özelliğin gerçek olgunluk seviyesi görülmezse teslim beklentisi karşılanmaz."
+ },
+ {
+  "id": "A-006",
+  "alan": "Ürün Tanımı ve Teknik Sınırlar",
+  "baslik": "Resmi olarak desteklenen ve bilinçli olarak desteklenmeyen kullanım senaryoları nelerdir?",
+  "ozet": "Kapsam dışı senaryo net tanımlanmazsa kurum kendi kullanım biçiminin desteklenip desteklenmediğini bilmez."
+ },
+ {
+  "id": "A-007",
+  "alan": "Ürün Tanımı ve Teknik Sınırlar",
+  "baslik": "Ürün lisanslaması hangi birim (kullanıcı, cihaz, sunucu, kiracı) üzerinden uygulanıyor?",
+  "ozet": "Lisans birimi belirsizse bütçe planlaması ve ölçeklenme maliyeti öngörülemez."
+ },
+ {
+  "id": "A-008",
+  "alan": "Ürün Tanımı ve Teknik Sınırlar",
+  "baslik": "Lisans sunucusuna erişilemediğinde uç nokta ve oturumların davranışı nedir?",
+  "ozet": "Lisans kesintisinin iş sürekliliğini durdurup durdurmadığı bilinmezse operasyonel risk gizli kalır."
+ },
+ {
+  "id": "A-009",
+  "alan": "Ürün Tanımı ve Teknik Sınırlar",
+  "baslik": "Bileşenler arası sürüm uyumluluğu ve sürüm sonu (EOL) bildirim süreci nasıl işliyor?",
+  "ozet": "Sürüm sonu politikası bilinmezse kurum plansız zorunlu yükseltmelerle karşılaşır."
+ },
+ {
+  "id": "A-010",
+  "alan": "Ürün Tanımı ve Teknik Sınırlar",
+  "baslik": "Standart ürün ile müşteriye özel geliştirme arasındaki bakım ve sürüm ilişkisi nedir?",
+  "ozet": "Özel geliştirme ana sürümden ayrışırsa güncelleme ve güvenlik yaması alma riski artar."
+ },
+ {
+  "id": "A-011",
+  "alan": "Ürün Tanımı ve Teknik Sınırlar",
+  "baslik": "Tedarikçinin garanti ettiği sonuçlar ile müşteri altyapısına bağlı sonuçlar nasıl ayrışıyor?",
+  "ozet": "Performans ve güvenlik sorumluluğu ayrışmazsa sorun anında taraflar birbirini işaret eder."
+ },
+ {
+  "id": "A-012",
+  "alan": "Teknoloji Sahipliği ve Bileşen Kökeni",
+  "baslik": "İstemci yazılımındaki tedarikçiye ait modüller ve kod deposu eşleşmesi nedir?",
+  "ozet": "Kod kökeni izlenemezse hangi modülün kurumun asıl güvendiği bileşen olduğu belirsizleşir."
+ },
+ {
+  "id": "A-013",
+  "alan": "Teknoloji Sahipliği ve Bileşen Kökeni",
+  "baslik": "Yönetim platformunda kullanılan hazır çerçeve ve ticari bileşenler hangileridir?",
+  "ozet": "Hazır bileşenlerin sürüm ve lisans durumu bilinmezse güvenlik açığı takibi eksik kalır."
+ },
+ {
+  "id": "A-014",
+  "alan": "Teknoloji Sahipliği ve Bileşen Kökeni",
+  "baslik": "Cihaz ajanı hangi konumlarda çalışıyor ve her konumdaki sorumluluğu nedir?",
+  "ozet": "Ajanın çalışma noktaları bilinmezse güvenlik denetimi kapsamı eksik kalır."
+ },
+ {
+  "id": "A-015",
+  "alan": "Teknoloji Sahipliği ve Bileşen Kökeni",
+  "baslik": "Sanallaştırma broker ve gateway bileşenlerinin üretici ve lisans durumu nedir?",
+  "ozet": "Kritik altyapı bileşenlerinin kime ait olduğu bilinmezse destek ve lisans sorumluluğu karışır."
+ },
+ {
+  "id": "A-016",
+  "alan": "Teknoloji Sahipliği ve Bileşen Kökeni",
+  "baslik": "Uç nokta işletim sisteminin taban dağıtımı, çekirdek sürümü ve güncelleme stratejisi nedir?",
+  "ozet": "Taban işletim sistemi bilinmezse güvenlik açığı ve yama takibi bağımsız doğrulanamaz."
+ },
+ {
+  "id": "A-017",
+  "alan": "Teknoloji Sahipliği ve Bileşen Kökeni",
+  "baslik": "Kritik bir üçüncü taraf servis devre dışı kaldığında ürün nasıl çalışmaya devam ediyor?",
+  "ozet": "Yedek/ikame planı yoksa dış servis kesintisi doğrudan iş kesintisine dönüşür."
+ },
+ {
+  "id": "A-018",
+  "alan": "Teknoloji Sahipliği ve Bileşen Kökeni",
+  "baslik": "Kod tabanına dış katkı sağlayan kişilerin kapsamı ve izlenebilirliği nasıl sağlanıyor?",
+  "ozet": "Yetkisiz veya kayıt dışı kod katkısı fikri mülkiyet ve güvenlik riski oluşturur."
+ },
+ {
+  "id": "A-019",
+  "alan": "Teknoloji Sahipliği ve Bileşen Kökeni",
+  "baslik": "Kaynak kodun kişisel hesap veya cihazlarda tutulmasını önleyen kontroller nelerdir?",
+  "ozet": "Kod kurumsal sınırlar dışına çıkarsa sızıntı ve kaynak kaybı riski denetlenemez hale gelir."
+ },
+ {
+  "id": "A-020",
+  "alan": "Teknoloji Sahipliği ve Bileşen Kökeni",
+  "baslik": "Alan adı, paket deposu ve kod imzalama hesapları kurumsal olarak mı sahiplenilmiş?",
+  "ozet": "Kritik hesaplar kişisel sahiplikteyse tedarikçi ayrılığında erişim kaybı riski oluşur."
+ },
+ {
+  "id": "A-021",
+  "alan": "Teknoloji Sahipliği ve Bileşen Kökeni",
+  "baslik": "Üretimdeki yazılımın kaynak kod ve derleme sürecine kadar izlenebilirliği nasıl kanıtlanıyor?",
+  "ozet": "Yazılımın kaynağı kanıtlanamazsa tedarik zincirine sızan değişiklik fark edilmeyebilir."
+ },
+ {
+  "id": "A-022",
+  "alan": "Uçtan Uca Sistem Mimarisi",
+  "baslik": "Sistemin bileşen seviyesinde güncel mimari diyagramı ve son doğrulama tarihi nedir?",
+  "ozet": "Güncel mimari şeması yoksa güvenlik ve risk değerlendirmesi eksik bilgiyle yapılır."
+ },
+ {
+  "id": "A-023",
+  "alan": "Uçtan Uca Sistem Mimarisi",
+  "baslik": "Her bileşenin konum, protokol, port ve işlenen veri türünü gösteren envanteri var mı?",
+  "ozet": "Ağ ve veri akışı envanteri yoksa güvenlik duvarı ve izleme kuralları eksik kalır."
+ },
+ {
+  "id": "A-024",
+  "alan": "Uçtan Uca Sistem Mimarisi",
+  "baslik": "İnternet, kurum ağı ve uç nokta arasındaki güven sınırlarını gösteren ağ mimarisi nedir?",
+  "ozet": "Güven sınırları belirsizse ağ bölümleme ve saldırı yüzeyi değerlendirmesi yapılamaz."
+ },
+ {
+  "id": "A-025",
+  "alan": "Uçtan Uca Sistem Mimarisi",
+  "baslik": "Yönetim trafiği ile kullanıcı/veri trafiği birbirinden nasıl ayrışıyor?",
+  "ozet": "Yönetim ve veri trafiği ayrışmazsa bir yönetim ihlali doğrudan kullanıcı verisini tehdit eder."
+ },
+ {
+  "id": "A-026",
+  "alan": "Uçtan Uca Sistem Mimarisi",
+  "baslik": "Cihaz kayıt, oturum açma ve güncelleme gibi kritik akışların sıra diyagramları mevcut mu?",
+  "ozet": "Akış diyagramı yoksa olay anında hangi adımın hatalı çalıştığı hızlı tespit edilemez."
+ },
+ {
+  "id": "A-027",
+  "alan": "Uçtan Uca Sistem Mimarisi",
+  "baslik": "Tek ve çok lokasyonlu kurulumlar için desteklenen referans mimari nedir?",
+  "ozet": "Referans mimari yoksa kurumun kendi topolojisine uygunluk kanıtlanamadan kurulum yapılır."
+ },
+ {
+  "id": "A-028",
+  "alan": "Uçtan Uca Sistem Mimarisi",
+  "baslik": "Kritik bileşenlerde tek hata noktası (single point of failure) analizi yapıldı mı?",
+  "ozet": "Tek hata noktası bilinmezse küçük bir arıza tüm sistemi durdurabilir."
+ },
+ {
+  "id": "A-029",
+  "alan": "Uçtan Uca Sistem Mimarisi",
+  "baslik": "Sunucu tarafı masaüstü altyapısının kapasite tasarımı ve işletim sorumluluğu kimde?",
+  "ozet": "Kapasite sorumluluğu belirsizse performans sorununda taraflar sorumluluk üstlenmez."
+ },
+ {
+  "id": "A-030",
+  "alan": "Uçtan Uca Sistem Mimarisi",
+  "baslik": "Ağ bölünmesi (network partition) durumunda cihaz ve oturumların beklenen davranışı nedir?",
+  "ozet": "Bölünme senaryosu test edilmemişse şube kesintisinde veri kaybı riski öngörülemez."
+ },
+ {
+  "id": "A-031",
+  "alan": "Uçtan Uca Sistem Mimarisi",
+  "baslik": "Saat kayması ve sertifika süresi dolması senaryoları için hangi testler yapıldı?",
+  "ozet": "Saat manipülasyonu kontrol edilmezse lisans ve sertifika denetimleri atlatılabilir."
+ },
+ {
+  "id": "A-032",
+  "alan": "Uçtan Uca Sistem Mimarisi",
+  "baslik": "Cihaz önyükleme yapamadığında güvenli kurtarma yolu ve kimlik koruması nasıl sağlanıyor?",
+  "ozet": "Kurtarma yolu güvenli değilse arızalı cihaz üzerinden veri veya kimlik sızabilir."
+ },
+ {
+  "id": "A-033",
+  "alan": "Uçtan Uca Sistem Mimarisi",
+  "baslik": "Yönetim platformu devre dışı kaldığında açık oturumlar çalışmaya devam ediyor mu?",
+  "ozet": "Yönetim kaybı oturumları durdurursa günlük iş yönetim altyapısına bağımlı hale gelir."
+ },
+ {
+  "id": "A-034",
+  "alan": "Uçtan Uca Sistem Mimarisi",
+  "baslik": "Veritabanına erişilemediğinde lisans, politika ve oturum işlevleri nasıl davranıyor?",
+  "ozet": "Veritabanı bağımlılığı bilinmezse tek bir bileşen arızası geniş kapsamlı kesintiye yol açabilir."
+ },
+ {
+  "id": "A-035",
+  "alan": "Uçtan Uca Sistem Mimarisi",
+  "baslik": "Pilot kurulumdaki mimari, üretim ortamı mimarisinden hangi noktalarda farklılaşıyor?",
+  "ozet": "Pilot ve üretim mimarisi farkı bilinmezse pilotta görülmeyen sorunlar canlıda ortaya çıkar."
+ },
+ {
+  "id": "A-036",
+  "alan": "Endpoint OS ve Cihaz Güvenliği",
+  "baslik": "Desteklenen işlemci mimarileri ve her biri için gereken asgari komut kümesi nedir?",
+  "ozet": "Donanım uyumluluğu netleşmezse mevcut cihaz filosunun desteklenip desteklenmediği bilinmez."
+ },
+ {
+  "id": "A-037",
+  "alan": "Endpoint OS ve Cihaz Güvenliği",
+  "baslik": "Önyükleme zincirinde imza doğrulaması (Secure Boot) hangi seviyede uygulanıyor?",
+  "ozet": "İmza zinciri eksikse cihaz açılışında kötü amaçlı yazılım tespit edilmeden çalışabilir."
+ },
+ {
+  "id": "A-038",
+  "alan": "Endpoint OS ve Cihaz Güvenliği",
+  "baslik": "Kullanıcı harici bir ortamdan önyükleyerek veriye erişebilir mi, bu nasıl önleniyor?",
+  "ozet": "Harici önyükleme engellenmezse fiziksel erişimi olan kişi cihaz korumasını aşabilir."
+ },
+ {
+  "id": "A-039",
+  "alan": "Endpoint OS ve Cihaz Güvenliği",
+  "baslik": "Cihazın kök dosya sistemi salt okunur ve değiştirilemez (immutable) mi?",
+  "ozet": "Kök dosya sistemi değiştirilebilirse kalıcı kötü amaçlı değişiklik riski oluşur."
+ },
+ {
+  "id": "A-040",
+  "alan": "Endpoint OS ve Cihaz Güvenliği",
+  "baslik": "Cihazdaki yazılabilir alanlarda hangi veriler tutuluyor ve nasıl temizleniyor?",
+  "ozet": "Yazılabilir alan denetlenmezse oturum sonrası veri kalıntısı sonraki kullanıcıya açık kalabilir."
+ },
+ {
+  "id": "A-041",
+  "alan": "Endpoint OS ve Cihaz Güvenliği",
+  "baslik": "Takas (swap) alanı şifreleniyor mu ve hassas veri kalıntısı nasıl önleniyor?",
+  "ozet": "Şifrelenmemiş takas alanı bellekteki hassas verinin diske sızmasına yol açabilir."
+ },
+ {
+  "id": "A-042",
+  "alan": "Endpoint OS ve Cihaz Güvenliği",
+  "baslik": "Tarayıcı geçmişi, pano ve yazdırma verileri oturum sonrasında nasıl işleniyor?",
+  "ozet": "Oturum artıkları temizlenmezse paylaşımlı cihazda bir kullanıcının verisi diğerine görünür olabilir."
+ },
+ {
+  "id": "A-043",
+  "alan": "Endpoint OS ve Cihaz Güvenliği",
+  "baslik": "Uzak masaüstü istemcisi kimlik bilgisi veya bağlantı izini cihazda saklıyor mu?",
+  "ozet": "İstemci tarafında iz kalırsa cihaza fiziksel erişen kişi önceki oturuma sızabilir."
+ },
+ {
+  "id": "A-044",
+  "alan": "Endpoint OS ve Cihaz Güvenliği",
+  "baslik": "TLS özel anahtarı cihaz üzerinde nasıl korunuyor ve dışa aktarılabiliyor mu?",
+  "ozet": "Özel anahtar korumasız veya taşınabilirse cihaz ele geçirilince kimlik taklidi mümkün olur."
+ },
+ {
+  "id": "A-045",
+  "alan": "Endpoint OS ve Cihaz Güvenliği",
+  "baslik": "Referans (golden) imaj üretimi, imzalanması ve sahadaki imajla hash uyumu nasıl doğrulanıyor?",
+  "ozet": "İmaj bütünlüğü doğrulanmazsa sahadaki cihazların onaylı yazılımı çalıştırdığı garanti edilemez."
+ },
+ {
+  "id": "A-046",
+  "alan": "Endpoint OS ve Cihaz Güvenliği",
+  "baslik": "Gereksiz servis, kabuk (shell) ve derleyici araçları cihazdan kaldırıldı mı?",
+  "ozet": "Gereksiz araçlar bırakılırsa saldırı yüzeyi ve kötüye kullanım imkânı artar."
+ },
+ {
+  "id": "A-047",
+  "alan": "Endpoint OS ve Cihaz Güvenliği",
+  "baslik": "Yerel yönetici hesaplarının açılması ve acil durum erişimi nasıl yönetiliyor?",
+  "ozet": "Yerel yönetici erişimi denetimsizse cihaz üzerinde yetkisiz kalıcı kontrol elde edilebilir."
+ },
+ {
+  "id": "A-048",
+  "alan": "Endpoint OS ve Cihaz Güvenliği",
+  "baslik": "Kiosk modundan kabuk veya masaüstüne çıkış (escape) engelleyen testler yapıldı mı?",
+  "ozet": "Kiosk sınırlaması aşılabilirse kısıtlı cihaz tam yetkili bir bilgisayara dönüşebilir."
+ },
+ {
+  "id": "A-049",
+  "alan": "Endpoint OS ve Cihaz Güvenliği",
+  "baslik": "Kurumsal proxy, captive portal ve sertifika dağıtımı hangi yöntemlerle destekleniyor?",
+  "ozet": "Kurumsal ağ entegrasyonu desteklenmezse cihaz mevcut ağ politikalarına uyum sağlayamaz."
+ },
+ {
+  "id": "A-050",
+  "alan": "Endpoint OS ve Cihaz Güvenliği",
+  "baslik": "Ekran kilidi ve oturum zaman aşımı politikaları merkezi olarak zorunlu kılınabiliyor mu?",
+  "ozet": "Zaman aşımı merkezi uygulanamazsa kilitsiz bırakılan cihazlar yetkisiz erişime açık kalır."
+ },
+ {
+  "id": "A-051",
+  "alan": "Endpoint OS ve Cihaz Güvenliği",
+  "baslik": "Pano, sürücü eşleme ve dosya transferi merkezi olarak ve yönlü şekilde kapatılabiliyor mu?",
+  "ozet": "Veri sızıntısı kanalları granüler kapatılamazsa yerel depolamaya kontrolsüz veri çıkışı olur."
+ },
+ {
+  "id": "A-052",
+  "alan": "Endpoint OS ve Cihaz Güvenliği",
+  "baslik": "Fabrika sıfırlaması sonrası cihaz kimliği nasıl yenileniyor ve güvenli silme yapılıyor mu?",
+  "ozet": "Güvenli silme prosedürü yoksa devre dışı bırakılan cihazda veri kalıntısı kalabilir."
+ },
+ {
+  "id": "A-053",
+  "alan": "Endpoint OS ve Cihaz Güvenliği",
+  "baslik": "Kayıp veya çalıntı bir cihazın erişim iptali ne kadar sürede tüm sisteme yayılıyor?",
+  "ozet": "İptal yayılım süresi ölçülmezse kaybolan cihaz üzerinden erişim penceresi ne kadar açık kalır bilinmez."
+ },
+ {
+  "id": "A-054",
+  "alan": "Endpoint OS ve Cihaz Güvenliği",
+  "baslik": "Kritik paketlerdeki güvenlik açıkları için önem derecesine göre yama süreleri nedir?",
+  "ozet": "Yama süresi taahhüt edilmezse bilinen bir açık uzun süre istismara açık kalabilir."
+ },
+ {
+  "id": "A-055",
+  "alan": "Endpoint OS ve Cihaz Güvenliği",
+  "baslik": "Uç nokta işletim sistemi ve temel paketlerin uzun destek (LTS) ve sürüm sonu takvimi nedir?",
+  "ozet": "Sürüm sonu takvimi bilinmezse desteği kesilen bir bileşenle üretimde kalma riski oluşur."
+ },
+ {
+  "id": "A-056",
+  "alan": "Endpoint OS ve Cihaz Güvenliği",
+  "baslik": "Desteklenmeyen donanım algılandığında sistem kurulumu engelliyor mu, uyarıyor mu?",
+  "ozet": "Denetimsiz kurulum, doğrulanmamış donanımda beklenmeyen güvenlik açıklarına yol açabilir."
+ },
+ {
+  "id": "A-057",
+  "alan": "Endpoint OS ve Cihaz Güvenliği",
+  "baslik": "Uzaktan tanılama paketi hangi verileri topluyor ve müşteri onayı gerektiriyor mu?",
+  "ozet": "Tanılama verisi onaysız toplanırsa veya kimlik bilgisi içerirse mahremiyet ihlali oluşabilir."
+ },
+ {
+  "id": "A-058",
+  "alan": "Merkezi Yönetim Platformu",
+  "baslik": "Yönetim platformunun API envanteri ve arayüz sözleşmesi (OpenAPI) dokümante mi?",
+  "ozet": "API dokümantasyonu eksikse entegrasyon ve güvenlik incelemesi tahmine dayalı yapılır."
+ },
+ {
+  "id": "A-059",
+  "alan": "Merkezi Yönetim Platformu",
+  "baslik": "Rol tabanlı erişim en az yetki ilkesine göre mi tasarlanmış, özel roller destekleniyor mu?",
+  "ozet": "Rol yapısı esnek ve dar kapsamlı değilse yöneticiler ihtiyacından fazla yetkiyle çalışır."
+ },
+ {
+  "id": "A-060",
+  "alan": "Merkezi Yönetim Platformu",
+  "baslik": "Ayrıcalıklı işlemler için çok faktörlü kimlik doğrulama yöneticilere zorunlu mu?",
+  "ozet": "Yönetici hesabında zorunlu MFA yoksa tek bir parola sızıntısı tüm platformu tehlikeye atar."
+ },
+ {
+  "id": "A-061",
+  "alan": "Merkezi Yönetim Platformu",
+  "baslik": "Yönetici oturumları için zaman aşımı ve eşzamanlı oturum sınırlaması var mı?",
+  "ozet": "Oturum kontrolü yoksa terk edilmiş bir yönetici oturumu ele geçirilebilir."
+ },
+ {
+  "id": "A-062",
+  "alan": "Merkezi Yönetim Platformu",
+  "baslik": "Kullanıcı dizini senkronizasyonunda silme ve yeniden adlandırma olayları nasıl işleniyor?",
+  "ozet": "Dizin senkronizasyonu hatalı çalışırsa işten ayrılan kullanıcının erişimi geç kapanabilir."
+ },
+ {
+  "id": "A-063",
+  "alan": "Merkezi Yönetim Platformu",
+  "baslik": "Politika önceliği, kalıtımı ve çakışma çözümü kuralları dokümante edilmiş mi?",
+  "ozet": "Politika çakışması belirsizse hangi kuralın uygulandığı öngörülemez, denetim zorlaşır."
+ },
+ {
+  "id": "A-064",
+  "alan": "Merkezi Yönetim Platformu",
+  "baslik": "Cihaz kayıt jetonu tek kullanımlık mı ve sahte/kopya cihaz kaydı nasıl engelleniyor?",
+  "ozet": "Kayıt jetonu kötüye kullanılabilirse yetkisiz cihazlar sisteme sızabilir."
+ },
+ {
+  "id": "A-065",
+  "alan": "Merkezi Yönetim Platformu",
+  "baslik": "Merkezi cihaz envanteri fiziksel sayımla ne sıklıkla ve nasıl mutabık kılınıyor?",
+  "ozet": "Envanter mutabakatı yapılmazsa kayıp veya kayıt dışı cihazlar fark edilmeyebilir."
+ },
+ {
+  "id": "A-066",
+  "alan": "Merkezi Yönetim Platformu",
+  "baslik": "Uzaktan gönderilen yeniden başlatma ve güncelleme komutları için yetkilendirme nasıl yapılıyor?",
+  "ozet": "Uzaktan komutlar doğrulanmazsa sahte bir komutla filodaki cihazlar kötüye kullanılabilir."
+ },
+ {
+  "id": "A-067",
+  "alan": "Merkezi Yönetim Platformu",
+  "baslik": "Veritabanı şema değişiklikleri sürümlü, geriye uyumlu ve geri alınabilir mi?",
+  "ozet": "Geri alınamayan şema değişikliği başarısız bir yükseltmede veri kaybına yol açabilir."
+ },
+ {
+  "id": "A-068",
+  "alan": "Merkezi Yönetim Platformu",
+  "baslik": "Lisans yönetimi saat geri alma, kopyalama ve API manipülasyonuna karşı dayanıklı mı?",
+  "ozet": "Lisans kontrolü kolayca atlatılabilirse ticari ve güvenlik denetimi anlamını kaybeder."
+ },
+ {
+  "id": "A-069",
+  "alan": "Merkezi Yönetim Platformu",
+  "baslik": "Toplu komutların hatalı sonuçlarının tüm filoya yayılmasını sınırlayan kontroller nelerdir?",
+  "ozet": "Kademeli dağıtım yoksa hatalı bir komut tüm cihaz filosunu aynı anda etkileyebilir."
+ },
+ {
+  "id": "A-070",
+  "alan": "Merkezi Yönetim Platformu",
+  "baslik": "Denetim kayıtları yönetici tarafından değiştirilemez ve silinemez şekilde korunuyor mu?",
+  "ozet": "Değiştirilebilir denetim kaydı, kötüye kullanan bir yöneticinin izini örtmesine imkân verir."
+ },
+ {
+  "id": "A-071",
+  "alan": "Merkezi Yönetim Platformu",
+  "baslik": "API istek sınırlamaları (rate limit) hem oturum açma hem toplu işlemlerde uygulanıyor mu?",
+  "ozet": "İstek sınırlaması eksikse kaba kuvvet denemeleri veya aşırı yük platformu felç edebilir."
+ },
+ {
+  "id": "A-072",
+  "alan": "Merkezi Yönetim Platformu",
+  "baslik": "Platformdan çıkışta müşteri verisi ve konfigürasyonu hangi formatta dışa aktarılabiliyor?",
+  "ozet": "Veri taşınabilirliği yoksa tedarikçi değişikliğinde kurum kendi verisine kilitlenmiş olur."
+ },
+ {
+  "id": "A-073",
+  "alan": "VDI / RDS / DaaS Uyumluluğu",
+  "baslik": "Yaygın VDI/DaaS platformlarıyla uyumluluk sertifikasyon mu, iç test mi, tek gözlem mi?",
+  "ozet": "Uyumluluk iddiasının dayanağı belirsizse üretim ortamında beklenmeyen entegrasyon sorunları çıkar."
+ },
+ {
+  "id": "A-074",
+  "alan": "VDI / RDS / DaaS Uyumluluğu",
+  "baslik": "Bağlantı broker'ının keşif işlemi ve çalışma alanı akışı entegrasyonu nasıl çalışıyor?",
+  "ozet": "Broker entegrasyonu netleşmezse kullanıcıya doğru masaüstünün yönlendirilmesi garanti edilmez."
+ },
+ {
+  "id": "A-075",
+  "alan": "VDI / RDS / DaaS Uyumluluğu",
+  "baslik": "Ağ geçidi, çok faktörlü kimlik doğrulama ve tek oturum açma kombinasyonları test edildi mi?",
+  "ozet": "Kimlik doğrulama bileşenlerinin birlikte test edilmemesi üretimde beklenmeyen erişim sorunlarına yol açar."
+ },
+ {
+  "id": "A-076",
+  "alan": "VDI / RDS / DaaS Uyumluluğu",
+  "baslik": "Çoklu monitör kullanımında desteklenen ekran sayısı, çözünürlük ve ölçekleme sınırları nedir?",
+  "ozet": "Çoklu ekran sınırları bilinmezse yaygın ofis kurulumlarında performans veya görüntü sorunu çıkar."
+ },
+ {
+  "id": "A-077",
+  "alan": "VDI / RDS / DaaS Uyumluluğu",
+  "baslik": "Ağ gecikmesi, jitter ve paket kaybı toleransı hangi test koşullarında ölçüldü?",
+  "ozet": "Zayıf ağ koşulları test edilmemişse şube veya uzaktan erişim kullanıcıları verimsiz kalabilir."
+ },
+ {
+  "id": "A-078",
+  "alan": "VDI / RDS / DaaS Uyumluluğu",
+  "baslik": "Ağ değişimi veya bağlantı kopması sırasında oturum devamlılığı ve veri kaybı riski nedir?",
+  "ozet": "Oturum devamlılığı sağlanmazsa bağlantı kesintisinde kaydedilmemiş iş kaybedilebilir."
+ },
+ {
+  "id": "A-079",
+  "alan": "VDI / RDS / DaaS Uyumluluğu",
+  "baslik": "Oturum başlatma süresinin p50, p95 ve p99 değerleri hangi test koşullarında ölçüldü?",
+  "ozet": "Ortalama dışındaki uç değerler bilinmezse gerçek kullanıcı deneyimi eksik değerlendirilir."
+ },
+ {
+  "id": "A-080",
+  "alan": "VDI / RDS / DaaS Uyumluluğu",
+  "baslik": "Farklı kullanıcı profilleri (ofis, ERP, çağrı merkezi) için performans karşılaştırması var mı?",
+  "ozet": "Profil bazlı ölçüm yoksa genel performans iddiası kurumun kendi kullanım senaryosunu yansıtmayabilir."
+ },
+ {
+  "id": "A-081",
+  "alan": "VDI / RDS / DaaS Uyumluluğu",
+  "baslik": "Uzak masaüstü protokolündeki güvenlik açıkları ve üretici değişiklikleri nasıl takip ediliyor?",
+  "ozet": "Protokol değişiklikleri takip edilmezse üçüncü taraf güncellemesi ürünü aniden çalışmaz hale getirebilir."
+ },
+ {
+  "id": "A-082",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "Uç nokta ve tedarik zinciri için güncel bir tehdit modeli (threat model) hazırlandı mı?",
+  "ozet": "Tehdit modeli yoksa güvenlik yatırımı sezgiyle değil kanıtla yönlendirilemez."
+ },
+ {
+  "id": "A-083",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "Ürün güvenliğinin teknik sorumlusu ve eskalasyon yetkisi kimde, bağımsız bir rol mü?",
+  "ozet": "Güvenlik sorumluluğu bağımsız değilse geliştirme baskısı güvenlik kararlarını gölgede bırakabilir."
+ },
+ {
+  "id": "A-084",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "Varsayılan ürün konfigürasyonu en az yetki ilkesiyle güvenli mi kuruluyor (secure-by-default)?",
+  "ozet": "Varsayılan ayarlar güvensizse kurulumu yapan personel farkında olmadan açık bırakabilir."
+ },
+ {
+  "id": "A-085",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "TLS sertifika doğrulaması geçersiz veya sahte sertifikalara karşı hangi testlerle kanıtlandı?",
+  "ozet": "Sertifika doğrulaması atlatılabilirse araya girme (man-in-the-middle) saldırısı tespit edilemez."
+ },
+ {
+  "id": "A-086",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "Karşılıklı TLS (mTLS) hangi veri akışlarında zorunlu, hangilerinde uygulanmıyor?",
+  "ozet": "mTLS eksik bırakılan akışlar kimlik doğrulaması olmadan iletişime açık kalabilir."
+ },
+ {
+  "id": "A-087",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "Kök, ara ve cihaz sertifikalarından oluşan güven hiyerarşisi nasıl kurulmuş?",
+  "ozet": "Güven hiyerarşisi belirsizse bir katmanın ele geçirilmesinin etkisi öngörülemez."
+ },
+ {
+  "id": "A-088",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "Cihaz sertifikası üretilirken gerçeklik ve özel anahtarın taşınamazlığı nasıl doğrulanıyor?",
+  "ozet": "Özel anahtar taşınabilirse sahte cihaz kimliğiyle sisteme sızılabilir."
+ },
+ {
+  "id": "A-089",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "Sertifika yenileme otomasyonu ve başarısız yenilemede güvenli kurtarma yolu nedir?",
+  "ozet": "Otomatik yenileme başarısız olursa cihazlar sertifika süresi dolduğunda erişimini kaybedebilir."
+ },
+ {
+  "id": "A-090",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "Sertifika iptali internet bağlantısı olmayan (air-gapped) ortamda nasıl uygulanıyor?",
+  "ozet": "İptal mekanizması çevrimdışı ortamda çalışmazsa ele geçirilen bir sertifika geçerliliğini korur."
+ },
+ {
+  "id": "A-091",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "Üretim imzalama sürecinde tek kişinin işlem yapmasını önleyen görev ayrımı var mı?",
+  "ozet": "Tek kişi imzalama yapabiliyorsa içeriden kötü niyetli bir yayın engellenemez."
+ },
+ {
+  "id": "A-092",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "Veritabanı, yedek ve loglardaki şifreleme anahtarları verilerden ayrı mı saklanıyor?",
+  "ozet": "Anahtar veriyle birlikte saklanırsa şifreleme yalnızca kağıt üzerinde koruma sağlar."
+ },
+ {
+  "id": "A-093",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "Kod deposu, imaj ve destek paketlerinde gizli anahtar/parola taraması yapılıyor mu?",
+  "ozet": "Sızan bir gizli anahtar taranmazsa fark edilmeden uzun süre açıkta kalabilir."
+ },
+ {
+  "id": "A-094",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "Parolalar hangi algoritma ile hashleniyor ve sürüm yükseltme (rehash) politikası nedir?",
+  "ozet": "Zayıf hashleme algoritması, sızan parola veritabanının hızla kırılmasına yol açar."
+ },
+ {
+  "id": "A-095",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "Kaba kuvvet ve kimlik bilgisi doldurma saldırılarına karşı hangi testler yapıldı?",
+  "ozet": "Bu saldırılar test edilmemişse çalınan parola listeleriyle toplu hesap ele geçirme riski doğar."
+ },
+ {
+  "id": "A-096",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "Parola sıfırlama ve hesap kurtarma akışı kötüye kullanıma karşı nasıl test edildi?",
+  "ozet": "Kurtarma akışı zayıfsa saldırgan hesabı sıfırlama yoluyla ele geçirebilir."
+ },
+ {
+  "id": "A-097",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "Yetkilendirme her API çağrısında sunucu tarafında uygulanıyor mu, atlama testleri yapıldı mı?",
+  "ozet": "İstemci tarafı yetkilendirme yetersizse bir kullanıcı başkasının verisine erişebilir."
+ },
+ {
+  "id": "A-098",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "Web arayüzü XSS, CSRF ve enjeksiyon gibi standart saldırı türlerine karşı test edildi mi?",
+  "ozet": "Temel web güvenlik testleri atlanırsa bilinen ve otomatik araçlarla bulunabilecek açıklar kalır."
+ },
+ {
+  "id": "A-099",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "API jetonlarının kapsamı, süresi ve iptal mekanizması nasıl yönetiliyor?",
+  "ozet": "Jeton yönetimi gevşekse sızan bir jeton uzun süre geçerliliğini koruyarak istismar edilebilir."
+ },
+ {
+  "id": "A-100",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "Oturum çerezleri ve tarayıcı güvenlik başlıkları üretimde nasıl doğrulanıyor?",
+  "ozet": "Güvenlik başlıkları eksikse tarayıcı tabanlı saldırılara karşı ek bir koruma katmanı kaybedilir."
+ },
+ {
+  "id": "A-101",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "Bir cihazın ele geçirilmesi yönetim platformuna yanal geçiş (lateral movement) sağlar mı?",
+  "ozet": "Yanal geçiş engellenmezse tek bir cihaz ihlali tüm filonun yönetimini tehlikeye atabilir."
+ },
+ {
+  "id": "A-102",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "Yönetim platformu ele geçirilirse etkinin yayılma alanını sınırlayan kontroller nelerdir?",
+  "ozet": "Etki sınırlanmazsa tek bir ihlal tüm cihaz filosunun aynı anda tehlikeye girmesine yol açar."
+ },
+ {
+  "id": "A-103",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "Güncelleme sunucusunun ele geçirilmesi senaryosu tatbikat veya sızma testiyle işlendi mi?",
+  "ozet": "Güncelleme kanalı en kritik saldırı yüzeyidir; test edilmemişse zararlı yazılım tüm filoya dağıtılabilir."
+ },
+ {
+  "id": "A-104",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "Güvenlik açığı bildirimi için yayımlanmış bir politika ve iletişim kanalı var mı?",
+  "ozet": "Bildirim süreci yoksa dışarıdan bulunan bir açık kuruma zamanında ulaşmayabilir."
+ },
+ {
+  "id": "A-105",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "En son bağımsız sızma testinin kapsamı ve kritik bulguların kapatıldığına dair kanıt nedir?",
+  "ozet": "Bağımsız test yoksa veya bulgular kapatılmamışsa güvenlik iddiaları doğrulanamamış kalır."
+ },
+ {
+  "id": "A-106",
+  "alan": "Güvenlik Mimarisi, Kimlik ve Kriptografi",
+  "baslik": "Açık güvenlik risklerinin kabulü, süre sınırı ve kapatılma süreci nasıl yönetiliyor?",
+  "ozet": "Risk kabulü süresiz kalırsa bilinen bir açık kalıcı hale gelip unutulabilir."
+ },
+ {
+  "id": "A-107",
+  "alan": "Güvenli SDLC ve Kod Kalitesi",
+  "baslik": "Aktif, arka planda ve eski (legacy) tüm kod depolarının envanteri tutuluyor mu?",
+  "ozet": "Depo envanteri eksikse unutulan bir eski depo denetim dışı güvenlik açığı barındırabilir."
+ },
+ {
+  "id": "A-108",
+  "alan": "Güvenli SDLC ve Kod Kalitesi",
+  "baslik": "Ana koda doğrudan yazma engelleniyor mu, kritik kod bağımsız incelemeden geçiyor mu?",
+  "ozet": "Bağımsız kod incelemesi yoksa hatalı veya kötü niyetli değişiklik fark edilmeden yayına girebilir."
+ },
+ {
+  "id": "A-109",
+  "alan": "Güvenli SDLC ve Kod Kalitesi",
+  "baslik": "Kod deposu erişimleri işten ayrılan veya rolü değişen kişiler için ne kadar sürede kapatılıyor?",
+  "ozet": "Erişim kapatma süreci yavaşsa ayrılan personel kritik koda erişimini bir süre daha koruyabilir."
+ },
+ {
+  "id": "A-110",
+  "alan": "Güvenli SDLC ve Kod Kalitesi",
+  "baslik": "İş takip sistemi ile kod değişiklikleri ve sürümler arasında izlenebilirlik sağlanıyor mu?",
+  "ozet": "İzlenebilirlik yoksa bir hatanın hangi değişiklikten kaynaklandığı hızlı tespit edilemez."
+ },
+ {
+  "id": "A-111",
+  "alan": "Güvenli SDLC ve Kod Kalitesi",
+  "baslik": "Testlerin modül bazındaki dağılımı ile 'tamamlanma tanımı' güvenlik kriteri içeriyor mu?",
+  "ozet": "Güvenlik kriteri tamamlanma tanımında yoksa test edilmemiş kod üretime çıkabilir."
+ },
+ {
+  "id": "A-112",
+  "alan": "Güvenli SDLC ve Kod Kalitesi",
+  "baslik": "Test kapsama oranları modül bazında, özellikle kritik kimlik doğrulama akışları için nedir?",
+  "ozet": "Kapsama oranı bilinmezse kritik bir akışın hiç test edilmediği fark edilmeyebilir."
+ },
+ {
+  "id": "A-113",
+  "alan": "Güvenli SDLC ve Kod Kalitesi",
+  "baslik": "Başarısız testi olan bir sürümün üretime çıkarılabildiği istisna süreci ve onay yetkisi nedir?",
+  "ozet": "İstisna süreci gevşekse test hatası göz ardı edilip bilinen bir kusurla üretime geçilebilir."
+ },
+ {
+  "id": "A-114",
+  "alan": "Güvenli SDLC ve Kod Kalitesi",
+  "baslik": "Statik ve bağımlılık güvenlik taramaları (SAST/SCA) derleme hattında zorunlu mu?",
+  "ozet": "Otomatik güvenlik taraması yoksa bilinen açık türleri her sürümde yeniden ortaya çıkabilir."
+ },
+ {
+  "id": "A-115",
+  "alan": "Güvenli SDLC ve Kod Kalitesi",
+  "baslik": "Dinamik güvenlik testleri (DAST) hangi ortamda ve üretime ne kadar benzer koşulda yapılıyor?",
+  "ozet": "Test ortamı üretimden çok farklıysa test sonuçları gerçek riski yansıtmayabilir."
+ },
+ {
+  "id": "A-116",
+  "alan": "Güvenli SDLC ve Kod Kalitesi",
+  "baslik": "Bağımlılık güncellemeleri otomatik takip ediliyor mu ve regresyon politikası nedir?",
+  "ozet": "Bağımlılık takibi otomatik değilse güncel olmayan kütüphaneler bilinmeden kullanılmaya devam eder."
+ },
+ {
+  "id": "A-117",
+  "alan": "Güvenli SDLC ve Kod Kalitesi",
+  "baslik": "Derleme (CI) ortamları her çalıştırmada izole mi ve derleme sırları geliştiricilerden ayrı mı?",
+  "ozet": "CI ortamı izole değilse bir derleme sırasında ele geçirilen sır tüm gizli anahtarları tehlikeye atar."
+ },
+ {
+  "id": "A-118",
+  "alan": "Güvenli SDLC ve Kod Kalitesi",
+  "baslik": "Geliştirme, test ve üretim ortamları erişim ve veri bakımından tam olarak ayrışıyor mu?",
+  "ozet": "Ortam ayrışması eksikse test ortamındaki bir zayıflık üretim verisine doğrudan erişim sağlayabilir."
+ },
+ {
+  "id": "A-119",
+  "alan": "Güvenli SDLC ve Kod Kalitesi",
+  "baslik": "Sorunlu bir özelliği hızla devre dışı bırakan (kill switch) mekanizma mevcut mu?",
+  "ozet": "Hızlı devre dışı bırakma yoksa hatalı bir özellik ancak yeni bir sürümle düzeltilebilir."
+ },
+ {
+  "id": "A-120",
+  "alan": "Güvenli SDLC ve Kod Kalitesi",
+  "baslik": "Acil yamalar (hotfix) normal güvenlik ve inceleme sürecini atlıyor mu?",
+  "ozet": "Acil yama süreci gevşetilirse hız kazanılırken test edilmemiş riskli kod üretime girebilir."
+ },
+ {
+  "id": "A-121",
+  "alan": "Güvenli SDLC ve Kod Kalitesi",
+  "baslik": "Kod tabanında sabit kodlanmış kimlik bilgisi veya devre dışı kontrol taraması yapılıyor mu?",
+  "ozet": "Bu tarama yapılmazsa unutulmuş bir test kimlik bilgisi üretimde açık kapı olarak kalabilir."
+ },
+ {
+  "id": "A-122",
+  "alan": "Güvenli SDLC ve Kod Kalitesi",
+  "baslik": "Son 24 aya ait commit, katkıcı ve hata (defect) metrikleri çıkarılabiliyor mu?",
+  "ozet": "Geçmiş metrikler yoksa ekibin ve ürünün gerçek gelişim hızı ve kararlılığı değerlendirilemez."
+ },
+ {
+  "id": "A-123",
+  "alan": "Güvenli SDLC ve Kod Kalitesi",
+  "baslik": "Tek bir kişiye bağımlı kritik kod modülleri ve bunların yedek bilgi sahibi kimdir?",
+  "ozet": "Tek kişiye bağımlılık, o kişinin ayrılması halinde kritik modülün bakımını riske atar."
+ },
+ {
+  "id": "A-124",
+  "alan": "Güvenli SDLC ve Kod Kalitesi",
+  "baslik": "Sistem, temiz bir ortamda yalnızca dokümantasyon kullanılarak sıfırdan derlenebiliyor mu?",
+  "ozet": "Sıfırdan derleme mümkün değilse tek bir geliştiricinin bilgisine bağımlılık kritik risk taşır."
+ },
+ {
+  "id": "A-125",
+  "alan": "Güvenli SDLC ve Kod Kalitesi",
+  "baslik": "Bağımsız bir uzman, kritik kimlik doğrulama ve güncelleme modüllerini inceleyebiliyor mu?",
+  "ozet": "Bağımsız kod incelemesi yapılmazsa üretici kendi güvenlik iddiasının tek tanığı kalır."
+ },
+ {
+  "id": "A-126",
+  "alan": "SBOM, Açık Kaynak ve Yazılım Tedarik Zinciri",
+  "baslik": "Her sürüm için makine tarafından okunabilir bir yazılım bileşen listesi (SBOM) üretiliyor mu?",
+  "ozet": "SBOM yoksa hangi bileşenin ürün içinde kullanıldığı ancak tahminle bilinebilir."
+ },
+ {
+  "id": "A-127",
+  "alan": "SBOM, Açık Kaynak ve Yazılım Tedarik Zinciri",
+  "baslik": "SBOM, gerçek çalışan yazılımdan mı yoksa yalnızca bağımlılık dosyalarından mı üretiliyor?",
+  "ozet": "Manifest tabanlı SBOM, üretimde gerçekte çalışan bileşenlerle tam örtüşmeyebilir."
+ },
+ {
+  "id": "A-128",
+  "alan": "SBOM, Açık Kaynak ve Yazılım Tedarik Zinciri",
+  "baslik": "SBOM tabanlı güvenlik açığı taraması hangi sıklıkla yapılıyor ve sonuçları nedir?",
+  "ozet": "Düzenli tarama yoksa bileşenlerdeki bilinen açıklar fark edilmeden birikir."
+ },
+ {
+  "id": "A-129",
+  "alan": "SBOM, Açık Kaynak ve Yazılım Tedarik Zinciri",
+  "baslik": "Temel işletim sistemindeki açık güvenlik açığı listesi önem derecesi ve yaşına göre nedir?",
+  "ozet": "Açık kalan güvenlik açığı listesi görülmezse riskin büyüklüğü ve aciliyeti değerlendirilemez."
+ },
+ {
+  "id": "A-130",
+  "alan": "SBOM, Açık Kaynak ve Yazılım Tedarik Zinciri",
+  "baslik": "Açık kaynak lisans yükümlülükleri (GPL/AGPL gibi) hukuki olarak incelenmiş mi?",
+  "ozet": "Copyleft lisans yükümlülüğü gözden kaçarsa kurum beklenmedik kod açıklama zorunluluğuyla karşılaşabilir."
+ },
+ {
+  "id": "A-131",
+  "alan": "SBOM, Açık Kaynak ve Yazılım Tedarik Zinciri",
+  "baslik": "Paket bütünlüğü ve sürüm sabitleme (pinning) ile hash doğrulaması nasıl yapılıyor?",
+  "ozet": "Paket sabitleme yoksa derleme sırasında beklenmeyen veya kötü amaçlı bir sürüm devreye girebilir."
+ },
+ {
+  "id": "A-132",
+  "alan": "SBOM, Açık Kaynak ve Yazılım Tedarik Zinciri",
+  "baslik": "Bağımlılık karışıklığı ve sahte paket adı (typosquatting) saldırılarına karşı kontrol var mı?",
+  "ozet": "Bu kontroller yoksa yazılım tedarik zincirine sahte bir paket sızabilir."
+ },
+ {
+  "id": "A-133",
+  "alan": "SBOM, Açık Kaynak ve Yazılım Tedarik Zinciri",
+  "baslik": "Üçüncü taraf yazılım bileşenleri için normal ve acil güvenlik güncelleme süreleri nedir?",
+  "ozet": "Üçüncü taraf güncelleme süresi taahhüt edilmezse dış kaynaklı bir açık uzun süre kapatılamayabilir."
+ },
+ {
+  "id": "A-134",
+  "alan": "Güncelleme, Sürüm ve Provisioning",
+  "baslik": "Fabrika üretiminden müşteri teslimine kadar cihaz kimliği ve imaj bütünlüğü nasıl izleniyor?",
+  "ozet": "Tedarik zinciri izlenmezse fabrikadan teslimata kadar cihaza müdahale edilip edilmediği bilinemez."
+ },
+ {
+  "id": "A-135",
+  "alan": "Güncelleme, Sürüm ve Provisioning",
+  "baslik": "Fabrika test hesapları veya kimlik bilgileri üretim ortamında kalıyor mu?",
+  "ozet": "Unutulan test hesabı, saldırganın kolayca tahmin edebileceği bir arka kapı oluşturur."
+ },
+ {
+  "id": "A-136",
+  "alan": "Güncelleme, Sürüm ve Provisioning",
+  "baslik": "Güncelleme paketleri ayrı imzalanıyor mu, sahte/eski paket saldırıları test edildi mi?",
+  "ozet": "İmzasız veya eski paket kabul edilebiliyorsa cihaz filosuna kötü amaçlı güncelleme yüklenebilir."
+ },
+ {
+  "id": "A-137",
+  "alan": "Güncelleme, Sürüm ve Provisioning",
+  "baslik": "Güncelleme sırasında kesinti olursa cihaz güvenli bir şekilde nasıl kurtarılıyor?",
+  "ozet": "Kurtarma mekanizması yoksa kesintiye uğrayan bir güncelleme cihazı kullanılamaz hale getirebilir."
+ },
+ {
+  "id": "A-138",
+  "alan": "Güncelleme, Sürüm ve Provisioning",
+  "baslik": "Güncellemeler kademeli dağıtılıyor mu ve hatalı güncelleme otomatik durduruluyor mu?",
+  "ozet": "Kademeli dağıtım yoksa hatalı bir güncelleme tüm cihaz filosuna aynı anda yayılabilir."
+ },
+ {
+  "id": "A-139",
+  "alan": "Güncelleme, Sürüm ve Provisioning",
+  "baslik": "Acil bir güvenlik güncellemesinin filoya ulaşması için hedeflenen ve ölçülen süre nedir?",
+  "ozet": "Acil güncelleme süresi bilinmezse kritik bir açığın kapatılma hızı öngörülemez."
+ },
+ {
+  "id": "A-140",
+  "alan": "Güncelleme, Sürüm ve Provisioning",
+  "baslik": "Güncelleme imzalama anahtarı ele geçirilirse yeni bir güven köküne geçiş nasıl yapılıyor?",
+  "ozet": "Anahtar ele geçirilmesine karşı geçiş planı yoksa güncelleme kanalı kalıcı olarak güvenilmez hale gelebilir."
+ },
+ {
+  "id": "A-141",
+  "alan": "Güncelleme, Sürüm ve Provisioning",
+  "baslik": "Her sürümün yapı, imza, test ve onay kayıtları tek bir bütünlük içinde tutuluyor mu?",
+  "ozet": "Sürüm kayıtları dağınıksa bir yayının hangi testten ve onaydan geçtiği sonradan kanıtlanamaz."
+ },
+ {
+  "id": "A-142",
+  "alan": "Altyapı, Kurulum ve Kapalı Ağ",
+  "baslik": "Kullanıcı ve cihaz sayısına göre sunucu boyutlandırma (sizing) tablosu mevcut mu?",
+  "ozet": "Boyutlandırma tablosu yoksa kurulum öncesi gerekli donanım kapasitesi tahminle belirlenir."
+ },
+ {
+  "id": "A-143",
+  "alan": "Altyapı, Kurulum ve Kapalı Ağ",
+  "baslik": "Desteklenen işletim sistemi, veritabanı ve kurulum yöntemleri nelerdir?",
+  "ozet": "Desteklenen altyapı listesi netleşmezse kurumun mevcut standartlarıyla uyumsuzluk sonradan çıkabilir."
+ },
+ {
+  "id": "A-144",
+  "alan": "Altyapı, Kurulum ve Kapalı Ağ",
+  "baslik": "Kurulum otomatik, tekrarlanabilir (idempotent) ve sürüm kontrollü mü tanımlanmış?",
+  "ozet": "Elle yapılan kurulum tekrarlanabilir değilse ortamlar arasında tutarsızlık ve gizli hata birikir."
+ },
+ {
+  "id": "A-145",
+  "alan": "Altyapı, Kurulum ve Kapalı Ağ",
+  "baslik": "Müşteriye özel elle yapılan konfigürasyon ve yama değişiklikleri kayıt altında mı?",
+  "ozet": "Elle yapılan özel değişiklikler kayıtsızsa bir yükseltmede hangi ayarın bozulacağı önceden bilinmez."
+ },
+ {
+  "id": "A-146",
+  "alan": "Altyapı, Kurulum ve Kapalı Ağ",
+  "baslik": "Gizli anahtar ve konfigürasyon yönetimi merkezi ve şifreli bir sistemde mi tutuluyor?",
+  "ozet": "Dağınık ve şifresiz konfigürasyon yönetimi, sırların yanlışlıkla açığa çıkma riskini artırır."
+ },
+ {
+  "id": "A-147",
+  "alan": "Altyapı, Kurulum ve Kapalı Ağ",
+  "baslik": "Güvenlik duvarı kuralları ve giden internet bağımlılıklarının tam listesi paylaşılıyor mu?",
+  "ozet": "Giden bağlantı listesi eksikse kapalı ağ kurulumunda hangi portun açılması gerektiği bilinmez."
+ },
+ {
+  "id": "A-148",
+  "alan": "Altyapı, Kurulum ve Kapalı Ağ",
+  "baslik": "Tedarikçi personelinin müşteri ortamına erişimi varsayılan kapalı mı, nasıl loglanıyor?",
+  "ozet": "Varsayılan açık uzaktan erişim, izlenmeyen bir üçüncü taraf erişim kapısı oluşturur."
+ },
+ {
+  "id": "A-149",
+  "alan": "Altyapı, Kurulum ve Kapalı Ağ",
+  "baslik": "Kurulum sertleştirme (hardening) kontrol listesi ve konfigürasyon sapması tespiti var mı?",
+  "ozet": "Sapma tespiti yoksa zamanla güvenli kurulan bir sistem fark edilmeden güvensiz hale gelebilir."
+ },
+ {
+  "id": "A-150",
+  "alan": "Altyapı, Kurulum ve Kapalı Ağ",
+  "baslik": "Yükseltme öncesi uyumluluk kontrolü (preflight check) otomatik olarak yapılıyor mu?",
+  "ozet": "Ön kontrol yapılmazsa uyumsuz bir yükseltme üretim ortamını beklenmedik şekilde bozabilir."
+ },
+ {
+  "id": "A-151",
+  "alan": "Altyapı, Kurulum ve Kapalı Ağ",
+  "baslik": "Müşteri ilişkisi sona erdiğinde tedarikçiye ait erişim ve gizli anahtarlar nasıl kaldırılıyor?",
+  "ozet": "Çıkış prosedürü yoksa ilişki bittikten sonra da tedarikçiye ait erişim açık kalabilir."
+ },
+ {
+  "id": "A-152",
+  "alan": "Performans, Ölçek ve Kapasite",
+  "baslik": "Gerçek ortamda doğrulanmış en yüksek cihaz ve eşzamanlı kullanıcı sayısı nedir?",
+  "ozet": "Ölçek iddiası ölçülmeden varsayımsa büyük filoda beklenmeyen performans sorunu çıkabilir."
+ },
+ {
+  "id": "A-153",
+  "alan": "Performans, Ölçek ve Kapasite",
+  "baslik": "Yük testi ortamı üretim topolojisini ve veri hacmini ne kadar temsil ediyor?",
+  "ozet": "Gerçekçi olmayan test ortamı, üretimdeki gerçek darboğazları gizleyebilir."
+ },
+ {
+  "id": "A-154",
+  "alan": "Performans, Ölçek ve Kapasite",
+  "baslik": "Cihazların normal ve zirve yükte sunucuya bağlanma sıklığı ve mesaj hacmi nedir?",
+  "ozet": "Trafik hacmi bilinmezse sunucu ve ağ kapasitesi doğru planlanamaz."
+ },
+ {
+  "id": "A-155",
+  "alan": "Performans, Ölçek ve Kapasite",
+  "baslik": "Politika değişikliğinin tüm filoya yayılma süresi (p50/p95/p99) nedir?",
+  "ozet": "Yayılım süresi bilinmezse acil bir güvenlik politikasının ne kadar hızlı etkin olacağı öngörülemez."
+ },
+ {
+  "id": "A-156",
+  "alan": "Performans, Ölçek ve Kapasite",
+  "baslik": "Büyük ölçekli (10.000 cihaz) bir güncelleme dağıtımı sunucu ve ağ yükünü nasıl etkiliyor?",
+  "ozet": "Büyük ölçekli dağıtım test edilmemişse toplu güncelleme sırasında sistem yavaşlayabilir veya çökebilir."
+ },
+ {
+  "id": "A-157",
+  "alan": "Performans, Ölçek ve Kapasite",
+  "baslik": "Büyük filolarda yönetim panosu sorgu zaman aşımı veriyor mu, raporlama yükü etkiliyor mu?",
+  "ozet": "Raporlama günlük işlemleri yavaşlatıyorsa büyüyen filoda yönetim paneli kullanılamaz hale gelebilir."
+ },
+ {
+  "id": "A-158",
+  "alan": "Performans, Ölçek ve Kapasite",
+  "baslik": "Veritabanı ve log hacminin büyüme modeli, saklama süresi ve maliyet etkisi nedir?",
+  "ozet": "Büyüme modeli yoksa depolama maliyeti ve kapasite ihtiyacı zamanla sürpriz şekilde artabilir."
+ },
+ {
+  "id": "A-159",
+  "alan": "Performans, Ölçek ve Kapasite",
+  "baslik": "Ani yük artışlarını yönetmek için kuyruk ve geri basınç (backpressure) tasarımı var mı?",
+  "ozet": "Yük yönetim mekanizması yoksa ani talep artışı sistemin tamamen tıkanmasına yol açabilir."
+ },
+ {
+  "id": "A-160",
+  "alan": "Performans, Ölçek ve Kapasite",
+  "baslik": "Bugün ölçülen en önemli üç performans darboğazı ve giderme planı nedir?",
+  "ozet": "Bilinen darboğaz açıklanmazsa kurum aynı sorunla üretimde ilk kez karşılaşabilir."
+ },
+ {
+  "id": "A-161",
+  "alan": "Süreklilik, Yedekleme ve Felaket Kurtarma",
+  "baslik": "Çalışma süresi, güncelleme ve destek için ayrı hizmet seviyesi taahhütleri (SLA) var mı?",
+  "ozet": "Tek bir genel SLA, kritik bir alt hizmetin gerçek performansını gizleyebilir."
+ },
+ {
+  "id": "A-162",
+  "alan": "Süreklilik, Yedekleme ve Felaket Kurtarma",
+  "baslik": "Son 12-24 aya ait gerçek çalışma süresi (uptime) verisi paylaşılabiliyor mu?",
+  "ozet": "Geçmiş uptime verisi olmadan güvenilirlik iddiası doğrulanamaz bir vaat olarak kalır."
+ },
+ {
+  "id": "A-163",
+  "alan": "Süreklilik, Yedekleme ve Felaket Kurtarma",
+  "baslik": "Her bileşen için hata modu ve etki analizi (FMEA) yapıldı mı, tek hata noktaları neler?",
+  "ozet": "Sistematik hata analizi yoksa kritik bir bileşenin arıza etkisi öngörülemeden üretime geçilir."
+ },
+ {
+  "id": "A-164",
+  "alan": "Süreklilik, Yedekleme ve Felaket Kurtarma",
+  "baslik": "Yüksek erişilebilirlik otomatik devreye geçme mi, elle mi yapılıyor ve son test sonucu nedir?",
+  "ozet": "Devreye geçme testi yapılmamışsa ilan edilen kurtarma süresi kriz anında doğrulanmamış olur."
+ },
+ {
+  "id": "A-165",
+  "alan": "Süreklilik, Yedekleme ve Felaket Kurtarma",
+  "baslik": "Veri kurtarma hedefi (RPO) veri türüne göre ayrı ayrı tanımlanmış mı?",
+  "ozet": "Tek bir genel RPO farklı kritiklikteki verilerin gerçek kayıp riskini yansıtmayabilir."
+ },
+ {
+  "id": "A-166",
+  "alan": "Süreklilik, Yedekleme ve Felaket Kurtarma",
+  "baslik": "Yedekleme kapsamı sertifika, gizli anahtar ve denetim kayıtlarını da içeriyor mu?",
+  "ozet": "Yedekleme kapsamı eksikse felaket sonrası sistemin tam olarak eski haline getirilmesi mümkün olmaz."
+ },
+ {
+  "id": "A-167",
+  "alan": "Süreklilik, Yedekleme ve Felaket Kurtarma",
+  "baslik": "Son yedekten geri yükleme testi ne zaman yapıldı ve sonucu nedir?",
+  "ozet": "Test edilmemiş bir yedek, gerçek bir felakette geri yüklenemeyebilir."
+ },
+ {
+  "id": "A-168",
+  "alan": "Süreklilik, Yedekleme ve Felaket Kurtarma",
+  "baslik": "Sertifika altyapısı (PKI) tamamen kaybedilirse ayrı bir kurtarma planı var mı?",
+  "ozet": "PKI kaybı için özel plan yoksa tüm cihaz filosunun kimlik güvenini yeniden kurmak aylar sürebilir."
+ },
+ {
+  "id": "A-169",
+  "alan": "Süreklilik, Yedekleme ve Felaket Kurtarma",
+  "baslik": "Kurtarma talimatları (runbook) yazarı dışında biri tarafından başarıyla uygulanabiliyor mu?",
+  "ozet": "Talimat sadece yazan kişi tarafından anlaşılıyorsa o kişinin yokluğunda kriz yönetilemez."
+ },
+ {
+  "id": "A-170",
+  "alan": "Süreklilik, Yedekleme ve Felaket Kurtarma",
+  "baslik": "Felaket kurtarma ortamı yama ve konfigürasyon olarak üretimle güncel tutuluyor mu?",
+  "ozet": "Güncel olmayan bir DR ortamı, gerçek felakette üretim ortamının davranışını yansıtmaz."
+ },
+ {
+  "id": "A-171",
+  "alan": "Süreklilik, Yedekleme ve Felaket Kurtarma",
+  "baslik": "Kritik bir tedarikçi kesintisi için yedek çözüm veya alternatif yol tanımlı mı?",
+  "ozet": "Alternatif planı olmayan bir dış bağımlılık, kesintide kurumu tamamen tedarikçiye bağımlı bırakır."
+ },
+ {
+  "id": "A-172",
+  "alan": "Süreklilik, Yedekleme ve Felaket Kurtarma",
+  "baslik": "Kurucu veya teknik yönetici erişilemez olduğunda felaket kurtarma kim tarafından yürütülüyor?",
+  "ozet": "Kritik süreç tek bir kişiye bağımlıysa o kişinin yokluğunda kriz müdahalesi gecikebilir."
+ },
+ {
+  "id": "A-173",
+  "alan": "Gözlemlenebilirlik, Olay Müdahalesi ve Destek",
+  "baslik": "Sistem sağlık kontrolü gerçek bağımlılık durumunu mu yansıtıyor, izleme envanteri kapsamlı mı?",
+  "ozet": "Yüzeysel sağlık kontrolü, aslında çalışmayan bir bağımlılığı 'çalışıyor' gibi gösterebilir."
+ },
+ {
+  "id": "A-174",
+  "alan": "Gözlemlenebilirlik, Olay Müdahalesi ve Destek",
+  "baslik": "Olay önceliklerinin tanımı ile ilk müdahale ve çözüm süresi hedefleri nedir?",
+  "ozet": "Olay önceliklendirmesi tanımlı değilse kritik bir kesinti sıradan bir sorun gibi ele alınabilir."
+ },
+ {
+  "id": "A-175",
+  "alan": "Gözlemlenebilirlik, Olay Müdahalesi ve Destek",
+  "baslik": "Son önemli olayların kök nedeni ve tekrarını önleyen aksiyonlar paylaşılabiliyor mu?",
+  "ozet": "Geçmiş olaylar ve alınan aksiyonlar görülmezse aynı hatanın tekrarlanma riski değerlendirilemez."
+ },
+ {
+  "id": "A-176",
+  "alan": "Gözlemlenebilirlik, Olay Müdahalesi ve Destek",
+  "baslik": "Ortalama tespit, müdahale ve çözüm süreleri (MTTD/MTTA/MTTR) ölçülüyor mu?",
+  "ozet": "Bu metrikler ölçülmezse destek ve olay yönetiminin gerçek performansı değerlendirilemez."
+ },
+ {
+  "id": "A-177",
+  "alan": "Gözlemlenebilirlik, Olay Müdahalesi ve Destek",
+  "baslik": "Loglar senkronize zaman damgası ve ilişkilendirme kimliği (correlation ID) kullanıyor mu?",
+  "ozet": "Zaman senkronizasyonu olmadan farklı bileşenlerdeki loglar birleştirilerek incelenemez."
+ },
+ {
+  "id": "A-178",
+  "alan": "Gözlemlenebilirlik, Olay Müdahalesi ve Destek",
+  "baslik": "Loglara gizli anahtar, parola veya hassas kişisel veri yazılıyor mu?",
+  "ozet": "Loglara yazılan hassas veri, log erişimi olan herkes için ayrı bir sızıntı kapısı açar."
+ },
+ {
+  "id": "A-179",
+  "alan": "Gözlemlenebilirlik, Olay Müdahalesi ve Destek",
+  "baslik": "Loglar bir SIEM sistemine gerçek zamanlı ve standart formatlarla aktarılabiliyor mu?",
+  "ozet": "SIEM entegrasyonu yoksa kurum kendi güvenlik izleme sistemiyle korelasyon yapamaz."
+ },
+ {
+  "id": "A-180",
+  "alan": "Gözlemlenebilirlik, Olay Müdahalesi ve Destek",
+  "baslik": "Destek talepleri ürün hatası ve yol haritasıyla ilişkilendiriliyor, çözüm süresi trendi nedir?",
+  "ozet": "İlişkilendirme yoksa tekrar eden bir sorunun kök nedeninin çözülüp çözülmediği takip edilemez."
+ },
+ {
+  "id": "A-181",
+  "alan": "Gözlemlenebilirlik, Olay Müdahalesi ve Destek",
+  "baslik": "Uzaktan destek sırasında müşteri verisine erişim onay, süre ve kayıt kontrolleriyle sınırlı mı?",
+  "ozet": "Denetimsiz destek erişimi, destek personelinin gereğinden fazla veriye ulaşmasına imkân verir."
+ },
+ {
+  "id": "A-182",
+  "alan": "Gözlemlenebilirlik, Olay Müdahalesi ve Destek",
+  "baslik": "Bir güvenlik olayında müşteri ve düzenleyici kuruma bildirim süreci tanımlı mı?",
+  "ozet": "Bildirim süreci yoksa yasal bildirim süreleri kaçırılabilir ve kanıt kaybolabilir."
+ },
+ {
+  "id": "A-183",
+  "alan": "Gözlemlenebilirlik, Olay Müdahalesi ve Destek",
+  "baslik": "Yılda en az bir kez masa başı (tabletop) ve teknik olay tatbikatı yapılıyor mu?",
+  "ozet": "Tatbikat yapılmadan yazılı bir olay müdahale planının gerçekte işleyip işlemediği bilinemez."
+ },
+ {
+  "id": "A-184",
+  "alan": "Veri, Mahremiyet ve Müşteri Ayrıştırması",
+  "baslik": "Toplanan her veri alanı için işleme amacı, saklama konumu ve erişim kapsamı belgeleniyor mu?",
+  "ozet": "Veri envanteri eksikse mevzuat uyumu ve mahremiyet riski tam olarak değerlendirilemez."
+ },
+ {
+  "id": "A-185",
+  "alan": "Veri, Mahremiyet ve Müşteri Ayrıştırması",
+  "baslik": "Yerinde (on-prem) kurulumda tedarikçiye otomatik giden telemetri tamamen kapatılabiliyor mu?",
+  "ozet": "Kapatılamayan telemetri, kapalı ağ gereksinimi olan kurum için gizli bir veri sızıntısı kanalı olur."
+ },
+ {
+  "id": "A-186",
+  "alan": "Veri, Mahremiyet ve Müşteri Ayrıştırması",
+  "baslik": "Veri akış şeması sınır ötesi (ülke dışı) veri aktarımını gösteriyor mu?",
+  "ozet": "Sınır ötesi aktarım görünür değilse veri yerelliği ve mevzuat uyumu doğrulanamaz."
+ },
+ {
+  "id": "A-187",
+  "alan": "Veri, Mahremiyet ve Müşteri Ayrıştırması",
+  "baslik": "Bir kullanıcı veya cihaz silindiğinde veri yedek ve loglardan da tam olarak kaldırılıyor mu?",
+  "ozet": "Silme yalnızca aktif veritabanında yapılıyorsa yedek ve loglarda veri kalıntısı süresiz kalabilir."
+ },
+ {
+  "id": "A-188",
+  "alan": "Veri, Mahremiyet ve Müşteri Ayrıştırması",
+  "baslik": "Destek personelinin görebildiği müşteri verisi rol bazlı olarak maskeleniyor mu?",
+  "ozet": "Maskeleme yoksa destek personeli ihtiyacından fazla hassas müşteri bilgisine erişebilir."
+ },
+ {
+  "id": "A-189",
+  "alan": "Veri, Mahremiyet ve Müşteri Ayrıştırması",
+  "baslik": "Cihazda veri tutulmadığı iddiası disk ve bellek adli analiziyle bağımsız olarak kanıtlandı mı?",
+  "ozet": "Bağımsız doğrulama olmadan 'veri tutulmuyor' iddiası ölçülmemiş bir vaat olarak kalır."
+ },
+ {
+  "id": "A-190",
+  "alan": "Donanım, Firmware ve Üretim",
+  "baslik": "Cihaz donanımının tam parça listesi (BOM) ve her bileşenin üretici/menşei bilgisi nedir?",
+  "ozet": "Tam parça listesi yoksa donanımdaki bir bileşenin menşei veya yaşam döngüsü doğrulanamaz."
+ },
+ {
+  "id": "A-191",
+  "alan": "Donanım, Firmware ve Üretim",
+  "baslik": "Onaylı tedarikçi listesi ve sahte (counterfeit) parça önleme süreci var mı?",
+  "ozet": "Sahte parça kontrolü yoksa donanıma güvenilmez veya standart dışı bileşen girebilir."
+ },
+ {
+  "id": "A-192",
+  "alan": "Donanım, Firmware ve Üretim",
+  "baslik": "Tek kaynaktan tedarik edilen kritik bileşenler ve bunların ikame planı nedir?",
+  "ozet": "Tek kaynaklı bileşen tedarik sorunuysa üretim tamamen durabilir."
+ },
+ {
+  "id": "A-193",
+  "alan": "Donanım, Firmware ve Üretim",
+  "baslik": "Tedarikçi ürün değişikliği veya sürüm sonu bildirimleri hangi değişim kontrol sürecine giriyor?",
+  "ozet": "Değişim kontrolü yoksa tedarikçi kaynaklı bir revizyon fark edilmeden ürüne yansıyabilir."
+ },
+ {
+  "id": "A-194",
+  "alan": "Donanım, Firmware ve Üretim",
+  "baslik": "Cihazın üretildiği fabrika, lokasyon ve kritik alt yükleniciler kimlerdir?",
+  "ozet": "Üretim zincirinin görünürlüğü olmadan tedarik riski ve coğrafi bağımlılık değerlendirilemez."
+ },
+ {
+  "id": "A-195",
+  "alan": "Donanım, Firmware ve Üretim",
+  "baslik": "Üretim dosyaları ikinci bir üreticiye aktarım için yeterli mi?",
+  "ozet": "Üretim tek bir fabrikaya bağımlıysa o fabrikanın kaybı tedariki tamamen durdurabilir."
+ },
+ {
+  "id": "A-196",
+  "alan": "Donanım, Firmware ve Üretim",
+  "baslik": "Referans örnek (golden sample) ve kalite kontrol kriterleri üretim öncesinde tanımlı mı?",
+  "ozet": "Kalite kriteri tanımsızsa seri üretimdeki sapmalar sahada fark edilene kadar görülmeyebilir."
+ },
+ {
+  "id": "A-197",
+  "alan": "Donanım, Firmware ve Üretim",
+  "baslik": "Her cihazın seri numarası ve sertifikası tekil izleniyor, kopya üretim tespit ediliyor mu?",
+  "ozet": "Tekil izlenebilirlik yoksa aynı kimlikle üretilmiş kopya bir cihaz sisteme sızabilir."
+ },
+ {
+  "id": "A-198",
+  "alan": "Donanım, Firmware ve Üretim",
+  "baslik": "Depolama ünitesinin güvenli silme (secure erase) desteği nasıl doğrulanmış?",
+  "ozet": "Güvenli silme doğrulanmamışsa hizmet dışı bırakılan disklerde veri kalıntısı kalabilir."
+ },
+ {
+  "id": "A-199",
+  "alan": "Donanım, Firmware ve Üretim",
+  "baslik": "Çalışma sıcaklığı ve titreşim gibi çevresel dayanıklılık şartnameleri nasıl doğrulandı?",
+  "ozet": "Çevresel dayanıklılık kanıtlanmamışsa saha koşullarında beklenmeyen donanım arızası çıkabilir."
+ },
+ {
+  "id": "A-200",
+  "alan": "Donanım, Firmware ve Üretim",
+  "baslik": "CE ve uygunluk sertifikaları hangi donanım revizyonu ve firmware sürümü için geçerli?",
+  "ozet": "Sertifika farklı bir revizyona aitse sahadaki gerçek cihazın uygunluğu kanıtlanmamış olur."
+ },
+ {
+  "id": "A-201",
+  "alan": "Donanım, Firmware ve Üretim",
+  "baslik": "Cihazların ortalama arıza aralığı ve iade (RMA) oranı verileri paylaşılabiliyor mu?",
+  "ozet": "Güvenilirlik verisi yoksa donanımın saha koşullarındaki gerçek arıza oranı bilinmez."
+ },
+ {
+  "id": "A-202",
+  "alan": "Donanım, Firmware ve Üretim",
+  "baslik": "Saha tamiri, yedek parça temini ve ürün ömrü sonrası destek politikası nedir?",
+  "ozet": "Yedek parça ve tamir politikası belirsizse arızalanan cihazın kullanım ömrü öngörülemez."
+ },
+ {
+  "id": "A-203",
+  "alan": "Donanım, Firmware ve Üretim",
+  "baslik": "Üretim ortağının tasarım dosyası ve anahtarlara erişimi asgari düzeyde mi sınırlanıyor?",
+  "ozet": "Üretici erişimi geniş kalırsa tasarım ve anahtarlar kurumun kontrolü dışında ele geçirilebilir."
+ },
+ {
+  "id": "A-204",
+  "alan": "Test Stratejisi ve Bağımsız Doğrulama",
+  "baslik": "Her sunum iddiasının bir doğrulama testine bağlandığı izlenebilirlik matrisi var mı?",
+  "ozet": "İzlenebilirlik yoksa pazarlama iddiası ile gerçekten test edilen özellik birbirinden ayrışamaz."
+ },
+ {
+  "id": "A-205",
+  "alan": "Test Stratejisi ve Bağımsız Doğrulama",
+  "baslik": "Desteklenen donanım ve çevre birimi listesi otomatik regresyon testine bağlı mı?",
+  "ozet": "Uyumluluk listesi teste bağlı değilse bir güncelleme mevcut donanım desteğini sessizce bozabilir."
+ },
+ {
+  "id": "A-206",
+  "alan": "Test Stratejisi ve Bağımsız Doğrulama",
+  "baslik": "Farklı test türlerinin (kabul, performans, güvenlik) sahipleri birbirinden bağımsız mı?",
+  "ozet": "Aynı ekip hem geliştirip hem test ederse kritik hatalar gözden kaçma riski taşır."
+ },
+ {
+  "id": "A-207",
+  "alan": "Test Stratejisi ve Bağımsız Doğrulama",
+  "baslik": "Test verisi ve test hesapları güvenli bir şekilde yönetiliyor mu?",
+  "ozet": "Test verisi güvensizse gerçek müşteri verisiyle karışma veya sızıntı riski oluşur."
+ },
+ {
+  "id": "A-208",
+  "alan": "Test Stratejisi ve Bağımsız Doğrulama",
+  "baslik": "Test edilen yazılım, üretime çıkacak tam sürümün aynısı (release candidate) mı?",
+  "ozet": "Farklı bir derleme test edilirse üretime çıkan gerçek yazılım hiç test edilmemiş olabilir."
+ },
+ {
+  "id": "A-209",
+  "alan": "Test Stratejisi ve Bağımsız Doğrulama",
+  "baslik": "Açık kritik hataların önem derecesi, açık kalma süresi ve kapanış hedefi paylaşılabiliyor mu?",
+  "ozet": "Açık hata listesi görülmezse kurum bilinen ama gizli kalmış bir kusurla teslim alabilir."
+ },
+ {
+  "id": "A-210",
+  "alan": "Test Stratejisi ve Bağımsız Doğrulama",
+  "baslik": "Sürümler arasında tekrar açılan (regresyon) hata oranı ve trendi nedir?",
+  "ozet": "Yüksek regresyon oranı, düzeltmelerin kalıcı olmadığını ve test sürecinin yetersizliğini gösterir."
+ },
+ {
+  "id": "A-211",
+  "alan": "Test Stratejisi ve Bağımsız Doğrulama",
+  "baslik": "Cihaz imajının sertleştirme (hardening) seviyesi bağımsız olarak kıyaslandı mı?",
+  "ozet": "Bağımsız kıyaslama yoksa güvenlik sertleştirmesi iddiası doğrulanmamış kalır."
+ },
+ {
+  "id": "A-212",
+  "alan": "Test Stratejisi ve Bağımsız Doğrulama",
+  "baslik": "Güncelleme ve imzalama zincirine yönelik saldırı senaryolu testler yapıldı mı?",
+  "ozet": "Bu zincir test edilmezse tedarik zincirinin en kritik halkası doğrulanmamış kalır."
+ },
+ {
+  "id": "A-213",
+  "alan": "Test Stratejisi ve Bağımsız Doğrulama",
+  "baslik": "Benchmark sonuçları aynı komut ve veri setiyle yeniden üretilebiliyor mu?",
+  "ozet": "Yeniden üretilemeyen bir benchmark, iddia edilen performans rakamının doğrulanmasına imkân vermez."
+ },
+ {
+  "id": "A-214",
+  "alan": "Pilot Kanıtı ve Production Readiness",
+  "baslik": "Geçmiş pilotların sektör, kapsam, sürüm ve teknik altyapı detayları paylaşılabiliyor mu?",
+  "ozet": "Pilot detayları görülmezse referans deneyimin kurumun kendi senaryosuna benzerliği değerlendirilemez."
+ },
+ {
+  "id": "A-215",
+  "alan": "Pilot Kanıtı ve Production Readiness",
+  "baslik": "Pilot öncesinde önceden imzalanmış kabul kriterleri belirlenmiş miydi?",
+  "ozet": "Kabul kriterleri sonradan belirlenirse pilot başarısı öznel bir değerlendirmeye dönüşür."
+ },
+ {
+  "id": "A-216",
+  "alan": "Pilot Kanıtı ve Production Readiness",
+  "baslik": "Pilot sürecine ait ham performans ve kullanıcı memnuniyeti verileri paylaşılabiliyor mu?",
+  "ozet": "Yalnızca özet sonuç paylaşılırsa ham veri görülmeden pilotun gerçek başarısı doğrulanamaz."
+ },
+ {
+  "id": "A-217",
+  "alan": "Teknik Ekip ve Uygulama Kapasitesi",
+  "baslik": "Mühendislik ekibinin güncel organizasyon şeması ve çalışan/yüklenici ayrımı nedir?",
+  "ozet": "Ekip yapısı görünür değilse ürünün gerçekte kaç kişilik bir ekiple geliştirildiği bilinmez."
+ },
+ {
+  "id": "A-218",
+  "alan": "Teknik Ekip ve Uygulama Kapasitesi",
+  "baslik": "Kritik bileşenlerin birincil ve ikincil sahipleri var mı, kaç kişi bağımsız yayın yapabiliyor?",
+  "ozet": "Tek kişiye bağımlı bir ekip yapısı, o kişinin yokluğunda operasyonel sürekliliği tehlikeye atar."
+ },
+ {
+  "id": "A-219",
+  "alan": "Teknik Ekip ve Uygulama Kapasitesi",
+  "baslik": "Ekibin uç nokta, güvenlik ve firmware gibi alanlardaki yetkinlik dağılımı nedir?",
+  "ozet": "Yetkinlik dağılımı görülmezse belirli bir alanda ekip darboğazı olup olmadığı anlaşılamaz."
+ },
+ {
+  "id": "A-220",
+  "alan": "Teknik Ekip ve Uygulama Kapasitesi",
+  "baslik": "Ekip kapasitesi satış hedefi ve yol haritasıyla sayısal olarak örtüşüyor mu?",
+  "ozet": "Kapasite hedefle örtüşmüyorsa taahhüt edilen yol haritası gerçekçi bir planlama değil vaat olabilir."
+ },
+ {
+  "id": "A-221",
+  "alan": "Teknik Ekip ve Uygulama Kapasitesi",
+  "baslik": "Nöbetçi destek yükü ürün geliştirme kapasitesini ne ölçüde etkiliyor?",
+  "ozet": "Destek yükü yüksekse geliştirme kapasitesi görünürde var olsa da fiilen kısıtlı olabilir."
+ },
+ {
+  "id": "A-222",
+  "alan": "Teknik Ekip ve Uygulama Kapasitesi",
+  "baslik": "Kalite güvence ekibinin bir sürümü durdurma (veto) yetkisi var mı?",
+  "ozet": "Veto yetkisi yoksa ticari baskı altında test edilmemiş bir sürüm üretime çıkabilir."
+ },
+ {
+  "id": "A-223",
+  "alan": "Roadmap, Teknik Borç ve Uygulama Planı",
+  "baslik": "24 aylık yol haritası güvenlik ve ölçeği kapsıyor mu, mühendislik kapasitesiyle örtüşüyor mu?",
+  "ozet": "Yol haritası kapasiteyle örtüşmezse taahhüt edilen özellikler zamanında teslim edilemeyebilir."
+ },
+ {
+  "id": "A-224",
+  "alan": "Roadmap, Teknik Borç ve Uygulama Planı",
+  "baslik": "Teknik borç kaydı, etki ve giderim çabası bakımından düzenli takip ediliyor mu?",
+  "ozet": "Teknik borç takip edilmezse birikmiş eski bileşen riski fark edilmeden büyür."
+ },
+ {
+  "id": "A-225",
+  "alan": "Roadmap, Teknik Borç ve Uygulama Planı",
+  "baslik": "Hedeflenen ölçeğe çıkmadan önce yapılması zorunlu mimari yeniden yapılandırmalar nelerdir?",
+  "ozet": "Zorunlu yeniden yapılandırma planlanmazsa büyüme mevcut mimarinin sınırlarında aniden durabilir."
+ },
+ {
+  "id": "A-226",
+  "alan": "Roadmap, Teknik Borç ve Uygulama Planı",
+  "baslik": "Kritik bir yol haritası bağımlılığı gerçekleşmezse hangi teknik alternatifler devreye giriyor?",
+  "ozet": "Alternatif plan yoksa dışarıdan gelen bir bağımlılığın gecikmesi tüm yol haritasını durdurabilir."
+ }
+];
+const bas = {}; (TR||[]).forEach(r=>bas[r.id]=r);
+const ADI={'Endpoint OS ve Cihaz Güvenliği':'Uç İşletim Sistemi ve Cihaz Güvenliği','Güvenli SDLC ve Kod Kalitesi':'Güvenli Yazılım Geliştirme ve Kod Kalitesi','SBOM, Açık Kaynak ve Yazılım Tedarik Zinciri':'Yazılım Bileşen Listesi, Açık Kaynak ve Tedarik Zinciri','Güncelleme, Sürüm ve Provisioning':'Güncelleme, Sürüm ve Cihaz Hazırlama','Pilot Kanıtı ve Production Readiness':'Pilot Kanıtı ve Üretime Hazırlık','Roadmap, Teknik Borç ve Uygulama Planı':'Yol Haritası, Teknik Borç ve Uygulama Planı','Performans, Ölçek ve Kapasite':'Performans, Ölçek ve Kapasite'};
+const AL = DD.alanlar.map(a=>ADI[a]||a), SQ = DD.sorular;
+const H=document.getElementById('harita'), L=document.getElementById('liste'), say=document.getElementById('say');
+const cnt=AL.map((_,i)=>SQ.filter(q=>q.a===i).length), mx=Math.max(...cnt);
+let secili=6;
+AL.forEach((a,i)=>{const b=document.createElement('button');const id='a-'+String(i+1).padStart(2,'0');
+  b.innerHTML=`<svg><use href="#${id}"/></svg><div><div class="nm">${a}</div><div class="bar"><i style="width:${cnt[i]/mx*100}%"></i></div></div><span class="n">${cnt[i]}</span>`;
+  b.onclick=()=>{secili=i;document.getElementById('ara').value='';ciz();document.getElementById('alanbas').scrollIntoView({behavior:'smooth',block:'start'})};H.appendChild(b)});
+const tr=s=>(s||'').toLocaleLowerCase('tr');
+const NO={};AL.forEach((_,i)=>SQ.filter(q=>q.a===i).forEach((q,j)=>NO[q.id]=String(i+1).padStart(2,'0')+'.'+String(j+1).padStart(2,'0')));
+function satir(q,s){const r=bas[q.id]||{};let t=r.baslik||q.konu,o=r.ozet||'';
+  if(s){const re=new RegExp('('+s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig');t=t.replace(re,'<mark>$1</mark>')}
+  return `<li><span class="id">${NO[q.id]}</span><div><b>${t}</b><p>${o}</p></div><span class="rt">${AL[q.a].split(/[ ,]/)[0]}</span></li>`}
+function ciz(){const s=tr(document.getElementById('ara').value.trim());
+  [...H.children].forEach((b,i)=>b.classList.toggle('on',!s&&i===secili));
+  let r;if(s){r=SQ.filter(q=>tr((bas[q.id]||{}).baslik||q.konu).includes(s)||(NO[q.id]||'').includes(s)||tr(AL[q.a]).includes(s));
+    document.getElementById('alanbas').innerHTML=`<h3>Arama sonuçları</h3>`;document.getElementById('alanacik').textContent='';}
+  else{r=SQ.filter(q=>q.a===secili);const id='a-'+String(secili+1).padStart(2,'0');
+    document.getElementById('alanbas').innerHTML=`<svg><use href="#${id}"/></svg><h3>${AL[secili]}</h3>`;
+    document.getElementById('alanacik').textContent=`${r.length} soru. Alanın bütün soruları tek kontrol listesi olarak da indirilebilir.`;}
+  say.textContent=s?`${r.length} soru eşleşti`:`226 soru · 20 alan`;
+  L.innerHTML=r.map(q=>satir(q,s)).join('')||'<li><span></span><div><b>Eşleşen soru yok.</b><p>Daha kısa bir sözcük deneyin ya da bir alan seçin.</p></div></li>';}
+document.getElementById('ara').addEventListener('input',ciz);
+if(location.hash==='#ara'){document.getElementById('ara').value='bilet'}
+ciz();
+</script>
+</body>
+</html>

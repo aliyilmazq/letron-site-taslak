@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: letron-site-taslak
+    runtime: static
+    staticPublishPath: .
+    headers:
+      - path: /*
+        name: X-Robots-Tag
+        value: noindex, nofollow
