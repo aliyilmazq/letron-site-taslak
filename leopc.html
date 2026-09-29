@@ -193,6 +193,9 @@ table.cmp td:nth-child(2) svg,table.cmp td:nth-child(3) svg{width:16px;height:16
 .pc svg{width:48px;height:48px;margin-bottom:18px}
 .pc h3{margin-bottom:8px}.pc p{font-size:15.5px;color:var(--ink-2)}
 @media (max-width:900px){.phero .w,.duo,.spec,.pc{grid-template-columns:1fr}.sub{display:none}}
+.pdfv iframe{width:100%;height:1100px;border:1px solid var(--rule);background:var(--surface);display:block}
+.pdfm{display:none}
+@media (max-width:900px){.pdfv iframe{display:none}.pdfm{display:block;border:1px solid var(--rule)}.pdfm img{width:100%}.pdfm span{display:flex;gap:8px;align-items:center;padding:12px 14px;font-weight:600;color:var(--red-2)}.pdfm svg{width:16px;height:16px}}
 </style>
 </head>
 <body>
@@ -340,7 +343,7 @@ table.cmp td:nth-child(2) svg,table.cmp td:nth-child(3) svg{width:16px;height:16
   <button class="burger" aria-label="Menü"><svg class="u"><use href="#ui-menu"/></svg></button>
   <a class="btn red" href="#">Pilot başlatın</a>
 </div></header>
-<nav class="sub"><div class="w"><strong>LeoPC</strong><span class="on">Genel bakış</span><span>Bağlantılar</span><span>Boyutlar</span><span>Kurulum</span><span>Teknik özellikler</span><span>Karşılaştırma</span><a class="btn line" href="#">Teknik föy <svg><use href="#ui-indir"/></svg></a></div></nav>
+<nav class="sub"><div class="w"><strong>LeoPC</strong><span class="on">Genel bakış</span><span>Bağlantılar</span><span>Boyutlar</span><span>Kurulum</span><span>Teknik özellikler</span><span>Karşılaştırma</span><a class="btn line" href="assets/belge/leopc-teknik-veri-foyu.pdf" target="_blank" rel="noopener">Teknik föy <svg><use href="#ui-indir"/></svg></a></div></nav>
 
 <section class="phero"><div class="w">
   <div>
@@ -1819,7 +1822,7 @@ table.cmp td:nth-child(2) svg,table.cmp td:nth-child(3) svg{width:16px;height:16
 </div></section>
 
 <section class="sec tone"><div class="w spec">
-  <div><div class="lbl">Teknik özellikler</div><h2>İhale şartnamesine doğrudan aktarılabilir.</h2><p style="margin:18px 0 24px;color:var(--ink-2)">Her satır ölçülebilir değer taşır. Doğrulanmamış değerler teknik föy yayımlanana kadar boş bırakılmıştır.</p><a class="btn line" href="#">Teknik föy (PDF) <svg><use href="#ui-indir"/></svg></a></div>
+  <div><div class="lbl">Teknik özellikler</div><h2>İhale şartnamesine doğrudan aktarılabilir.</h2><p style="margin:18px 0 24px;color:var(--ink-2)">Her satır ölçülebilir değer taşır. Doğrulanmamış değerler teknik föy yayımlanana kadar boş bırakılmıştır.</p><a class="btn line" href="assets/belge/leopc-teknik-veri-foyu.pdf" target="_blank" rel="noopener">Teknik föy (PDF) <svg><use href="#ui-indir"/></svg></a></div>
   <table class="sp"><tbody>
     <tr><td><svg><use href="#i-isletim"/></svg>İşletim sistemi</td><td>LetrOS</td></tr>
     <tr><td><svg><use href="#i-monitor"/></svg>Görüntü</td><td>2 × HDMI, çift ekran <span class="ph">· en yüksek çözünürlük [__]</span></td></tr>
@@ -1835,6 +1838,14 @@ table.cmp td:nth-child(2) svg,table.cmp td:nth-child(3) svg{width:16px;height:16
   </tbody></table>
 </div></section>
 
+
+<section class="sec"><div class="w">
+  <div class="shead"><div><div class="lbl">Teknik veri föyü</div><h2>Dört sayfada bütün teknik değerler.</h2></div>
+    <div><p style="margin-bottom:22px">Modeller, portlar, boyutlar, ortam koşulları, Standart ve Pro lisans uyumu, belgeler ve sipariş kodları. İhale şartnamesine doğrudan aktarılabilir.</p>
+    <a class="btn red" href="assets/belge/leopc-teknik-veri-foyu.pdf" download>Teknik veri föyünü indirin (PDF) <svg><use href="#ui-indir"/></svg></a></div></div>
+  <div class="pdfv"><iframe src="assets/belge/leopc-teknik-veri-foyu.pdf#view=FitH&toolbar=1" title="LeoPC Teknik Veri Föyü" loading="lazy"></iframe>
+    <a class="pdfm" href="assets/belge/leopc-teknik-veri-foyu.pdf" target="_blank" rel="noopener"><img src="assets/belge/tds-kapak.png" alt="LeoPC Teknik Veri Föyü, 1. sayfa"><span>Föyü açın <svg><use href="#ui-dis"/></svg></span></a></div>
+</div></section>
 <section class="sec"><div class="w">
   <div class="shead"><div><div class="lbl">Karşılaştırma</div><h2>LeoPC ve klasik masaüstü bilgisayar.</h2></div><p>Fark donanımın gücünde değil, verinin ve yönetimin nerede durduğunda.</p></div>
   <table class="cmp"><thead><tr><th>Konu</th><th>LeoPC</th><th>Klasik bilgisayar</th></tr></thead><tbody>
